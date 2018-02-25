@@ -1,0 +1,161 @@
+/*首页*/
+header{
+	position: relative;
+}
+header span,h1{
+	background: #e74c3c;
+}
+header h1{
+	height: 2.82em;
+	font-weight: normal;
+	font-size: 1.2em;
+	margin: 0 auto;
+	color: #ffffff;
+	line-height: 2.82em;
+	text-align: center;
+}
+header .home{
+	position: absolute;
+	top: 1em;
+	left: 1em;
+	width: 1.72em;
+	height: 1.72em;
+	border-radius: .9em;
+}
+header .home a{
+	display: block;
+	width: 100%;
+	height: 100%;
+	background: url("../imgs/home.png") 0 0 no-repeat;
+}
+.banner{
+	overflow: hidden;
+}
+.banner img{
+	max-width: 100%;
+	height: auto;
+	border-bottom: 1px #dbdddf solid; 
+	float: left;
+}
+.loginbanner{
+	height: auto;
+	padding: .7em 10px;
+}
+.loginbanner .inner{
+	background: #F35240;
+	border-radius: 1.33em;
+	text-align: center;
+}
+.loginbanner a{
+	display: block;
+	padding: .5em 0 .65em;
+	width: 100%;
+	height: 100%;
+	text-decoration: none;
+	color: #ffffff;
+	vertical-align: middle;
+}
+.listnews{
+	padding: 0 10px;
+	height: 15em;
+}
+.listnews .newsitem{
+	background: green;
+	border-radius: .5em;
+	box-shadow: 2px 2px 2px #dbdddf;
+	margin-bottom: .75em;
+	padding: 9px 0 2px;
+	background: #ffffff;
+	border: 1px solid #e1e1e1;
+}
+.listnews .newsitem ul{
+	list-style-type: none;
+}
+.listnews .newsitem ul li{
+	padding:  9px 0 9px 35px;
+	background: url("../imgs/dian.png") 20px 17px no-repeat;
+	border-top: 1px solid #e1e1e1;
+}
+.listnews .newsitem .listtit{
+	padding: 0 15px 9px 17px;
+	background: none;
+	border: none;
+}
+.listnews .newsitem li a{
+	text-decoration: none;
+	color: #000;
+}
+.listnews .newsitem .listtit img{
+	vertical-align: middle;
+}
+.listnews .newsitem .listtit span{
+	vertical-align: middle;
+	margin-left: 10px;
+	font-weight: bold;
+}
+.listnews .newsitem .listtit .more{
+	float: right;
+	font-size: 14px;
+	line-height: 30px;
+}
+.listnews .lastlist{
+	margin-bottom: 60px;
+}
+footer{
+	width: 100%;
+	height: 45px;
+	background: #e74c3c;
+	position: fixed;
+	bottom: 0;
+}
+footer ul{
+	padding: 10px 0;
+	overflow: hidden;
+	text-align: center;
+}
+footer li{
+	float: left;
+	width: 25%;
+	list-style-type: none; 
+}
+footer a{
+	text-decoration: none;
+	color: #fff;
+	border-right: 1px solid #fff;
+	width: 100%;
+	display: block;
+}
+footer .lasta{
+	border: none;
+}
+/*其它页面---i趣学堂learning*/
+.others .listnews{
+	margin-top: 12px;
+}
+.others .newsitem ul .contents{
+	background: none;
+	padding: 10px;
+}
+.others .contents h3{
+	font-size: 1em;
+	font-weight: normal;
+	margin-bottom: 12px;
+}
+.others .contents p{
+	line-height: 30px;
+	font-size: 15px;
+	margin: 5px 0 1px;
+}
+.others .contents img{
+	display: block;
+	margin: 15px auto;
+}
+.others .contents .titred{
+	padding: 15px 0;
+	margin: 0px;
+	color: red;
+}
+.others .newsitem ul .wxcon{
+	padding: 5px 10px 20px;
+}
+

@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+	<appender name="stdout" class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern"
+				value="[%p]%d{yyyy-MM-dd HH:mm:ss} [%t] %C.%M(%L) | %m%n" />
+		</layout>
+	</appender>
+	<appender name="A1" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="/home/work/logs/applogs/pos.be.xiaomi.com/xms.log" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern"
+				value="[%p]%d{yyyy-MM-dd HH:mm:ss} %p [%t] %C.%M(%L) | %m%n" />
+		</layout>
+	</appender>
+	<appender name="storm" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="/home/work/logs/applogs/pos.be.xiaomi.com/xms-storm.log" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern"
+				value="[%p]%d{yyyy-MM-dd HH:mm:ss} [%t] %C.%M(%L) | %m%n" />
+		</layout>
+	</appender>
+	<appender name="api" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="/home/work/logs/applogs/pos.be.xiaomi.com/xms-api.log" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern"
+				value="[%p]%d{yyyy-MM-dd HH:mm:ss} [%t] %C.%M(%L) | %m%n" />
+		</layout>
+	</appender>
+	
+	<appender name="wipezero" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="/home/work/logs/applogs/pos.be.xiaomi.com/xms-wipezero.log" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern"
+				value="[%p]%d{yyyy-MM-dd HH:mm:ss} [%t] %C.%M(%L) | %m%n" />
+		</layout>
+	</appender>
+	
+	<appender name="salesapi" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="/home/work/logs/applogs/pos.be.xiaomi.com/xms-salesapi.log" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern"
+				value="[%p]%d{yyyy-MM-dd HH:mm:ss} [%t] %C.%M(%L) | %m%n" />
+		</layout>
+	</appender>
+	
+	    <appender name="sqlTimeCost" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="/home/work/logs/applogs/pos.be.xiaomi.com/xms-sqlTimeCost.log" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern"
+                   value="[%p]%d{yyyy-MM-dd HH:mm:ss} [%t] %C.%M(%L) | %m%n" />
+        </layout>
+    </appender>
+	
+	
+	<appender name="helper" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="/home/work/logs/applogs/pos.be.xiaomi.com/xms-helper.log" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern"
+				value="[%p]%d{yyyy-MM-dd HH:mm:ss} [%t] %C.%M(%L) | %m%n" />
+		</layout>
+	</appender>
+	<appender name="xprocess" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="/home/work/logs/applogs/pos.be.xiaomi.com/xms-xprocess.log" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern"
+				value="[%p]%d{yyyy-MM-dd HH:mm:ss} [%t] %C.%M(%L) | %m%n" />
+		</layout>
+	</appender>
+	<appender name="sql" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="/home/work/logs/applogs/pos.be.xiaomi.com/xms-sql.log" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern"
+				value="[%p]%d{yyyy-MM-dd HH:mm:ss} [%t] %C.%M(%L) | %m%n" />
+		</layout>
+	</appender>
+	<appender name="perf4j" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="/home/work/logs/applogs/pos.be.xiaomi.com/xms-perf4j.log" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern"
+				value="[%p]%d{yyyy-MM-dd HH:mm:ss} [%t] %C.%M(%L) | %m%n" />
+		</layout>
+	</appender>
+    <appender name="CoalescingStatistics" class="org.perf4j.log4j.AsyncCoalescingStatisticsAppender">
+        <param name="TimeSlice" value="10000"/>
+        <appender-ref ref="perf4j"/>
+  		<appender-ref ref="graphExecutionTimes"/>
+        <appender-ref ref="graphExecutionTPS"/>        
+    </appender> 
+    
+    <appender name="graphExecutionTimes" class="org.perf4j.log4j.GraphingStatisticsAppender">
+        <!-- Possible GraphTypes are Mean, Min, Max, StdDev, Count and TPS -->
+        <param name="GraphType" value="Mean"/>
+        <!-- The tags of the timed execution blocks to graph are specified here -->
+        <!--
+        <param name="TagNamesToGraph" value="before,after"/>
+        -->
+        <appender-ref ref="perf4j"/>
+    </appender>
+   <appender name="graphExecutionTPS" class="org.perf4j.log4j.GraphingStatisticsAppender">
+        <param name="GraphType" value="TPS"/>
+        <!--
+        <param name="TagNamesToGraph" value="before,after"/>
+        -->
+        <appender-ref ref="perf4j"/>
+    </appender>    
+
+	<logger name="com.opensymphony.xwork2.ognl.OgnlValueStack">
+		<level value="ERROR" />
+	</logger>
+	<logger name="net.sourceforge.jdbclogger">
+		<level value="INFO" />
+	</logger>
+	<logger name="com.mchange.v2.resourcepool">
+		<level value="INFO" />
+	</logger>
+	<logger name="org.springframework">
+		<level value="INFO" />
+	</logger>
+	<logger name="com.xiaomi.xms">
+		<level value="${log4j.level}" />
+	</logger>
+	<logger name="com.xiaomi.service">
+		<level value="${log4j.level}" />
+	</logger>
+	<logger name="com.xiaomi.platform">
+		<level value="${log4j.level}" />
+	</logger>
+	<logger name="com.xiaomi.xms.storm.trident" additivity="false">
+		<level value="${log4j.level}" />
+		<appender-ref ref="storm" />
+	</logger>
+	
+	   <logger name="com.xiaomi.xms.web.SqlTimeCostInterceptor" additivity="false">
+         <level value="INFO" />
+         <appender-ref ref="sqlTimeCost" />
+     </logger>
+     
+	<logger name="com.xiaomi.xms.action.api" additivity="false">
+		<level value="${log4j.level}" />
+		<appender-ref ref="api" />
+	</logger>
+	
+	<logger name="com.xiaomi.xms.sales.utils" additivity="false">
+		<level value="${log4j.level}" />
+		<appender-ref ref="wipezero" />
+	</logger>
+	
+	<logger name="com.xiaomi.xms.api.service" additivity="false">
+		<level value="${log4j.level}" />
+		<appender-ref ref="salesapi" />
+	</logger>
+
+	<logger name="org.apache.zookeeper" additivity="false">
+		<level value="INFO" />
+		<appender-ref ref="storm" />
+	</logger>
+    <logger name="org.perf4j.TimingLogger" additivity="false">
+        <level value="INFO"/>
+        <appender-ref ref="CoalescingStatistics"/>
+    </logger>
+    
+	<logger name="com.jolbox.bonecp" additivity="false">
+		<level value="INFO" />
+		<appender-ref ref="helper" />		
+	</logger>
+
+	<root>
+		<priority value="INFO" />
+		<appender-ref ref="stdout" />
+		<appender-ref ref="A1" />
+	</root>	
+</log4j:configuration>
