@@ -7,12 +7,12 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.yaohoo.be.dao.entity.ActivityDO;
-import com.yaohoo.be.dao.entity.ClassDO;
-import com.yaohoo.be.dao.entity.InfoDO;
-import com.yaohoo.be.dao.service.ActivityManager;
-import com.yaohoo.be.dao.service.ClassManager;
-import com.yaohoo.be.dao.service.InfoManager;
+import entity.ActivityDO;
+import entity.ClassDO;
+import entity.InfoDO;
+import com.yaohoo.be.service.ActivityManager;
+import com.yaohoo.be.service.ClassManager;
+import com.yaohoo.be.service.InfoManager;
 
 @Controller
 public class NavController {
@@ -29,9 +29,9 @@ public class NavController {
 		return "main";
 	}
 
-	@RequestMapping("/toService")
+	@RequestMapping("/app/to/babysitter")
 	public String toLoginPage() {
-		return "service";
+		return "babysitter_form";
 	}
 
 	@RequestMapping("/toAddActivity")

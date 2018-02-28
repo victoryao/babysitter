@@ -6,7 +6,7 @@ import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.SelectKey;
 import org.apache.ibatis.annotations.Update;
 
-import com.yaohoo.be.dao.entity.ClassDO;
+import entity.ClassDO;
 
 public interface ClassMapper {
 	

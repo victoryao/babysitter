@@ -10,12 +10,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.yaohoo.be.constant.Constant;
-import com.yaohoo.be.dao.entity.ActivityDO;
-import com.yaohoo.be.dao.entity.ClassDO;
-import com.yaohoo.be.dao.entity.InfoDO;
-import com.yaohoo.be.dao.service.ActivityManager;
-import com.yaohoo.be.dao.service.ClassManager;
-import com.yaohoo.be.dao.service.InfoManager;
+import entity.ActivityDO;
+import entity.ClassDO;
+import entity.InfoDO;
+import com.yaohoo.be.service.ActivityManager;
+import com.yaohoo.be.service.ClassManager;
+import com.yaohoo.be.service.InfoManager;
 import com.yaohoo.be.utils.PageView;
 
 @RestController

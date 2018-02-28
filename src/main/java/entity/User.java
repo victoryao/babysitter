@@ -1,4 +1,4 @@
-package com.yaohoo.be.dao.entity;
+package entity;
 
 import java.io.Serializable;
 

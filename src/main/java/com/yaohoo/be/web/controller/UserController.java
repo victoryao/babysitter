@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.yaohoo.be.constant.Constant;
-import com.yaohoo.be.dao.entity.User;
-import com.yaohoo.be.dao.service.UserManager;
+import entity.User;
+import com.yaohoo.be.service.UserManager;
 import com.yaohoo.be.utils.MD5Utils;
 @Controller
 public class UserController {

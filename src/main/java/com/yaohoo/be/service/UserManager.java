@@ -1,9 +1,9 @@
-package com.yaohoo.be.dao.service;
+package com.yaohoo.be.service;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.yaohoo.be.dao.entity.User;
+import entity.User;
 import com.yaohoo.be.dao.mapper.read.UserReadMapper;
 import com.yaohoo.be.dao.mapper.write.UserMapper;
 

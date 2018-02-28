@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.yaohoo.be.constant.Constant;
-import com.yaohoo.be.dao.entity.ActivityDO;
-import com.yaohoo.be.dao.service.ActivityManager;
+import entity.ActivityDO;
+import com.yaohoo.be.service.ActivityManager;
 import com.yaohoo.be.utils.PageView;
 import com.yaohoo.be.utils.QueryResult;
 

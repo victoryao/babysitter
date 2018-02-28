@@ -1,11 +1,11 @@
-package com.yaohoo.be.dao.entity;
+package entity;
 
 import java.util.Date;
 
-public class InfoDO {
+public class ClassDO {
 	
 	private int id;
-	private int iId;
+	private int cId;
 	private String subject;
 	private String content;
 	private int status;	//0:上线 1:下线
@@ -13,9 +13,15 @@ public class InfoDO {
 	private Date created;
 	private Date updated;
 	
-	public InfoDO() {
+	public ClassDO() {
 	}
-	public InfoDO(String subject, String content) {
+	public int getcId() {
+		return cId;
+	}
+	public void setcId(int cId) {
+		this.cId = cId;
+	}
+	public ClassDO(String subject, String content) {
 		this.subject = subject;
 		this.content = content;
 		this.created = new Date();
@@ -38,6 +44,7 @@ public class InfoDO {
 	public void setId(int id) {
 		this.id = id;
 	}
+	
 	public Date getCreated() {
 		return created;
 	}
@@ -62,11 +69,10 @@ public class InfoDO {
 	public void setType(int type) {
 		this.type = type;
 	}
-	public int getiId() {
-		return iId;
+	@Override
+	public String toString() {
+		return "ClassDO [id=" + id + ", cId=" + cId + ", subject=" + subject
+				+ ", content=" + content + ", status=" + status + ", type="
+				+ type + ", created=" + created + ", updated=" + updated + "]";
 	}
-	public void setiId(int iId) {
-		this.iId = iId;
-	}
-	
 }

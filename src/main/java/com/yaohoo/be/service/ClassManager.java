@@ -1,4 +1,4 @@
-package com.yaohoo.be.dao.service;
+package com.yaohoo.be.service;
 
 import java.util.List;
 
@@ -7,7 +7,7 @@ import javax.annotation.Resource;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.yaohoo.be.dao.entity.ClassDO;
+import entity.ClassDO;
 import com.yaohoo.be.dao.mapper.read.ClassReadMapper;
 import com.yaohoo.be.dao.mapper.write.ClassMapper;
 import com.yaohoo.be.utils.QueryResult;

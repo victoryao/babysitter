@@ -3,7 +3,7 @@ package com.yaohoo.be.dao.mapper.read;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
-import com.yaohoo.be.dao.entity.User;
+import entity.User;
 
 public interface UserReadMapper {
 	
