@@ -1,8 +1,8 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.yaohoo.be</groupId>
-	<artifactId>backend</artifactId>
+	<groupId>com.happymama.be</groupId>
+	<artifactId>app</artifactId>
 	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>backend Maven Webapp</name>
@@ -13,7 +13,7 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 	</properties>
 	<build>
-		<finalName>backend</finalName>
+		<finalName>app</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -46,7 +46,14 @@
 				<artifactId>maven-jetty-plugin</artifactId>
 				<version>6.1.26</version>
 				<configuration>
-					<scanIntervalSeconds>0</scanIntervalSeconds>
+					<connectors>
+						<connector implementation="org.mortbay.jetty.nio.SelectChannelConnector">
+							<port>8000</port>
+							<maxIdleTime>30000</maxIdleTime>
+						</connector>
+					</connectors>
+					<webAppSourceDirectory>${project.build.directory}/${project.artifactId}
+					</webAppSourceDirectory>
 					<contextPath>/</contextPath>
 				</configuration>
 			</plugin>
@@ -137,12 +144,6 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-		
-		<dependency> 
-            <groupId>net.fckeditor</groupId> 
-            <artifactId>java-core</artifactId> 
-            <version>2.6</version> 
-        </dependency>
 
 		<dependency>
 			<groupId>com.google.guava</groupId>
@@ -150,9 +151,6 @@
 			<version>17.0</version>
 		</dependency>
 
-		<!-- spring security -->
-		<!-- <dependency> <groupId>org.springframework.security</groupId> <artifactId>spring-security-config</artifactId> 
-			<version>${spring.version}</version> </dependency> -->
 		<dependency>
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-core</artifactId>
@@ -282,6 +280,12 @@
 			<artifactId>lombok</artifactId>
 			<version>1.16.20</version>
 		</dependency>
+
+		<dependency>
+			<groupId>net.fckeditor</groupId>
+			<artifactId>java-core</artifactId>
+			<version>2.6</version>
+		</dependency>
 	</dependencies>
 
 	<profiles>
@@ -293,7 +297,7 @@
 			<properties>
 				<staging>dev</staging>
 				<mysql.host>127.0.0.1</mysql.host>
-				<mysql.database>db</mysql.database>
+				<mysql.database>happymama</mysql.database>
 				<mysql.port>3306</mysql.port>
 				<mysql.username>root</mysql.username>
 				<mysql.password>viqxkj</mysql.password>
@@ -316,10 +320,10 @@
 			<properties>
 				<staging>dev</staging>
 				<mysql.host>127.0.0.1</mysql.host>
-				<mysql.database>db</mysql.database>
+				<mysql.database>happymama</mysql.database>
 				<mysql.port>3306</mysql.port>
 				<mysql.username>root</mysql.username>
-				<mysql.password>iqutouzi123</mysql.password>
+				<mysql.password>Viqxkj521</mysql.password>
 				<cache.host>127.0.0.1</cache.host>
 				<cache.port>6379</cache.port>
 				<cache.password></cache.password>

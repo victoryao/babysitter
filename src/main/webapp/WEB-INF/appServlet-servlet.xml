@@ -19,7 +19,7 @@
 
 
 	<mvc:annotation-driven />
-	<context:component-scan base-package="com.yaohoo.be.web.controller" />
+	<context:component-scan base-package="com.happymama.be.controller" />
 	<bean id="freemarkerConfig"
 		class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
 		<property name="templateLoaderPath" value="/WEB-INF/view/" />

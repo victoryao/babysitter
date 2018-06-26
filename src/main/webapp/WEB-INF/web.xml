@@ -3,8 +3,8 @@
 	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 	id="WebApp_ID" version="2.5">
-	<display-name>backend</display-name>
-	<description>后台系统</description>
+	<display-name>happymama_app</display-name>
+	<description>快乐妈咪App</description>
 
 	<context-param>
 		<param-name>webAppRootKey</param-name>
@@ -38,27 +38,13 @@
 	
 	<!--<filter>-->
 		<!--<filter-name>sessionFilter</filter-name>-->
-		<!--<filter-class>com.yaohoo.be.filter.SessionFilter</filter-class>-->
+		<!--<filter-class>SessionFilter</filter-class>-->
 	<!--</filter>-->
 	<!---->
 	<!--<filter-mapping>-->
 		<!--<filter-name>sessionFilter</filter-name>-->
 		<!--<url-pattern>*.do</url-pattern>-->
 	<!--</filter-mapping>-->
-	
-	<servlet>
-		<servlet-name>ConnectorServlet</servlet-name>
-		<servlet-class>
-			net.fckeditor.connector.ConnectorServlet
-		</servlet-class>
-		<load-on-startup>1</load-on-startup>
-	</servlet>
-
-	<servlet-mapping>
-		<servlet-name>ConnectorServlet</servlet-name>
-		<!-- Do not wrap this line otherwise Glassfish will fail to load this file -->
-		<url-pattern>/fckeditor/editor/filemanager/connectors/*</url-pattern>
-	</servlet-mapping>
 
 	<!-- Processes application requests -->
 	<servlet>

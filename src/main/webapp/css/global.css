@@ -1,0 +1,537 @@
+* {
+    margin: 0;
+    padding: 0
+}
+
+*, :after, :before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: transparent;
+    outline: 0
+}
+
+body {
+    background-color: #F1F2F6;
+    font-size: 15px
+}
+
+li {
+    list-style: none
+}
+
+img {
+    border: 0;
+    width: 100%;
+    vertical-align: middle
+}
+
+input, select, textarea {
+    outline: 0;
+    border: 0
+}
+
+input {
+    -webkit-appearance: none;
+    font-family: "Microsoft YaHei", Helvetica
+}
+
+textarea {
+    resize: none;
+    font-family: "Microsoft YaHei", Helvetica
+}
+
+a {
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent
+}
+
+a:link {
+    text-decoration: none
+}
+
+a:visited {
+    text-decoration: none
+}
+
+a:hover {
+    text-decoration: none
+}
+
+a:active {
+    text-decoration: none
+}
+
+em, i {
+    font-style: normal
+}
+
+h3, h5, p, ul, li {
+    margin: 0;
+    font-family: PingFangSC-Regular
+}
+
+.single-list {
+    background-color: #fff;
+    overflow: hidden
+}
+
+.single-list li {
+    padding-left: 15px
+}
+
+.single-list a {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    padding: 14px 15px 14px 32px;
+    color: #292D33
+}
+
+.single-list a:after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    background-color: #e8ebf0;
+    -webkit-transform: scaleY(.5);
+    transform: scaleY(.5);
+    -webkit-transform-origin: 0 1px;
+    transform-origin: 0 1px
+}
+
+.single-list li:active {
+    background-color: #F5F7FA
+}
+
+.single-list li a img {
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    left: 0;
+    top: 50%;
+    margin-top: -11px
+}
+
+.single-list li .txt {
+    line-height: 22px;
+    padding-right: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+
+.tmore {
+    position: relative;
+    background: #fff;
+    margin: -1px 0 0 -15px;
+    text-align: center;
+    padding-bottom: 8px;
+    line-height: 23px;
+    display: none
+}
+
+.tmore em {
+    padding-right: 5px;
+    margin-left: -8px;
+    font-size: 11px;
+    color: #525A66
+}
+
+.tmore .triangleB {
+    width: 6px;
+    height: 6px;
+    margin-top: -8px
+}
+
+.tmore .triangleB.open {
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    margin-top: -5px
+}
+
+.double-list {
+    background-color: #fff;
+    overflow: hidden;
+    font-size: 12px;
+    color: #848C99;
+    line-height: 19px
+}
+
+.double-list li {
+    position: relative;
+    width: 50%;
+    padding: 13px 25px;
+    float: left
+}
+
+.double-list li:after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    background-color: #e8ebf0;
+    -webkit-transform: scaleY(.5);
+    transform: scaleY(.5);
+    -webkit-transform-origin: 0 1px;
+    transform-origin: 0 1px
+}
+
+.double-list li:nth-child(odd):before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1px;
+    height: 100%;
+    background-color: #e8ebf0;
+    -webkit-transform: scaleX(.5);
+    transform: scaleX(.5);
+    -webkit-transform-origin: 0 1px;
+    transform-origin: 0 1px
+}
+
+.double-list h5 {
+    line-height: 22px;
+    font-size: 15px;
+    font-weight: 400;
+    color: #292D33;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+
+.double-list li .txt {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+
+.triangleR {
+    position: absolute;
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-top: solid #ccc 1px;
+    border-right: solid #ccc 1px;
+    top: 50%;
+    right: 15px;
+    margin-top: -4px;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg)
+}
+
+.triangleB {
+    position: absolute;
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-top: solid #ccc 1px;
+    border-right: solid #ccc 1px;
+    -webkit-transform: rotate(135deg);
+    transform: rotate(135deg);
+    top: 50%;
+    margin-top: -7px
+}
+
+.line-B:after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    background-color: #e8ebf0;
+    -webkit-transform: scaleY(.5);
+    transform: scaleY(.5);
+    -webkit-transform-origin: 0 1px;
+    transform-origin: 0 1px
+}
+
+.line-R:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1px;
+    height: 100%;
+    background-color: #e8ebf0;
+    -webkit-transform: scaleX(.5);
+    transform: scaleX(.5);
+    -webkit-transform-origin: 0 1px;
+    transform-origin: 0 1px
+}
+
+.bg-icon {
+    background: url(//static.daojia.com/assets/project/user-center-v1.1/images/icon-group.png) no-repeat;
+    background-size: 30px;
+    background-position: right 30px
+}
+
+.bg-icon.common {
+    background-size: 26px;
+    background-position: right -53px
+}
+
+.bg-icon.silver {
+    background-size: 26px;
+    background-position: right -79px
+}
+
+.bg-icon.gold {
+    background-size: 26px;
+    background-position: right -105px
+}
+
+.bg-icon.platina {
+    background-size: 26px;
+    background-position: right -130px
+}
+
+@keyframes showAnimation {
+    0% {
+        height: 50px
+    }
+    70% {
+        height: 60px
+    }
+    100% {
+        height: 50px
+    }
+}
+
+@-webkit-keyframes showAnimation {
+    0% {
+        height: 50px
+    }
+    70% {
+        height: 60px
+    }
+    100% {
+        height: 50px
+    }
+}
+
+@keyframes hideAnimation {
+    0% {
+        height: 50px
+    }
+    100% {
+        height: 50px
+    }
+}
+
+@-webkit-keyframes hideAnimation {
+    0% {
+        height: 50px
+    }
+    100% {
+        height: 50px
+    }
+}
+
+#page_load {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10002;
+    background-color: #fff
+}
+
+#page_load .pull_up_loading {
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%)
+}
+
+.pull_up_loading {
+    width: 100%;
+    height: 46px;
+    line-height: 46px;
+    margin: 0 auto;
+    font-size: 12px;
+    color: #ea5152;
+    text-align: center
+}
+
+.pull_up_loading span {
+    vertical-align: middle
+}
+
+.pull_up_loading .pull_up_rotater {
+    display: inline-block;
+    margin-right: 5px;
+    width: 20px;
+    height: 20px;
+    background: url(//static.daojia.com/assets/project/user-center-v1.1/images/loading_img.png) no-repeat 6px 6px;
+    background-size: 8px 8px
+}
+
+.pull_up_loading .pull_up_rotater span {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: url(//static.daojia.com/assets/project/user-center-v1.1/images/loading.png) no-repeat;
+    background-size: 20px 20px;
+    vertical-align: top;
+    -webkit-animation: Rotater 1s linear 0s infinite;
+    animation: Rotater 1s linear 0s infinite
+}
+
+@-webkit-keyframes Rotater {
+    0% {
+        -webkit-transform: rotate(0deg)
+    }
+    25% {
+        -webkit-transform: rotate(90deg)
+    }
+    50% {
+        -webkit-transform: rotate(180deg)
+    }
+    75% {
+        -webkit-transform: rotate(270deg)
+    }
+    100% {
+        -webkit-transform: rotate(360deg)
+    }
+}
+
+@keyframes Rotater {
+    0% {
+        -webkit-transform: rotate(0deg)
+    }
+    25% {
+        -webkit-transform: rotate(90deg)
+    }
+    50% {
+        -webkit-transform: rotate(180deg)
+    }
+    75% {
+        -webkit-transform: rotate(270deg)
+    }
+    100% {
+        -webkit-transform: rotate(360deg)
+    }
+}
+
+.dot-red {
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    background-color: #e6454a;
+    border-radius: 6px;
+    margin: 0 0 2px 5px
+}
+
+.pop_alert {
+    display: none;
+    z-index: 2;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .7)
+}
+
+.pop_alert_qxyy .popbox {
+    margin-top: -140px
+}
+
+.pop_alert .popbox {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 280px;
+    margin: -100px 0 0 -140px;
+    border-radius: 4px;
+    background-color: #fff
+}
+
+.pop_alert .popcon {
+    text-align: center;
+    padding: 10px 15px;
+    color: #292d33
+}
+
+.pop_alert .twobtn {
+    position: relative;
+    width: 100%;
+    height: 44px;
+    text-align: center
+}
+
+.pop_alert .twobtn:before {
+    background-color: #e0e0e0
+}
+
+.pop_alert .twobtn:before, .pop_alert .onebtn:before, .mform:before, .kcts:before, .foobtnone:before, .moneybar:before, .citytop_fail .titcity:before, .topbar_sdbj:before, .bar_fwmi:before, .bar_wsjs:before, .footbtn:before, .pop_sm .btnbar:before, .tempaaa:before, .infolist .infobox .tkts:before, ul.mydd li .btnbar:before, .fbtn_choice:before, .commentinfo .comcon:before, .foobtnmin:before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: -1px;
+    height: 1px;
+    background-color: #e8ebf0;
+    -webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+    -webkit-transform-origin: 0 1px;
+    transform-origin: 0 1px
+}
+
+.pop_alert a:last-child {
+    position: relative
+}
+
+.pop_alert a:last-child:after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 1%;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background-color: #e0e0e0;
+    -webkit-transform: scaleX(0.5);
+    transform: scaleX(0.5);
+    -webkit-transform-origin: 0 1px;
+    transform-origin: 0 1px
+}
+
+.pop_alert .twobtn div {
+    float: left;
+    width: 50%
+}
+
+.pop_alert .twobtn div:first-child a {
+    border-radius: 0 0 0 4px
+}
+
+.pop_alert .twobtn div a {
+    display: block;
+    height: 44px;
+    line-height: 44px;
+    font-size: 16px;
+    text-align: center;
+    color: #e6454a
+}

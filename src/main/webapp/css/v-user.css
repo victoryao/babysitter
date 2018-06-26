@@ -1,0 +1,838 @@
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent
+}
+
+li {
+    list-style: none
+}
+
+img {
+    border: 0
+}
+
+input, select, textarea {
+    outline: 0;
+    border: 0;
+    background: 0 0
+}
+
+input {
+    -webkit-appearance: none
+}
+
+textarea {
+    resize: none
+}
+
+body, button, input, select, textarea {
+    font: 12px/1.5 tahoma, arial, 'Hiragino Sans GB', Microsoft YaHei, sans-serif
+}
+
+a {
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent
+}
+
+a:visited {
+    color: #292d33
+}
+
+body {
+    background: #f1f2f6;
+    color: #292d33;
+    font: 12px/1 tahoma, arial, 'Hiragino Sans GB', Microsoft YaHei, sans-serif;
+    font-family: PingFangSC-Regular
+}
+
+.head {
+    margin-top: 10px;
+    padding: 15px;
+    background: #fff
+}
+
+.ico a:before, .loginbar:before, .userPhone:before {
+    background: url(//static.daojia.com/fe/h5/app/css/v-userimg/icon_0461475.png) no-repeat;
+    background-size: 175px auto
+}
+
+.myorder li a:before, .footprint li a:before {
+    background: url(//static.daojia.com/fe/h5/app/css/v-userimg/iconGroup_5a4fdc3.png) no-repeat;
+    background-size: 30px auto
+}
+
+.loginbar {
+    height: 50px;
+    font-size: 15px;
+    line-height: 50px
+}
+
+.loginbar:before {
+    display: inline-block;
+    margin-right: 10px;
+    width: 50px;
+    height: 50px;
+    content: "";
+    vertical-align: middle
+}
+
+.userinfo {
+    height: 50px
+}
+
+.userinfo img {
+    float: left;
+    margin-right: 10px;
+    width: 50px;
+    border-radius: 50%
+}
+
+.userinfo h3 {
+    padding: 8px 0;
+    font-weight: 300;
+    font-size: 15px
+}
+
+.userinfo p {
+    color: #848c99;
+    font-size: 12px
+}
+
+.userPhone {
+    font-size: 15px;
+    line-height: 26px
+}
+
+.userPhone:before {
+    display: inline-block;
+    margin-right: 10px;
+    width: 25px;
+    height: 25px;
+    background-position: -50px 0;
+    content: "";
+    vertical-align: top
+}
+
+.head-new {
+    position: relative;
+    height: 95px;
+    background-color: #e6454a;
+    color: #fff
+}
+
+.head-new .uface {
+    width: 100px;
+    height: 100px;
+    margin: -5px -10px 0 0;
+    transform: scale(.5);
+    -webkit-transform: scale(.5)
+}
+
+.head-new .uface img {
+    display: block;
+    width: 100%;
+    border-radius: 100px
+}
+
+.head-new .uname {
+    position: absolute;
+    top: 50%;
+    left: 90px;
+    margin-top: -8px;
+    height: 20px;
+    line-height: 20px;
+    font-size: 15px
+}
+
+.head-new .rank {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    margin-top: -8px;
+    padding: 0 6px 0 27px;
+    height: 22px;
+    line-height: 22px;
+    background-color: #c5383c;
+    font-size: 11px;
+    border-radius: 20px 0 0 20px
+}
+
+.head-new .rank:before {
+    position: absolute;
+    left: -1px;
+    top: -1px;
+    display: block;
+    content: "";
+    width: 23px;
+    height: 23px;
+    border-radius: 20px;
+    background: url(//static.daojia.com/fe/h5/app/css/v-userimg/icons_rank_978e52b.png) no-repeat 0 0;
+    background-size: 23px
+}
+
+.head-new .rank-ordinary {
+    color: #d5d4d5
+}
+
+.head-new .rank-ordinary:before {
+    background-position: 0 0
+}
+
+.head-new .rank-silver-medal {
+    color: #FFE0E1
+}
+
+.head-new .rank-silver-medal:before {
+    background-position: 0 -25px
+}
+
+.head-new .rank-gold {
+    color: #fed26e
+}
+
+.head-new .rank-gold:before {
+    background-position: 0 -50px
+}
+
+.head-new .rank-platinum {
+    color: #fff
+}
+
+.head-new .rank-platinum:before {
+    background-position: 0 -75px
+}
+
+.head-new .more {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    margin-top: -5px;
+    width: 10px;
+    height: 10px;
+    border: 1px solid #fff;
+    border-width: 1px 1px 0 0;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg)
+}
+
+.head-new .btn_rank {
+    position: absolute;
+    top: 25px;
+    right: 0;
+    width: 80px;
+    height: 44px
+}
+
+.ico {
+    position: relative
+}
+
+.ico a {
+    display: block;
+    padding: 12px 15px;
+    color: #292d33;
+    font-size: 16px;
+    line-height: 26px;
+    font-family: PingFangSC-Medium
+}
+
+.ico a:before {
+    display: inline-block;
+    margin-right: 10px;
+    width: 25px;
+    height: 25px;
+    content: "";
+    vertical-align: top
+}
+
+.ico a:after {
+    content: "";
+    position: absolute;
+    top: 19px;
+    right: 15px;
+    display: block;
+    width: 7px;
+    height: 12px;
+    background: url(//static.daojia.com/fe/h5/app/css/v-userimg/arrowR_f538970.png) center;
+    background-size: 100% 100%
+}
+
+.ico a:active {
+    background: #f5f7fa
+}
+
+.border-b {
+    position: relative
+}
+
+.border-b:after {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: #f1f2f6;
+    content: "";
+    -webkit-transform: scaleY(.5);
+    -webkit-transform-origin: 0 0;
+    z-index: 1
+}
+
+.border-b:before {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: #f1f2f6;
+    content: "";
+    -webkit-transform: scaleY(.5);
+    -webkit-transform-origin: 0 0;
+    z-index: 1
+}
+
+.mydjq {
+    background: #fff
+}
+
+.mymessage, .myorder {
+    margin-top: 10px;
+    background: #fff
+}
+
+.footprint, .footprintlogin {
+    margin: 10px 0;
+    background-color: #fff
+}
+
+.myhyk {
+    background: #fff
+}
+
+.mydjq a:before {
+    background-position: -25px -51px
+}
+
+.mydjq p {
+    position: absolute;
+    top: 12px;
+    right: 30px;
+    color: #b2b8c2;
+    font-size: 14px;
+    font-family: PingFangSC-Regular
+}
+
+.mydjq p .dot-red {
+    float: right;
+    width: 8px;
+    height: 8px;
+    display: inline-block;
+    background-color: #e6454a;
+    border-radius: 6px;
+    margin: 9px 5px
+}
+
+.myorder .ico a, .footprint .ico a, .footprintlogin .ico a {
+    font-size: 17px
+}
+
+.myorder .ico a:before {
+    background-position: 0 -51px
+}
+
+.myorder .ico a p, .footprint .ico a p {
+    position: absolute;
+    top: 12px;
+    right: 27px;
+    color: #b2b8c2;
+    font-size: 14px;
+    font-family: PingFangSC-Regular
+}
+
+.myorder .bd, .footprint .bd, .footprintlogin .bd {
+    overflow: hidden;
+    padding: 17px 0
+}
+
+.myorder li, .footprint li, .footprintlogin li {
+    float: left;
+    width: 25%;
+    text-align: center
+}
+
+.myorder li a, .footprint li a {
+    position: relative;
+    display: inline-block;
+    font-size: 12px;
+    color: #292d33
+}
+
+.footprintlogin li a {
+    display: block;
+    color: #292d33
+}
+
+.myorder li a em {
+    position: absolute;
+    display: inline-block;
+    font-style: normal;
+    min-width: 16px;
+    padding: 0 4px;
+    background: #e6454a;
+    background-size: 100% auto;
+    top: -11px;
+    left: 31px;
+    font: 9px/16px arial;
+    color: #fff;
+    border-radius: 8px;
+    text-align: center;
+    z-index: 1;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box
+}
+
+.myorder li a em:after {
+    content: '';
+    position: absolute;
+    width: 7px;
+    height: 3px;
+    background: url(//static.daojia.com/fe/h5/app/css/v-userimg/redhorn_36a4690.png) no-repeat center;
+    background-size: 100% 100%;
+    left: 1px;
+    bottom: -1px;
+    z-index: -1
+}
+
+.myorder li a:before, .footprint li a:before {
+    display: block;
+    margin: 0 auto 4px;
+    width: 25px;
+    height: 25px;
+    content: ""
+}
+
+.myorder li a.havenot:before {
+    background-position: center -3px
+}
+
+.myorder li a.over:before {
+    background-position: center -32px
+}
+
+.myorder li a.stay:before {
+    background-position: center -63px
+}
+
+.myorder li a.all:before {
+    background-position: center -92px
+}
+
+.footprint li a.card:before {
+    background-position: center -122px
+}
+
+.footprint li a.service:before {
+    background-position: center -152px
+}
+
+.footprint li a.store:before {
+    background-position: center -182px
+}
+
+.footprint li a.foot:before {
+    background-position: center -212px
+}
+
+.myorder .ico a:after {
+    display: none
+}
+
+.footprintlogin .count {
+    font-size: 17px;
+    line-height: 17px;
+    margin-bottom: 12px
+}
+
+.jifen {
+    background-color: #fff
+}
+
+.jifen a:before {
+    background-position: -100px -25px
+}
+
+.jifen p {
+    position: absolute;
+    top: 10px;
+    right: 30px;
+    color: #a4aab2;
+    font-size: 13px;
+    color: #e6454a
+}
+
+.myfav {
+    margin-top: 10px;
+    background-color: #fff
+}
+
+.myfav a:before {
+    background-position: -150px -50px
+}
+
+.myfav p {
+    position: absolute;
+    top: 12px;
+    right: 27px;
+    color: #b2b8c2;
+    font-size: 14px
+}
+
+.myaddr {
+    margin-top: 10px;
+    background-color: #fff
+}
+
+.myaddr a:before {
+    background-position: -150px -25px
+}
+
+.myaddr p {
+    position: absolute;
+    top: 10px;
+    right: 30px;
+    color: #a4aab2;
+    font-size: 13px;
+    color: #e6454a
+}
+
+.imserver {
+    background-color: #fff
+}
+
+.imserver a:before {
+    background-position: -50px -25px
+}
+
+.imserver em, .imsg em {
+    position: absolute;
+    top: 14px;
+    right: 30px;
+    padding: 0 3px;
+    height: 15px;
+    line-height: 15px;
+    min-width: 9px;
+    text-align: center;
+    border-radius: 15px;
+    color: #fff;
+    font-size: 12px;
+    background-image: linear-gradient(-139deg, #FFC9B3 0, #FF7E7E 49%, #FF3B55 98%);
+    font-style: normal
+}
+
+.imsshop {
+    background-color: #fff
+}
+
+.imsshop a:before {
+    background-position: -150px 0
+}
+
+.imsshop em, .imsg em {
+    position: absolute;
+    top: 14px;
+    right: 30px;
+    padding: 0 3px;
+    height: 15px;
+    line-height: 15px;
+    min-width: 9px;
+    text-align: center;
+    border-radius: 15px;
+    color: #fff;
+    font-size: 12px;
+    background-image: linear-gradient(-139deg, #FFC9B3 0, #FF7E7E 49%, #FF3B55 98%);
+    font-style: normal
+}
+
+.imsg {
+    margin-top: 10px;
+    background-color: #fff
+}
+
+.imsg a:before {
+    background-position: -125px -50px
+}
+
+.myhyk a:before {
+    background-position: -100px 0
+}
+
+.mymessage a:before {
+    background-position: -50px -51px
+}
+
+.my2 a:before {
+    background-position: -75px -51px
+}
+
+.feedback a:before {
+    background-position: -100px -51px
+}
+
+.phone_kf a:before {
+    background-position: -75px 0
+}
+
+.my2_Q a:before {
+    background-position: -75px -25px
+}
+
+.my2_lq a:before {
+    background-position: -125px 0
+}
+
+.my2_rz a:before {
+    background-position: -125px -25px
+}
+
+.my2 {
+    position: relative;
+    background: #fff;
+    margin-top: 10px
+}
+
+.feedback {
+    background: #fff;
+    margin-top: 0
+}
+
+.phone_kf {
+    margin-top: 10px
+}
+
+.my2 p {
+    position: absolute;
+    top: 12px;
+    right: 30px;
+    color: #b2b8c2;
+    font-size: 14px;
+    font-family: PingFangSC-Regular
+}
+
+.noread {
+    position: relative;
+    top: 5px;
+    right: 20px;
+    float: right;
+    padding: 0 10px;
+    border-radius: 9px;
+    background: #e6454a;
+    color: #fff;
+    font-size: 11px;
+    line-height: 18px
+}
+
+.feedbackbox {
+    padding: 15px;
+    text-align: center
+}
+
+.textarea {
+    -webkit-box-sizing: border-box;
+    padding: 15px;
+    width: 100%;
+    min-height: 150px;
+    border-radius: 0;
+    background: #fff;
+    color: #292d33;
+    font-size: 14px
+}
+
+.textarea::-webkit-textarea-placeholder {
+    color: #a8acb2
+}
+
+.feedbackbox .btn {
+    margin: 20px auto;
+    width: 150px;
+    height: 40px;
+    border-radius: 20px;
+    background: #ea8a8f;
+    color: #fff;
+    text-align: center;
+    font-size: 16px;
+    line-height: 40px
+}
+
+.feedbackbox .btn.disable {
+    background: #d3d6db
+}
+
+.feedbackbox .btn:active {
+    background: #d16d72;
+    color: #f4e1e2
+}
+
+.poplayer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .5)
+}
+
+.tablediv {
+    display: table;
+    width: 100%;
+    height: 100%
+}
+
+.tablecelldiv {
+    display: table-cell;
+    vertical-align: middle
+}
+
+.feedbacksuc {
+    -webkit-box-sizing: border-box;
+    margin-left: 10%;
+    padding: 15px;
+    width: 80%;
+    border-radius: 4px;
+    background: #fff
+}
+
+.feedbacksuc h3 {
+    color: #292d33;
+    text-align: center;
+    font-weight: 400;
+    font-size: 18px
+}
+
+.feedbacksuc p {
+    margin: 15px 0;
+    color: #292d33;
+    font-size: 14px;
+    line-height: 1.4
+}
+
+.feedbacksuc .btn {
+    display: block;
+    width: 100%;
+    height: 44px;
+    border-radius: 4px;
+    background: #e6454a;
+    color: #fff;
+    text-align: center;
+    font-size: 16px;
+    line-height: 44px
+}
+
+.feedbacksuc .btn:active {
+    background: #c23a3f;
+    color: #f4e1e2
+}
+
+.question_box {
+    padding: 0 15px;
+    font: 12px/20px arial;
+    text-align: justify
+}
+
+.question_box .title {
+    position: relative;
+    height: 15px;
+    margin: 0 30px;
+    border-top: solid 1px #a7adb7
+}
+
+.question_box .title span {
+    position: absolute;
+    font-size: 11px;
+    color: #9fa6b0;
+    padding: 0 10px;
+    left: 50%;
+    margin: -10px 0 0 -34px;
+    background: #f1f2f6
+}
+
+.question_box .text {
+    margin-bottom: 24px
+}
+
+.question_box .text p {
+    position: relative;
+    padding-left: 15px
+}
+
+.question_box .text span {
+    position: absolute;
+    font-weight: bolder;
+    left: 0;
+    top: 0
+}
+
+.question_box .phone {
+    text-align: center
+}
+
+.copyright-feedback {
+    display: block;
+    color: #525a66;
+    font-size: 14px;
+    line-height: 16px;
+    margin-top: 34px;
+    margin-bottom: 14px
+}
+
+.footer {
+    text-align: center;
+    padding-bottom: 20px
+}
+
+.footer a {
+    display: inline-block;
+    padding: 7px 20px;
+    border: solid 1px #848c9a;
+    border-radius: 18px;
+    margin-bottom: 10px
+}
+
+.footer a i {
+    float: left;
+    width: 15px;
+    height: 15px;
+    margin: 2px 5px 0 0;
+    background: url(//static.daojia.com/fe/h5/app/css/images/card_cardIconNew_ec307e6.png) no-repeat center;
+    background-size: 44px;
+    background-position: center -218px
+}
+
+.footer a em {
+    float: left;
+    font: 16px/19px arial;
+    color: #525a66
+}
+
+.footer p {
+    color: #848c99
+}
+
+.mt0 {
+    margin-top: 0
+}
+
+.mb0 {
+    margin-bottom: 0
+}
+
+.mt {
+    margin-top: 10px
+}
+
+.mb {
+    margin-bottom: 10px
+}

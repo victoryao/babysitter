@@ -12,7 +12,7 @@
 
 
 
-	<context:component-scan base-package="com.yaohoo.be.service" />
+	<context:component-scan base-package="com.happymama.be.service" />
 
 	<aop:config proxy-target-class="true" />
 

@@ -1,101 +1,144 @@
+<#assign base=request.contextPath />
 <!DOCTYPE html>
 <html lang="zh-CN">
-
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="renderer" content="webkit"/>
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=0,uc-fitscreen=yes"/>
-    <meta name="apple-mobile-web-app-capable" content="yes"/>
-    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
-    <meta name="format-detection" content="telephone=no"/>
-    <title>miniMobile</title>
-    <meta name="keywords" content="miniMobile的demo"/>
-    <meta name="description" content="miniMobile是一个简单易用的移动框架！"/>
-    <!-- miniMObile.css、js -->
-    <link rel="stylesheet" type="text/css" href="/css/miniMobile.css"/>
-    <script type="text/javascript" src="/js/zepto.min.js"></script>
-    <script type="text/javascript" src="/js/miniMobile.js"></script>
-    <!-- mobileSelect -->
-    <link rel="stylesheet" type="text/css" href="/plugins/mobileSelect/mobileSelect.css">
-    <script src="/plugins/mobileSelect/mobileSelect.js" type="text/javascript"></script>
-    <!-- icheck -->
-    <script src="/plugins/icheck/icheck.js" type="text/javascript" charset="utf-8"></script>
-    <!-- noUiSlider -->
-    <link rel="stylesheet" type="text/css" href="/plugins/noUiSlider.10.0.0/nouislider.css"/>
-    <script src="/plugins/noUiSlider.10.0.0/nouislider.js" type="text/javascript" charset="utf-8"></script>
-    <!-- switchery -->
-    <link rel="stylesheet" type="text/css" href="/plugins/switchery/switchery.css"/>
-    <script src="/plugins/switchery/switchery.js" type="text/javascript" charset="utf-8"></script>
-    <!-- iconfont -->
-    <link rel="stylesheet" type="text/css" href="/plugins/fonticon/iconfont.css"/>
-    <!-- animate.css -->
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css"/>
+    <base id="base" href="${base}">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+          content="北京快乐妈咪科技有限公司是由一群有爱心有激情的奶爸与月嫂创始建设，着力搭建一个孕妈和月嫂的深度交流平台。目前的核心服务包括培训、月嫂、育儿嫂、催乳师、产后护理、小儿推拿、月子餐等母婴服务的预定与咨询，用户可结合自身实际情况，分价格、分地域、分年限进行快速搜索，可以周为单位进行服务评价、付款，是专业且具有保障的孕妈社区。"/>
+    <meta name="aplus-xplug" content="NONE">
+    <meta name="keyword" content="月嫂,培训,月嫂培训,育儿嫂,催乳师,小儿推拿师,产后恢复,月子膳食,营养师,快乐妈咪,推荐工作,高薪,家政"/>
+    <meta name="baidu-site-verification" content="71R86N1GBt"/>
+
+    <title>北京快乐妈咪科技有限公司</title>
+    <script type="text/javascript" src="${base}/js/zepto.min.js"></script>
+    <script type="text/javascript" src="${base}/js/miniMobile.js"></script>
+    <script src="${base}/js/swiper.min.js"></script>
+    <!-- Animation CSS -->
+    <link href="${base}/css/animate.css" rel="stylesheet">
+    <!-- Chosen CSS -->
+    <link href="${base}/css/chosen.min.css" rel="stylesheet">
+    <!-- Chosen CSS -->
+    <link href="${base}/css/login-register.css" rel="stylesheet">
+    <!-- Swiper Slider CSS -->
+    <link href="${base}/css/flexslider.css" rel="stylesheet">
+    <!-- Pretty Photo CSS -->
+    <link href="${base}/css/prettyPhoto.css" rel="stylesheet">
+    <!-- Swiper Slider CSS -->
+    <link href="${base}/css/swiper.css" rel="stylesheet">
+    <!-- Custom Main StyleSheet CSS -->
+    <link href="${base}/css/style.css" rel="stylesheet">
+    <!-- Color CSS -->
+    <link href="${base}/css/color.css" rel="stylesheet">
+    <!-- Typography StyleSheet CSS -->
+    <link href="${base}/css/typography.css" rel="stylesheet">
+    <!-- Responsive CSS -->
+    <link href="${base}/css/responsive.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="${base}/css/customer.css"/>
+    <link rel="stylesheet" type="text/css" href="${base}/css/miniMobile.css"/>
+    <!-- fonticon -->
+    <link rel="stylesheet" type="text/css" href="${base}/plugins/fonticon/iconfont.css"/>
+    <link rel="stylesheet" type="text/css" href="${base}/css/customer.css"/>
+    <link rel="stylesheet" href="${base}/css/frame_338829c.css">
+    <link rel="stylesheet" href="${base}/css/common_16f528f.css">
+    <link rel="stylesheet" href="${base}/css/home_f587618.css">
+    <link rel="stylesheet" href="${base}/css/footer.css">
 </head>
 
-<body class="pb12 fadeIn animated">
-<header class="ui-header clearfix w75 h8 f46 pl3 pr3 color8 bg-color-success t-c o-h">
-    <div class="ui-header-l fl w5">
-        <b class="icon iconfont icon-sortlight"></b>
-    </div>
-    <div class="ui-header-c fl f30 w59">
-        个人信息
-    </div>
-    <div class="ui-header-r fl w5">
-        <i class="icon iconfont icon-phone"></i>
-    </div>
-</header>
-<style>
-    .formheader {
-        line-height: 0.7rem;
-    }
+<body>
+<!--gt Wrapper Start-->
+<div class="gt_wrapper">
 
-    .formheader span {
-        display: inline-block;
-    }
+    <!--Header Wrap Start-->
+    <header>
+    <!--Main Content Wrap Start-->
+    <div class="gt_content_wrap">
+        <section>
+            <div class="container">
+                <!--Conatct Form Wrap Start-->
+                <div class="gt_contact_form_wrap default_width">
 
-    .formheader input {
-        border: none;
-    }
-</style>
-<div class="p3 f30 f30 w75">
-    <form action="/app/baby/sitter/add.do" method="post">
-        <div class="pt2 pb2">
-            姓名：
-            <input type="text" name="name" class="w59  form-control" placeholder="请输入您的称呼"/>
-        </div>
-        <div class="pt2 pb2">
-            手机：
-            <input type="text" name="phone" class="w59  form-control" placeholder="请输入您的手机号码"/>
-        </div>
-        <div class="pt2 pb2">
-            地址：
-            <input type="text" name="address" class="w59  form-control" placeholder="请输入您的地址"/>
-        </div>
-        <div>
-            宝宝的年龄：
-            <label class="mr3"><input type="checkbox" name="babyage" value="0" class="check"/>1岁以内</label>
-            <label class="mr3"><input type="checkbox" name="babyage" value="1" class="check"/>1~3岁</label>
-            <label class="mr3"><input type="checkbox" name="babyage" value="2" class="check"/>3岁以上</label>
-        </div>
+                    <!--Heading Wrap Start-->
+                    <div class="gt_hdg_1 default_width">
+                        <h3>已为<b><span style="color:red">${count}</span></b>位妈妈进行匹配最佳月嫂/育儿嫂</h3>
+                        <span class="gt_hdg_left"></span>
+                        <i class="icon-school"></i>
+                        <span class="gt_hdg_right"></span>
+                    </div>
 
-        <div class="mt4 mb4">
-            备注：
-            <textarea class="w59 h20 form-control" name="memo" placeholder="备注内容"></textarea>
-        </div>
-        <div class="t-c mt5">
-            <input type="submit" class="btn f30 btn-primary radius10 p2 w50" value="确定提交"/>
-        </div>
-    </form>
+                    <!--Heading Wrap End-->
+                    <form class="gt_contact_form" id="contact-form" action="${base}/user/reserve.do" method="post"
+                          enctype="multipart/form-data"
+                          accept-charset="utf-8">
+                        <div class="col-md-4">
+                            <div class="gt_contact_us_field">
+                                <input class="c_ph" type="text" placeholder="姓名" id="name" name="name"
+                                       required>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="gt_contact_us_field">
+                                <input class="c_ph" type="text" placeholder="联系方式" id="phone"
+                                       name="phone" required>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="gt_contact_us_field">
+                                <input class="c_ph" type="text" placeholder="您的地址（可不填）" id="address"
+                                       name="address">
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="gt_contact_us_field">
+                                <textarea class="gt_c_bg" name="memo" id="memo" placeholder="特殊要求（可不填）"
+                                ></textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="gt_contact_us_field">
+                                <input id="submit-message" type="submit" value="为我匹配月嫂" name="submit_msg">
+                            </div>
+                            <!--Alert Message-->
+                            <div id="contact-result">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <!--Conatct Form Wrap End-->
+            </div>
+        </section>
+    </div>
+    <!--Main Content Wrap End-->
+
+
+    <!--Main Content Wrap End-->
+
+    <!--Footer Wrap End-->
 </div>
-<script type="text/javascript">
-    //icheck 多选框插件
-    $('.check').iCheck({
-        checkboxClass: 'ui-checkbox check-primary',
-        radioClass: 'ui-radio check-primary'
-    });
+<!--gt Wrapper End-->
 
-</script>
+<!-- 底部导航 -->
+<#include "/common/foot.ftl" >
+<!--Jquery Library-->
+<script src="${base}/js/jquery.js"></script>
+<!--Bootstrap core JavaScript-->
+<script src="${base}/js/bootstrap.min.js"></script>
+<!--Flex Slider JavaScript-->
+<script src="${base}/js/jquery.flexslider-min.js"></script>
+<!--Swiper Slider JavaScript-->
+<script src="${base}/js/swiper.jquery.min.js"></script>
+<!--Owl Carousel JavaScript-->
+<script src="${base}/js/owl.carousel.js"></script>
+<!--Chosen JavaScript-->
+<script src="${base}/js/chosen.jquery.min.js"></script>
+<!--Chosen JavaScript-->
+<script src="${base}/js/waypoints-min.js"></script>
+<!--Pretty Photo Javascript-->
+<script src="${base}/js/jquery.prettyPhoto.js"></script>
+<!--Custom JavaScript-->
+<script src="${base}/js/custom.js"></script>
+
 </body>
-
 </html>
