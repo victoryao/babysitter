@@ -1,0 +1,905 @@
+/* ---------- CSS reset ---------- */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+a {
+    text-decoration: none;
+}
+
+@-ms-viewport{
+    width: device-width;
+}
+
+
+/* ---------- Hospital ---------- */
+
+body {
+    background-color: #fff9f6;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.clearfix:after{
+    content:".";
+    display:block;
+    height:0;
+    clear:both;
+    visibility:hidden;
+}
+
+#summary {
+    padding: 20px;
+}
+
+#summary div.header {
+    overflow: hidden;
+}
+
+#summary a.cover {
+    float: left;
+}
+
+#summary div.info {
+    margin-left: 110px;
+}
+
+#summary div.info h1 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #484848;
+    margin-bottom: 15px;
+    line-height: 20px;
+}
+
+#summary div.info p a {
+    background-color: #fff9f6;
+    border: 2px solid #ffe5e2;
+    border-radius: 20px;
+    font-size: 12px;
+    color: #ff8576;
+    padding: 5px 15px;
+    margin-right: 5px;
+}
+
+#summary div.capability {
+    overflow: hidden;
+    margin: 20px 0 15px 0;
+    padding: 15px 0;
+    border-top: 1px dashed #ffe5e2;
+    border-bottom: 1px dashed #ffe5e2;
+}
+
+#summary div.expense {
+    overflow: hidden;
+    margin: 15px 0 0 7px;
+    padding-left: 18px;
+    background: url("/static/img/expense.png") no-repeat left 2px;
+    background-size: 15px 15px;
+    font-size: 14px;
+    color: #b6b4b2;
+    line-height: 20px;
+}
+
+#summary div.expense span {
+    color: #ff8576;
+}
+
+#summary div.capability a.ok {
+    float: left;
+    border: 2px solid #ffe5e2;
+    border-radius: 20px;
+    font-size: 14px;
+    color: #ff8576;
+    padding: 6px 15px;
+    padding-left: 23px;
+    margin: 5px 10px 5px 0;
+    background: url("/static/img/support.png") no-repeat 5px center;
+    background-size: 15px 15px;
+}
+
+#summary div.capability a.no {
+    float: left;
+    border: 2px solid #e4e2e0;
+    border-radius: 20px;
+    font-size: 14px;
+    color: #aba9a7;
+    padding: 6px 15px;
+    padding-left: 23px;
+    margin: 5px 10px 5px 0;
+    background: url("/static/img/nosupport.png") no-repeat 5px center;
+    background-size: 15px 15px;
+}
+
+#address {
+    display: block;
+    margin-top: 24px;
+    color: #ff8576;
+    font-size: 14px;
+    background: url("/static/img/location.png") no-repeat left center;
+    background-size: 12px 14px;
+    padding-left: 15px;
+}
+
+div.panel {
+    background-color: #fff;
+    margin: 10px 0;
+    border-top: 1px solid #ffe5e2;
+    border-bottom: 1px solid #ffe5e2;
+    font-size: 16px;
+}
+
+div.panel h2 {
+    padding: 20px 20px 20px 40px;
+    border-bottom: 1px dashed #ffe5e2;
+    background-size: 16px 16px;
+    color: #484848;
+    font-weight: bold;
+}
+
+
+
+#jiandang_status h2, #intro h2 {
+    background: url("/static/img/jiandang_status.png") no-repeat 15px center;
+}
+
+#weike h2 {
+    background: url("/static/img/weike.png") no-repeat 15px center;
+}
+
+#event h2 {
+    background: url("/static/img/offline.png") no-repeat 15px center;
+}
+
+#pregCheck_note h2 {
+    background: url("/static/img/pregCheck_note@3x.png") no-repeat 15px center;
+    background-size: 15px 15px;
+}
+
+#doctors h2, #doctor_comments h2 {
+    background: url("/static/img/doctor.png") no-repeat 15px center;
+}
+
+#packages h2 {
+    background: url("/static/img/price.png") no-repeat 15px center;
+}
+
+#doctors a.doc {
+    display: block;
+    padding: 15px;
+}
+
+#doctors ul {
+    overflow: hidden;
+    height: 77px;
+}
+
+#doctors ul li {
+    float: left;
+    margin-right: 13px;
+}
+
+#doctors ul li img {
+    display: block;
+    border-radius: 30px;
+}
+
+#doctors ul li span {
+    display: block;
+    text-align: center;
+    color: #aba9a7;
+    font-size: 14px;
+    margin-top: 7px;
+}
+
+#packages ul {
+    padding: 0 20px 20px;
+}
+
+#packages ul li {
+    border-bottom: 1px dashed #ffe5e2;
+}
+
+#packages ul li a {
+    display: block;
+    padding: 20px 0;
+    background: url("/static/img/arrow_right_light.png") no-repeat right center;
+    background-size: 9px 14px;
+    color: #484848;
+    font-size: 14px;
+}
+
+#packages ul li a::before {
+    content: "鈼� ";
+    color: #ff8576;
+}
+
+#intro h2, #weike h2, #doctors h2, #event h2 {
+    padding: 0 20px;
+}
+
+#jiandang_process h2 {
+    background: url("/static/img/examination.png") no-repeat 15px center;
+}
+
+div.tips h2 {
+    padding: 0 20px;
+    background: url("/static/img/tips.png") no-repeat 15px center;
+    background-size: 14px 14px;
+}
+
+div.tips h2 a, #intro h2 a, #weike h2 a, #doctors h2 a, #event h2 a {
+    padding: 20px 0 20px 20px;
+    display: block;
+    color: #484848;
+    background: url("/static/img/arrow_right.png") no-repeat right center;
+    background-size: 9px 14px;
+}
+
+#intro div.content {
+    padding: 0 20px;
+    line-height: 20px;
+}
+
+#intro div.content p.short a {
+    margin-left: 5px;
+    color: #ff8576;
+}
+
+#weike a.weike {
+    display: block;
+    padding: 15px;
+    overflow: hidden;
+}
+
+#weike a.weike img {
+    float: left;
+}
+
+#weike a.weike div.start_time {
+    float: left;
+}
+
+div.start_time p.date {
+    color: #ff8576;
+    margin: 2px 0 5px 0;
+}
+
+div.start_time p.time {
+    color: #aba9a7;
+    font-size: 14px;
+}
+
+div.start_time div.weekday {
+    border: 1px solid #ff8576;
+    font-size: 12px;
+    padding: 4px 10px;
+    color: #ff8576;
+    margin-top: 8px;
+}
+
+#weike a.weike div.title {
+    margin-left: 93px;
+    position: relative;
+}
+
+div.title p.title {
+    color: #ff8576;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 20px;
+}
+
+div.title p.start_time {
+    color: #aba9a7;
+    font-size: 13px;
+    position: absolute;
+    top: 48px;
+    left: 0;
+}
+
+div.title p.speaker {
+    color: #aba9a7;
+    font-size: 13px;
+    position: absolute;
+    top: 65px;
+    left: 0;
+}
+
+#event a.event {
+    display: block;
+    padding: 15px;
+    overflow: hidden;
+}
+
+#event a.event img {
+    float: left;
+}
+
+#event a.event div.start_time {
+    float: left;
+}
+
+#event a.event div.title {
+    margin-left: 93px;
+    position: relative;
+}
+
+#event a.event div.title p.title {
+    color: #ff8576;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 20px;
+}
+
+#event a.event div.title p.start_time {
+    color: #aba9a7;
+    font-size: 13px;
+    position: absolute;
+    top: 32px;
+    left: 0;
+}
+
+#event a.event div.title p.location {
+    color: #aba9a7;
+    font-size: 13px;
+    position: absolute;
+    top: 49px;
+    left: 0;
+    line-height: 15px;
+}
+
+#jiandang_status div.content {
+    overflow: hidden;
+    padding: 20px 20px 20px 40px;
+    line-height: 20px;
+}
+
+#jiandang_process table {
+    margin: 0 20px 0 40px;
+    line-height: 20px;
+    border-collapse: separate;
+    border-spacing: 0 20px;
+}
+
+#jiandang_process table td {
+    vertical-align: middle;
+}
+
+#jiandang_process table td.text {
+    width: 100%;
+    color: #484848;
+    font-size: 14px;
+}
+
+#jiandang_process table a {
+    display: block;
+    color: #aba9a7;
+    padding-right: 30px;
+    background: url("/static/img/arrow_right.png") no-repeat right center;
+    background-size: 9px 14px;
+}
+
+#jiandang_process table span.number {
+    display: inline-block;
+    width: 34px;
+    height: 34px;
+    line-height: 34px;
+    text-align: center;
+    border-radius: 10px;
+    border: 1px solid #ff8576;
+    font-size: 16px;
+    color: #ff8576;
+    margin-right: 10px;
+}
+
+#jiandang_status p.reservation_req {
+    color: #484848;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+#jiandang_status p.current_state {
+    color: #ff8576;
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+#jiandang_status p.hint {
+    font-size: 13px;
+    color: #aba9a7;
+    margin-top: 10px;
+    padding-left: 18px;
+    opacity: 0.5;
+    background: url("/static/img/logo30.png") no-repeat left 3px;
+    background-size: 15px 14px;
+}
+
+#jiandang_status p.hint span {
+    color: #ff8576;
+    margin: 0 2px;
+}
+
+#jiandang_process div.construction {
+    height: 80px;
+    background: url("/static/img/mua_hello.png") no-repeat center 30px;
+    background-size: 222px 222px;
+    padding-top: 280px;
+}
+
+#jiandang_process div.construction p {
+    text-align: center;
+    font-size: 16px;
+    color: #aba9a7;
+}
+
+#jiandang_process div.construction a {
+    display: block;
+    width: 120px;
+    margin: 20px auto;
+    background-color: #fff9f6;
+    border: 2px solid #ffe5e2;
+    border-radius: 20px;
+    color: #ff8576;
+    padding: 10px 15px;
+    text-align: center;
+}
+
+div.tips ul {
+    margin: 5px 20px;
+}
+
+div.tips ul li {
+    padding: 10px 0px;
+}
+
+div.tips ul li.more {
+    text-align: center;
+    padding-bottom: 25px;
+    margin: 10px 0;
+}
+
+div.tips ul li.more a {
+    color: #ff8576;
+    font-size: 14px;
+    background-color: #fff9f6;
+    border: 2px solid #ffe5e2;
+    border-radius: 20px;
+    padding: 8px 25px;
+}
+
+div.tips ul li div.user {
+    overflow: hidden;
+}
+
+div.user a.number {
+    float: left;
+    width: 45px;
+    margin-top: 12px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ff8576;
+}
+
+div.user a.avatar {
+    float: left;
+}
+
+div.user a.avatar img {
+    border-radius: 20px;
+}
+
+div.user div.userinfo {
+    float: left;
+    margin: 5px 0 0 10px;
+}
+
+div.userinfo a.name {
+    display: block;
+    color: #ff8576;
+    font-size: 14px;
+    height: 15px;
+    width: 80px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+div.userinfo span.date {
+    display: block;
+    color: #ccc;
+    font-size: 12px;
+    margin-top: 6px;
+}
+
+div.user a.doctor {
+    float: right;
+    background-color: #fff9f6;
+    border: 2px solid #ffe5e2;
+    border-radius: 20px;
+    font-size: 14px;
+    color: #ff8576;
+    padding: 7px 15px;
+    margin-top: 4px;
+}
+
+div.tip {
+    margin: 0 0 0 50px;
+}
+
+div.tip p, #intro div.content p {
+    color: #484848;
+    font-size: 14px;
+    line-height: 22px;
+}
+
+#intro div.content p {
+    margin: 20px 0;
+}
+
+div.tip p.all {
+    display: none;
+}
+
+div.tip p.short a {
+    margin-left: 5px;
+    color: #ff8576;
+}
+
+div.tip div.photo {
+    margin-top: 5px;
+    overflow: hidden;
+    font-size: 0;
+}
+
+div.gallery-item {
+    float: left;
+    width: 33.33333333%;
+    padding: 5px 5px 0 0;
+    box-sizing: border-box;
+    font-size: 0;
+}
+
+div.gallery-item a {
+    display: block;
+    position: relative;
+    padding-top: 100%;
+    border: 1px solid #DFDFDF;
+    background-color: #eee;
+}
+
+div.gallery-item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+}
+
+div.gallery-item span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+#placeholder {
+    height: 70px;
+}
+
+#bottom_bar {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 62px;
+    text-align: center;
+    background-color: #fff;
+    border: 1px solid #ffe5e2;
+}
+
+#bottom_bar a.one {
+    display: inline-block;
+    border-radius: 20px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 12px 40px;
+    padding-left: 60px;
+    margin-top: 12px;
+    background: #ff8576 url("/static/img/consult.png") no-repeat 35px center;
+    background-size: 16px 16px;
+}
+
+#bottom_bar a.left, #bottom_bar a.right {
+    display: inline-block;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 12px 20px;
+    margin-top: 12px;
+    border-radius: 20px;
+}
+
+#bottom_bar a.left {
+    background-color: #fff9f6;
+    border: 2px solid #ffe5e2;
+    color: #ff8576;
+    padding: 10px 20px;
+}
+
+#bottom_bar a.right {
+    background-color: #ff8576;
+    margin-left: 20px;
+}
+
+#brand {
+    text-align: center;
+    margin: 20px 0;
+}
+#brand.marginB {
+    margin-bottom: 96px;
+}
+
+#brand a {
+    display: inline-block;
+}
+
+#joinmua {
+    position: relative;
+}
+#joinmua:after {
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: block;
+    content: '';
+    width: 110px;
+    height: 104px;
+    background-image: url(/static/img/iconChat@2x.png);
+    background-size: 110px 104px;
+    background-repeat: no-repeat;
+}
+#joinmua .joinmua_mua {
+    display: block;
+    width: 63px;
+    height: 63px;
+    margin: 26px auto 0;
+    border: solid 1px #f0f0f0;
+    border-radius: 50%;
+}
+#joinmua .joinmua_text {
+    margin-top: 16px;
+    font-size: 14px;
+    line-height: 20px;
+    color: #484848;
+    font-weight: normal;
+    text-align: center;
+}
+#joinmua .joinmua_link {
+    display: block;
+    width: 114px;
+    margin: 16px auto 25px;
+    padding: 12px 0;
+    border-radius: 8px;
+    font-size: 14px;
+    line-height: 14px;
+    color: #fff;
+    background-color: #ff8576;
+    font-weight: normal;
+    text-align: center;
+}
+#joinmua_bottom {
+    display: block;
+    box-sizing: border-box;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 76px;
+    padding-top: 21px;
+    background-color: #ff8576;
+    background-image: url(/static/img/banner_ele_01@2x.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#joinmua_bottom .logo-mua {
+    float: left;
+    width: 36px;
+    height: 35px;
+    margin-left: 20px;
+}
+#joinmua_bottom .logo-mua img {
+    width: 100%;
+    height: 100%;
+}
+#joinmua_bottom .joinmua_bottom_text {
+    float: left;
+    margin-left: 10px;
+    max-width: 180px;
+}
+#joinmua_bottom .joinmua_bottom_text .joinmua_title {
+    font-size: 15px;
+    line-height: 21px;
+    color: #fff;
+    font-weight: 500;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+#joinmua_bottom .joinmua_bottom_text .joinmua_text {
+    font-size: 10px;
+    line-height: 14px;
+    color: #fff;
+    font-weight: 300;
+}
+#joinmua_bottom .joinmua_bottom_link {
+    box-sizing: border-box;
+    float: right;
+    width: 80px;
+    height: 35px;
+    padding: 8px 0;
+    margin-right: 20px;
+    border: solid 3px rgba(255,255,255,.5);
+    border-radius: 9px;
+    font-size: 13px;
+    line-height: 13px;
+    color: #fff;
+    font-weight: normal;
+    text-align: center;
+}
+#joinmua_bottom .joinmua_bottom_close {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 18px;
+    height: 18px;
+    background-image: url(/static/img/iconClose@2x.png);
+    background-size: 18px 18px;
+    background-repeat: no-repeat;
+}
+
+
+/* ---------- For Retina ---------- */
+
+@media (-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
+
+    #address {
+        background: url("/static/img/location@2x.png") no-repeat left center;
+        background-size: 12px 14px;
+    }
+
+    #jiandang_status h2, #intro h2 {
+        background: url("/static/img/jiandang_status@2x.png") no-repeat 15px center;
+        background-size: 16px 16px;
+    }
+
+    #jiandang_process h2 {
+        background: url("/static/img/examination@2x.png") no-repeat 15px center;
+        background-size: 16px 16px;
+    }
+
+    #packages h2 {
+        background: url("/static/img/price@2x.png") no-repeat 15px center;
+        background-size: 16px 16px;
+    }
+
+    div.tips h2 {
+        background: url("/static/img/tips@2x.png") no-repeat 15px center;
+        background-size: 14px 14px;
+    }
+
+    div.tips h2 a, #intro h2 a, #weike h2 a, #doctors h2 a, #event h2 a {
+        background: url("/static/img/arrow_right@2x.png") no-repeat right center;
+        background-size: 9px 14px;
+    }
+
+    #weike h2 {
+        background: url("/static/img/weike@2x.png") no-repeat 15px center;
+        background-size: 12px 15px;
+    }
+
+    #event h2 {
+        background: url("/static/img/offline@2x.png") no-repeat 15px center;
+        background-size: 15px 15px;
+    }
+
+    #doctors h2, #doctor_comments h2 {
+        background: url("/static/img/doctor@2x.png") no-repeat 15px center;
+        background-size: 15px 15px;
+    }
+
+    #packages ul li a {
+        background: url("/static/img/arrow_right_light@2x.png") no-repeat right center;
+        background-size: 9px 14px;
+    }
+
+    #jiandang_status p.hint {
+        background: url("/static/img/logo30@2x.png") no-repeat left 3px;
+        background-size: 15px 14px;
+    }
+
+    #jiandang_process div.construction {
+        background: url("/static/img/mua_hello@2x.png") no-repeat center 30px;
+        background-size: 222px 222px;
+    }
+
+    #summary div.capability a.ok {
+        background: url("/static/img/support@2x.png") no-repeat 5px center;
+        background-size: 15px 15px;
+    }
+
+    #summary div.capability a.no {
+        background: url("/static/img/nosupport@2x.png") no-repeat 5px center;
+        background-size: 15px 15px;
+    }
+
+    #summary div.expense {
+        background: url("/static/img/expense@2x.png") no-repeat left 2px;
+        background-size: 15px 15px;
+    }
+
+    #bottom_bar a.one {
+        background: #ff8576 url("/static/img/consult@2x.png") no-repeat 35px center;
+        background-size: 16px 16px;
+    }
+}
+@media (-webkit-min-device-pixel-ratio: 3),(min-device-pixel-ratio: 3) {
+    #joinmua:after {
+        background-image: url(/static/img/iconChat@3x.png);
+    }
+    #joinmua_bottom {
+        background-image: url(/static/img/banner_ele_01@3x.png);
+    }
+    #joinmua_bottom .joinmua_bottom_close {
+        background-image: url(/static/img/iconClose@3x.png);
+    }
+}

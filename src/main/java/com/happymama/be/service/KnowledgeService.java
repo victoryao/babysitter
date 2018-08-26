@@ -17,18 +17,18 @@ public class KnowledgeService {
     @Resource
     private KnowledgeDao knowledgeDao;
 
-    public QueryResult<KnowledgeDO> getKnowledgeList(int firstResult, int maxresult) {
+    public QueryResult<KnowledgeDO> getKnowledgeListByParentId(int parentId, int firstResult, int maxresult) {
         QueryResult<KnowledgeDO> qr = new QueryResult<>();
-        List<KnowledgeDO> list = knowledgeDao.getKnowledgeList(firstResult, maxresult);
-        long count = getKnowledgeCount();
+        List<KnowledgeDO> list = knowledgeDao.getKnowledgeListByParentId(parentId, firstResult, maxresult);
+        long count = getKnowledgeCountByParentId(parentId);
         qr.setResultlist(list);
         qr.setTotalrecord(count);
         return qr;
     }
 
 
-    private long getKnowledgeCount() {
-        return knowledgeDao.getKnowledgeCount();
+    private long getKnowledgeCountByParentId(int parentId) {
+        return knowledgeDao.getKnowledgeCount(parentId);
     }
 
 

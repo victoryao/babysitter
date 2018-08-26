@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
+    <meta name="referrer" content="never">
     <base id="base" href="${base}">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,6 +15,8 @@
 
     <title>快乐妈咪</title>
 
+    <script type="text/javascript" src="${base}/js/jquery.js"></script>
+    <script type="text/javascript" src="${base}/js/jquery.cookie.js"></script>
     <script type="text/javascript" src="${base}/js/zepto.min.js"></script>
     <script type="text/javascript" src="${base}/js/miniMobile.js"></script>
     <link rel="stylesheet" type="text/css" href="${base}/css/miniMobile.css"/>
@@ -22,6 +25,7 @@
     <link rel="stylesheet" type="text/css" href="${base}/css/customer.css"/>
     <!-- animate.css -->
     <link rel="stylesheet" type="text/css" href="${base}/css/animate.css"/>
+    <link rel="stylesheet" type="text/css" href="${base}/css/hosptial.css"/>
     <link rel="stylesheet" href="${base}/css/swiper.min.css">
     <script src="${base}/js/swiper.min.js"></script>
 
@@ -46,10 +50,12 @@
 
             </a>
         </div>
-        <div class="tit"><h1 class="tit_custom"><b>${knowledgeDO.title}</b></h1></div>
+        <div class="tit"><h1 class="tit_custom" style="padding: 10px"><b>${knowledgeDO.title}</b></h1></div>
     </div>
 
-    <div>${knowledgeDO.content}</div>
+    <div style=" margin: 10px; padding: 10px">
+    ${knowledgeDO.content}
+    </div>
 
 </div>
 

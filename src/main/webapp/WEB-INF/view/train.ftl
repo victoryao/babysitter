@@ -15,6 +15,8 @@
 
     <title>快乐妈咪-联系我们</title>
     <!-- ui css、js -->
+    <script type="text/javascript" src="${base}/js/jquery.js"></script>
+    <script type="text/javascript" src="${base}/js/jquery.cookie.js"></script>
     <link rel="stylesheet" type="text/css" href="/css/miniMobile.css"/>
     <script type="text/javascript" src="/js/zepto.min.js"></script>
     <script type="text/javascript" src="/js/miniMobile.js"></script>

@@ -8,8 +8,8 @@ import org.apache.ibatis.annotations.*;
  */
 public interface CustomerDao {
 
-    @Insert("insert into `customer`(`name`,`phone`,`address`, `created`,`updated`) " +
-            "values(#{name}, #{phone}, #{address}, now(), now())")
+    @Insert("insert into `customer`(`name`,`phone`,`address`, `token`, `created`,`updated`) " +
+            "values(#{name}, #{phone}, #{address}, #{token}, now(), now())")
     @SelectKey(statement = "SELECT LAST_INSERT_ID() as id", keyProperty = "id", before = false, resultType = Integer.class)
     boolean addCustomer(CustomerDO customerDO);
 
@@ -19,6 +19,12 @@ public interface CustomerDao {
     @Select("select * from `customer` where phone = #{phone}")
     CustomerDO getCustomerByPhone(@Param("phone") String phone);
 
+    @Select("select * from `customer` where token = #{token}")
+    CustomerDO getCustomerByToken(@Param("token") String token);
+
     @Update("update `customer` set `name` = #{name}, phone = #{phone}, address = #{address}, `updated` = now() where id = #{id}")
     void updateCustomer(CustomerDO customerDO);
+
+    @Update("update `customer` set `token` = #{token}, `updated` = now() where phone = #{mobile}")
+    void updateCustomerToken(@Param("mobile") String mobile, @Param("token") String token);
 }

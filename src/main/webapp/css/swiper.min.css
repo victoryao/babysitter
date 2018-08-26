@@ -9,6 +9,10 @@
  *
  * Released on: November 7, 2017
  */
+.new-comment-content {
+    padding-bottom: 2px;
+}
+
 .swiper-container {
     margin: 0 auto;
     position: relative;

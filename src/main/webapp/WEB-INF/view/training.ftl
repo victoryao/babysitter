@@ -13,8 +13,9 @@
     <meta name="baidu-site-verification" content="71R86N1GBt"/>
 
     <title>北京快乐妈咪科技有限公司</title>
+    <script type="text/javascript" src="${base}/js/jquery.js"></script>
+    <script type="text/javascript" src="${base}/js/jquery.cookie.js"></script>
     <script type="text/javascript" src="${base}/js/zepto.min.js"></script>
-    <script type="text/javascript" src="${base}/js/miniMobile.js"></script>
     <script src="${base}/js/swiper.min.js"></script>
     <!-- Animation CSS -->
     <link href="${base}/css/animate.css" rel="stylesheet">
@@ -37,10 +38,8 @@
     <!-- Responsive CSS -->
     <link href="${base}/css/responsive.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="${base}/css/customer.css"/>
-    <link rel="stylesheet" type="text/css" href="${base}/css/miniMobile.css"/>
     <!-- fonticon -->
     <link rel="stylesheet" type="text/css" href="${base}/plugins/fonticon/iconfont.css"/>
-    <link rel="stylesheet" type="text/css" href="${base}/css/customer.css"/>
     <link rel="stylesheet" href="${base}/css/frame_338829c.css">
     <link rel="stylesheet" href="${base}/css/common_16f528f.css">
     <link rel="stylesheet" href="${base}/css/home_f587618.css">
@@ -63,6 +62,7 @@
                     <!--Heading Wrap Start-->
                     <div class="gt_hdg_1 default_width">
                         <h3>快乐妈咪已经累积培训<b><span style="color:red">${count}</span></b>位月嫂/育儿嫂，并为他们推荐了工作。</h3>
+                        <p>推荐人将得到巨额奖励</p>
                         <span class="gt_hdg_left"></span>
                         <i class="icon-school"></i>
                         <span class="gt_hdg_right"></span>
@@ -88,6 +88,12 @@
                             <div class="gt_contact_us_field">
                                 <input class="c_ph" type="text" placeholder="您的地址（可不填）" id="address"
                                        name="address">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="gt_contact_us_field">
+                                <input class="c_ph" type="text" placeholder="推荐人手机号（可不填）" id="recommendMobile"
+                                       name="recommendMobile">
                             </div>
                         </div>
                         <div class="col-md-12">
@@ -120,8 +126,6 @@
 
 <#include "/common/foot.ftl" >
 
-<!--Jquery Library-->
-<script src="${base}/js/jquery.js"></script>
 <!--Bootstrap core JavaScript-->
 <script src="${base}/js/bootstrap.min.js"></script>
 <!--Flex Slider JavaScript-->

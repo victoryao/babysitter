@@ -18,11 +18,11 @@ public interface KnowledgeDao {
     @Update("update knowledge set count = count +1 where id = #{id}")
     boolean addKnowledgeCount(int id);
 
-    @Select("select * from knowledge  limit #{offset},#{limit}")
-    List<KnowledgeDO> getKnowledgeList(@Param("offset") int offset, @Param("limit") int limit);
+    @Select("select * from knowledge where type=#{type}  limit #{offset},#{limit}")
+    List<KnowledgeDO> getKnowledgeListByParentId(@Param("type") int type, @Param("offset") int offset, @Param("limit") int limit);
 
-    @Select("select count(1) from knowledge")
-    long getKnowledgeCount();
+    @Select("select count(1) from knowledge where type = #{parentId}")
+    long getKnowledgeCount(@Param("parentId") int parentId);
 
     @Delete("delete from knowledge where id = #{id}")
     void deleteKnowledgeById(int id);

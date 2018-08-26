@@ -11,8 +11,11 @@
     <meta name="aplus-xplug" content="NONE">
     <meta name="keyword" content="月嫂,培训,月嫂培训,育儿嫂,催乳师,小儿推拿师,产后恢复,月子膳食,营养师,快乐妈咪,推荐工作,高薪,家政"/>
     <meta name="baidu-site-verification" content="71R86N1GBt" />
+    <meta name="applicable-device" content="mobile">
 
     <title>北京快乐妈咪科技有限公司</title>
+    <script type="text/javascript" src="${base}/js/jquery.js"></script>
+    <script type="text/javascript" src="${base}/js/jquery.cookie.js"></script>
     <script type="text/javascript" src="${base}/js/zepto.min.js"></script>
     <script type="text/javascript" src="${base}/js/miniMobile.js"></script>
     <script src="${base}/js/swiper.min.js"></script>
@@ -243,8 +246,6 @@
 
 <#include "/common/foot.ftl" >
 
-<!--Jquery Library-->
-<script src="${base}/js/jquery.js"></script>
 <!--Bootstrap core JavaScript-->
 <script src="${base}/js/bootstrap.min.js"></script>
 <!--Pretty Photo JavaScript-->

@@ -40,7 +40,6 @@
     <link rel="stylesheet" type="text/css" href="${base}/css/miniMobile.css"/>
     <!-- fonticon -->
     <link rel="stylesheet" type="text/css" href="${base}/plugins/fonticon/iconfont.css"/>
-    <link rel="stylesheet" type="text/css" href="${base}/css/customer.css"/>
     <link rel="stylesheet" href="${base}/css/frame_338829c.css">
     <link rel="stylesheet" href="${base}/css/common_16f528f.css">
     <link rel="stylesheet" href="${base}/css/home_f587618.css">
@@ -63,6 +62,7 @@
                     <!--Heading Wrap Start-->
                     <div class="gt_hdg_1 default_width">
                         <h3>已为<b><span style="color:red">${count}</span></b>位妈妈进行匹配最佳月嫂/育儿嫂</h3>
+                        <p>推荐人将得到巨额奖励</p>
                         <span class="gt_hdg_left"></span>
                         <i class="icon-school"></i>
                         <span class="gt_hdg_right"></span>
@@ -88,6 +88,12 @@
                             <div class="gt_contact_us_field">
                                 <input class="c_ph" type="text" placeholder="您的地址（可不填）" id="address"
                                        name="address">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="gt_contact_us_field">
+                                <input class="c_ph" type="text" placeholder="推荐人手机号（可不填）" id="recommendMobile"
+                                       name="recommendMobile">
                             </div>
                         </div>
                         <div class="col-md-12">

@@ -14,6 +14,8 @@
 
     <title>快乐妈咪</title>
 
+    <script type="text/javascript" src="${base}/js/jquery.js"></script>
+    <script type="text/javascript" src="${base}/js/jquery.cookie.js"></script>
     <script type="text/javascript" src="${base}/js/zepto.min.js"></script>
     <script type="text/javascript" src="${base}/js/miniMobile.js"></script>
     <link rel="stylesheet" type="text/css" href="${base}/css/miniMobile.css"/>
@@ -39,7 +41,6 @@
             form.page.value = page;
             form.submit();
         }
-
     </script>
 
 </head>
@@ -49,12 +50,14 @@
 
     <form action="${base}/app/to/knowledge/list.do">
         <input type="hidden" name="page" id="page"/>
+        <input type="hidden" name="loc" id="loc" value="knowledge"/>
+        <input type="hidden" name="parentId" id="parentId" value="${parentId}"/>
     </form>
 
     <ul class="list_pet">
     <#list pageView.records as knowledge>
         <li class="js-tracker ">
-            <a href="${base}/app/${knowledge.id}/knowledge/view.do">
+            <a href="${base}/app/${knowledge.id}/knowledge/view.do?loc=knowledge">
                 <div class="picbox"
                      style="background-image:url(<#if (knowledge.img != '')>'/imgs/${knowledge.img}'
                      <#else>'${base}/images/blog-pic.jpg'</#if>);">

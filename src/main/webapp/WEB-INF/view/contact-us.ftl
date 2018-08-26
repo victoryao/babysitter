@@ -13,6 +13,8 @@
     <meta name="baidu-site-verification" content="71R86N1GBt" />
 
     <title>北京快乐妈咪科技有限公司</title>
+    <script type="text/javascript" src="${base}/js/jquery.js"></script>
+    <script type="text/javascript" src="${base}/js/jquery.cookie.js"></script>
     <script type="text/javascript" src="${base}/js/zepto.min.js"></script>
     <script type="text/javascript" src="${base}/js/miniMobile.js"></script>
     <script src="${base}/js/swiper.min.js"></script>
@@ -92,7 +94,7 @@
                                     <div class="gt_contact_icon"><i class="icon-telephone"></i></div>
                                     <div class="gt_contact_des">
                                         <h6>微信</h6>
-                                        <a href="#">15652402869</a>
+                                        <a href="#">15834267356</a>
                                     </div>
                                 </li>
                                 <li>
@@ -124,8 +126,7 @@
 
 <!-- 底部导航 -->
 <#include "/common/foot.ftl" >
-<!--Jquery Library-->
-<script src="${base}/js/jquery.js"></script>
+
 <!--Bootstrap core JavaScript-->
 <script src="${base}/js/bootstrap.min.js"></script>
 <!--Jquery Validation Script-->

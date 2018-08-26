@@ -1,0 +1,789 @@
+body {
+    font-family: '微软雅黑', "Helvetica Neue", Helvetica, STHeiTi, Arial, sans-serif;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+    -webkit-user-select: none;
+    -webkit-text-size-adjust: none;
+    outline: 0;
+}
+
+input, textarea {
+    -webkit-user-select: text;
+    outline: 0
+}
+
+textarea::-webkit-resizer {
+    display: none
+}
+
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none
+}
+
+section, nav, article, aside, hgroup, header, footer {
+    display: block
+}
+
+input, textarea, select, button, table {
+    font-size: inherit;
+    font-family: inherit;
+    line-height: inherit
+}
+
+body, div, h2, h4, ul, li, dl, dt, dd, p {
+    margin: 0;
+    padding: 0
+}
+
+img {
+    border: none
+}
+
+ul, ol, li {
+    list-style: none
+}
+
+i, em {
+    font-style: normal
+}
+
+a {
+    color: inherit;
+    text-decoration: none
+}
+
+article, aside, details, figcaption, figure, footer, header, main, nav, section, summary {
+    display: block
+}
+
+.mt50 {
+    margin-top: 50px !important
+}
+
+.fr {
+    float: right !important
+}
+
+.icon {
+    position: absolute;
+    /*width: 25px;*/
+    height: 25px;
+    background: url(//c.58cdn.com.cn/qqm/img/icons.gif);
+    background-size: 50px auto
+}
+
+.icon-angle-right {
+    background-position: 0 -100px
+}
+
+.icon-paper-plane {
+    background-position: 0 0
+}
+
+.icon-file-user {
+    background-position: 0 -50px
+}
+
+.icon-suitcase {
+    background-position: 0 -25px
+}
+
+.icon-file {
+    background-position: 0 -75px
+}
+
+.icon-info {
+    background-position: -25px 0
+}
+
+.icon-close {
+    background-position: 0 -125px
+}
+
+.prompt {
+    padding-right: 40px;
+    padding-left: 40px;
+    border-bottom: 1px solid #dedfe0
+}
+
+.prompt p {
+    font-size: 14px;
+    line-height: 47px;
+    position: relative;
+    color: #00a5e0
+}
+
+.prompt p > i:first-child {
+    top: 12px;
+    left: -33px
+}
+
+.prompt p > i:last-child {
+    top: 12px;
+    right: -37px
+}
+
+.resume-list {
+    margin-top: 9px
+}
+
+.resume-list .item {
+    margin-bottom: 9px;
+    border-top: 1px solid #dedfe0;
+    border-bottom: 1px solid #dedfe0
+}
+
+.resume-list .item > a {
+    display: block;
+    margin: 0 15px;
+    padding: 20px 0 5px;
+    border-bottom: 1px solid #efefef
+}
+
+.resume-list .default {
+    position: relative
+}
+
+.resume-list .default:before {
+    position: absolute;
+    top: -1px;
+    box-sizing: border-box;
+    width: 50px;
+    height: 25px;
+    content: '';
+    color: #fff;
+    background: url(//c.58cdn.com.cn/qqm/img/icons.gif);
+    background-position: 0 -150px;
+    background-size: 50px auto
+}
+
+.mark {
+    font-size: 11px;
+    position: relative;
+    top: 0;
+    right: -3px;
+    display: inline-block;
+    width: 11px;
+    height: 11px;
+    padding: 1px;
+    color: #fff;
+    border-radius: 3px
+}
+
+.mark:after {
+    position: relative;
+    top: -1px;
+    left: 0
+}
+
+.mark-quan {
+    background: #f70
+}
+
+.mark-quan:after {
+    content: '全'
+}
+
+.mark-jian {
+    background: #35cd33
+}
+
+.mark-jian:after {
+    content: '兼'
+}
+
+.tit strong {
+    font-size: 15px;
+    font-weight: 400;
+    position: relative;
+    display: block;
+    overflow-x: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis
+}
+
+.attr p {
+    font-size: 11px;
+    display: inline-block;
+    width: 49%;
+    color: gray
+}
+
+.meta-menu {
+    padding: 0 10px 0 15px
+}
+
+.meta-menu:after {
+    display: block;
+    clear: both;
+    overflow: hidden;
+    content: ''
+}
+
+.meta-menu .meta {
+    font-size: 12px;
+    line-height: 44px;
+    float: left;
+    color: gray
+}
+
+.meta-menu .operation {
+    font-size: 14px;
+    line-height: 44px;
+    float: right;
+    padding: 0 15px;
+    color: #17b4ed
+}
+
+.meta-menu .separator {
+    float: right;
+    height: 20px;
+    margin-top: 10px;
+    border-right: 1px solid #17b4ed
+}
+
+.btn-create {
+    margin: 20px 14px 10px
+}
+
+.btn-create a {
+    user-select: none;
+    font-size: 18px;
+    line-height: 44px;
+    display: block;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    border-radius: 4px;
+    background: #18b4ed
+}
+
+.resume {
+    position: relative;
+    margin-top: 32px;
+    padding-top: 5px;
+    margin-bottom: 25px;
+    clear: both
+}
+
+.resume .field {
+    margin: 0 15px 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #f4f4f4
+}
+
+.resume .field:last-child {
+    border-bottom: none
+}
+
+.resume .field .title {
+    font-size: 15px;
+    line-height: 30px;
+    margin: 20px auto 0;
+    color: #000
+}
+
+.resume .field .last-modified {
+    font-size: 11px;
+    margin-bottom: 0;
+    color: #a6a6a6;
+    font-weight: 400;
+    float: right
+}
+
+.resume .field-title {
+    font-size: 15px;
+    line-height: 15px;
+    margin-bottom: 5px;
+    color: #000
+}
+
+.resume .contact-list {
+    font-size: 14px;
+    line-height: 22px;
+    color: gray
+}
+
+.resume .contact-list li {
+    display: inline
+}
+
+.resume .contact-list .separator:after {
+    margin: auto 0;
+    content: '/';
+    color: #eee
+}
+
+.resume .tags-list li {
+    font-size: 11px;
+    display: inline-block;
+    margin: 2px 5px 2px 0;
+    padding: 0 1px;
+    white-space: nowrap;
+    color: #f05e4b;
+    border: 1px solid #f6a297;
+    border-radius: 1px
+}
+
+.resume .field dt, .resume .field dd {
+    display: inline-block
+}
+
+.resume .field p {
+    font-size: 14px;
+    line-height: 22px;
+    color: gray
+}
+
+.resume .field .field-list {
+    font-size: 14px;
+    color: gray
+}
+
+.resume .field dl {
+    font-size: 14px;
+    line-height: 22px
+}
+
+.resume .field dt, .resume .field dd {
+    display: inline
+}
+
+.resume .field dt {
+    color: #a6a6a6
+}
+
+.resume .field dd {
+    color: gray
+}
+
+.stamp {
+    position: absolute;
+    top: -1px;
+    right: 0;
+    display: block;
+    width: 40px;
+    height: 40px;
+    background-image: url(//img.58cdn.com.cn/m58/m4/detail/labels.gif);
+    background-size: 40px auto;
+    z-index: 100
+}
+
+.stamp-interview {
+    background-position: 0 -100px
+}
+
+.stamp-notavailable {
+    background-position: 0 -147px
+}
+
+.stamp-undetermined {
+    background-position: 0 -50px
+}
+
+.stamp-fail {
+    background-position: 0 0
+}
+
+.footer-fixed {
+    position: fixed;
+    bottom: 0;
+    width: 100%
+}
+
+.footer-menu {
+    font-size: 0;
+    border-top: 1px solid #cdcdcd
+}
+
+.footer-menu .item {
+    display: inline-block;
+    box-sizing: border-box;
+    width: 33.3%;
+    text-align: center;
+    border-right: 1px solid #cdcdcd;
+    background: linear-gradient(to bottom, #f9f9f9, #e0e0e0)
+}
+
+.footer-menu .item > a {
+    font-size: 15px;
+    line-height: 47px;
+    display: block;
+    color: #1fbaf3
+}
+
+.footer-menu .item:last-child {
+    border-right: none
+}
+
+.info-list {
+    margin-top: 10px
+}
+
+.info-list li {
+    padding: 15px 10px;
+    border-top: 1px solid #dedfe0
+}
+
+.info-list li:last-child {
+    border-bottom: 1px solid #dedfe0
+}
+
+.info-list li h2 {
+    font-size: 15px;
+    font-weight: 400
+}
+
+.info-list p {
+    font-size: 11px;
+    line-height: 18px;
+    color: #a6a6a6
+}
+
+.info-list p .text-resume {
+    color: #18b4ed
+}
+
+.info-list.invitation-list .item {
+    padding-left: 25px
+}
+
+.status {
+    font-size: 11px;
+    float: right;
+    padding: 0 2px;
+    color: #fff;
+    border-radius: 3px
+}
+
+.status-interested {
+    background-color: #6ab147
+}
+
+.status-unqualified {
+    background-color: #ababab
+}
+
+.status-interview {
+    background-color: #6ab147
+}
+
+.status-unread {
+    background-color: #f2ad23
+}
+
+.unread {
+    position: relative;
+    float: left
+}
+
+.unread:after {
+    position: absolute;
+    top: -2px;
+    left: -22px;
+    display: block;
+    width: 25px;
+    height: 25px;
+    content: '';
+    background-image: url(//c.58cdn.com.cn/qqm/img/icons.gif);
+    background-position: -25px -75px;
+    background-size: 50px auto
+}
+
+li {
+    list-style-type: none
+}
+
+.myjob-menu {
+    margin-top: 15px
+}
+
+.myjob-menu .item {
+    border-top: 1px solid #dedfe0
+}
+
+.myjob-menu .item:last-child {
+    border-bottom: 1px solid #dedfe0
+}
+
+.myjob-menu .item > a {
+    font-size: 15px;
+    line-height: 47px;
+    position: relative;
+    display: block;
+    padding-right: 50px;
+    padding-left: 51px
+}
+
+.myjob-menu a > i:first-child {
+    top: 12px;
+    left: 17px
+}
+
+.myjob-menu a > i:last-child {
+    top: 12px;
+    right: 18px
+}
+
+.myjob-menu .separator {
+    padding-top: 10px
+}
+
+.fresh:after {
+    display: block;
+    float: right;
+    width: 25px;
+    height: 25px;
+    content: '';
+    transform: translateY(50%);
+    background-image: url(//c.58cdn.com.cn/qqm/img/icons.gif);
+    background-position: -25px -75px;
+    background-size: 50px auto
+}
+
+.noresume {
+    font-size: 16px;
+    box-sizing: border-box;
+    width: 280px;
+    height: 275px;
+    margin: 0 auto;
+    padding-top: 200px;
+    text-align: center;
+    color: #a6a6a6;
+    background: url(//img.58cdn.com.cn/qqm/common/noinfo.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 90px auto
+}
+
+.btn-create {
+    margin: 20px 14px 10px
+}
+
+.btn-create a {
+    font-size: 18px;
+    line-height: 44px;
+    display: block;
+    width: 100%;
+    user-select: none;
+    text-align: center;
+    color: #fff;
+    border-radius: 4px;
+    background: #18b4ed
+}
+
+.date {
+    font-size: 11px;
+    color: #a6a6a6
+}
+
+.infomore {
+    font-size: 14px;
+    line-height: 60px;
+    text-align: center;
+    color: #9fa2a9
+}
+
+.loading {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    margin-right: 10px;
+    background: url(//img.58cdn.com.cn/m58/m4/list/qq/loading.gif) no-repeat;
+    background-position: -55px -43px;
+    background-size: 125px
+}
+
+.title_phone:after {
+    position: relative;
+    display: inline-block;
+    top: 5px;
+    width: 20px;
+    height: 22px;
+    content: '';
+    background: url(//img.58cdn.com.cn/m58/m4/detail/zp_detail_bg.png) no-repeat 0 -364px;
+    background-size: 60px auto
+}
+
+.resume .field .meta {
+    font-size: 12px;
+    color: #999
+}
+
+.text-red {
+    color: red
+}
+
+.status_list {
+    margin: 0 auto
+}
+
+.status_list:after {
+    display: block;
+    content: "";
+    overflow: hidden;
+    height: 0;
+    visibility: hidden;
+    clear: both
+}
+
+.resume_status {
+    padding: 0 15px
+}
+
+.resume_status p {
+    font-size: 13px;
+    margin: 10px 0 20px
+}
+
+.resume_status p .label {
+    color: #f60
+}
+
+.status_list li {
+    width: 22%;
+    display: block;
+    float: left;
+    font-size: 0;
+    margin-right: 4%
+}
+
+.status_list li:last-child {
+    margin-right: 0
+}
+
+.status_list li a {
+    display: block;
+    border: 1px solid #FCD1B5;
+    color: #f60;
+    line-height: 32px;
+    border-radius: 0;
+    height: 32px;
+    text-align: center;
+    background: #FFF5EF;
+    font-size: 14px;
+    box-sizing: border-box;
+    line-height: 30px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap
+}
+
+.status_list li a.selected {
+    border: 2px solid #F60;
+    background-image: url(//img.58cdn.com.cn/m58/m4/detail/select_label.gif);
+    background-position: bottom right;
+    background-size: 19px auto;
+    background-repeat: no-repeat
+}
+
+#resume_detail {
+    margin-bottom: 50px
+}
+
+.employed {
+    margin-bottom: 10px
+}
+
+.project {
+    margin-bottom: 20px
+}
+
+.popup {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .2);
+    top: 0;
+    z-index: 1000;
+    border-radius: 2px
+}
+
+.popup .popbox {
+    position: absolute;
+    width: 250px;
+    background-color: #fff;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    border: 2px solid #D8D9DA;
+    font-size: 14px
+}
+
+.popup .popheader {
+    background: -webkit-linear-gradient(top, #F8F9FA, #EEF0F2);
+    border-bottom: 1px solid #D8D9DA;
+    height: 14px;
+    line-height: 14px;
+    color: #b6b7b7;
+    padding: 10px 10px 10px 15px
+}
+
+.popup .popheader .close {
+    display: block;
+    height: 15px;
+    width: 15px;
+    float: right;
+    background: url(//img.58cdn.com.cn/m58/m4/detail/close_btn.png);
+    background-size: 15px auto
+}
+
+.popup .popbody {
+    padding: 20px 15px;
+    border-bottom: 1px solid #D8D9DA
+}
+
+.popup .popbody p {
+    margin-bottom: 6px
+}
+
+.popup .popbody ul li {
+    line-height: 36px;
+    padding-left: 25px;
+    position: relative
+}
+
+.popup .popbody ul li:before {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    display: block;
+    width: 15px;
+    height: 15px;
+    content: "";
+    background-image: url(//img.58cdn.com.cn/m58/m4/detail/list_icon.gif);
+    background-repeat: no-repeat;
+    background-size: 15px auto
+}
+
+.popup .popbody ul .selected:before {
+    background-position: 0 -15px
+}
+
+.popup .popfooter {
+    padding: 10px 15px
+}
+
+.popup .popfooter a {
+    display: block;
+    background: #FF9000;
+    color: #fff;
+    width: 114px;
+    height: 36px;
+    border-radius: 0;
+    line-height: 36px;
+    margin: 0 auto;
+    text-align: center
+}
+
+.hjbq-label {
+    background: url(//img.58cdn.com.cn/m58/job/img/hjbq.gif);
+    width: 3.5rem;
+    height: 1.6rem;
+    line-height: 1.8rem;
+    padding-left: 1.3rem;
+    font-size: .75rem;
+    display: block;
+    color: #ca7300
+}

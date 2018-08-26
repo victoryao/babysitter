@@ -14,6 +14,8 @@
     <meta name="baidu-site-verification" content="71R86N1GBt" />
 
     <title>北京快乐妈咪科技有限公司</title>
+    <script type="text/javascript" src="${base}/js/jquery.js"></script>
+    <script type="text/javascript" src="${base}/js/jquery.cookie.js"></script>
     <script type="text/javascript" src="${base}/js/zepto.min.js"></script>
     <script type="text/javascript" src="${base}/js/miniMobile.js"></script>
     <script src="${base}/js/swiper.min.js"></script>
@@ -204,8 +206,6 @@
 <!-- 底部导航 -->
 <#include "/common/foot.ftl" >
 
-<!--Jquery Library-->
-<script src="${base}/js/jquery.js"></script>
 <!--Bootstrap core JavaScript-->
 <script src="${base}/js/bootstrap.min.js"></script>
 <!--Chosen JavaScript-->

@@ -23,7 +23,7 @@ public class OrderService {
         return orderDao.getOrderCount();
     }
 
-    public boolean addOrder(String name, String phone, String address, int type, String memo) {
+    public OrderDO addOrder(String name, String phone, String address, int type, String memo, String recommendMobile) {
 
         //客户逻辑处理
         CustomerDO customerDO = CustomerDO.builder().name(name).phone(phone).address(address).build();
@@ -33,7 +33,7 @@ public class OrderService {
                 .memo(memo).realPrice(0).recommendPrice(0).build();
         orderDao.addOrder(orderDO);
 
-        return true;
+        return orderDO;
     }
 
 }

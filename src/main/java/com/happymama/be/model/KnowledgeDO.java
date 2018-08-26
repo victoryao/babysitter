@@ -18,6 +18,7 @@ public class KnowledgeDO {
     private int id;
     private String title;
     private String content;
+    private String summary;
     private String img;
     private int type;
     private Date created;

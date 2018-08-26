@@ -1,6 +1,9 @@
+<#assign base=request.contextPath />
 <!DOCTYPE HTML>
 <html>
 <head>
+    <script type="text/javascript" src="${base}/js/jquery.js"></script>
+    <script type="text/javascript" src="${base}/js/jquery.cookie.js"></script>
     <script type="text/javascript" src="${base}/js/zepto.min.js"></script>
     <script type="text/javascript" src="${base}/js/miniMobile.js"></script>
     <link rel="stylesheet" type="text/css" href="${base}/css/miniMobile.css"/>
@@ -20,30 +23,45 @@
     <link rel="stylesheet" href="${base}/css/v-user.css">
     <link rel="stylesheet" href="${base}/css/global.css">
     <link rel="stylesheet" href="${base}/css/login.css">
-
+    <script>
+        $(document).ready(function () {
+            $.cookie('kl_token', '${token}', {expires: 120, path: '/'});
+        });
+    </script>
 </head>
 <body>
-<!--未登陆-->
-<div class="login-block" id="putonglogin">
-    <img class="bgImg" src="//static.daojia.com/assets/project/user-center-v1.1/images/banner-bg.png"/>
-    <div class="wrap">
+
+<!--已登陆-->
+<div class="login-block" id="loginuserdiv">
+    <img class="bgImg" src="//static.daojia.com/assets/project/user-center-v1.1/images/banner-bg.png">
+    <div class="wrap" id="personaldata">
         <div class="box">
-            <img src="//static.daojia.com/assets/project/user-center-v1.1/images/temp-head_c43dfad.png"/>
+            <img src="${base}/imgs/user.jpg">
             <div class="verticalv-box">
-                <span class="bg-icon name">立即登录</span>
+                <span class="bg-icon common name">${customerDO.name} </span>
+                <p>
+                    <em class="usermark">普通用户</em>
+                    <em class="score">${customerDO.phone}</em>
+                </p>
             </div>
         </div>
     </div>
 </div>
 
-<div class="myorder">
-    <div class="hd ico border-b" id="myorder"><a>我的订单 <p>查看全部订单</p></a></div>
-</div>
 
-<div class="myaddr ico mt0 " id="myAddr"><a>地址</a></div>
-<div class="myfav ico border-b " id="joinwork"><a>加盟<p>企业入驻/个人发布</p></a></div>
-<div class="myfav ico" id="appdownload"><a>下载APP<p>超快速度，超省流量</p></a></div>
+
+<#--<div class="myorder">-->
+<#--<div class="hd ico border-b" id="myorder"><a>我的订单 <p>查看全部订单</p></a></div>-->
+<#--</div>-->
+
+<div class="myaddr ico mt0 "><a href="${base}/app/to/course.do">课程培训</a></div>
+<div class="jifen ico mt0 "><a href="${base}/app/to/about-us.do">关于我们</a></div>
+<div class="myfav ico mt0 "><a href="${base}/app/to/contact-us.do"> 联系我们</a></div>
+<#--<div class="myfav ico border-b"><a href="${base}/app/to/contact-us.do"> 联系我们</a></div>-->
+<#--<div class="myfav ico" id="appdownload"><a>下载APP<p>超快速度，超省流量</p></a></div>-->
 <div style="height: 20px"></div>
+
+<#include "/common/foot.ftl" >
 
 </body>
 </html>

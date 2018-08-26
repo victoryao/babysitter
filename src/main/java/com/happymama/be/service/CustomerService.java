@@ -1,7 +1,6 @@
 package com.happymama.be.service;
 
 
-
 import com.happymama.be.dao.CustomerDao;
 import com.happymama.be.model.CustomerDO;
 import org.springframework.stereotype.Service;
@@ -33,7 +32,16 @@ public class CustomerService {
         return customerDao.getCustomerByPhone(phone);
     }
 
+    public CustomerDO getCustomerByToken(String token) {
+        return customerDao.getCustomerByToken(token);
+    }
+
+
     public void updateCustomer(CustomerDO customerDO) {
         customerDao.updateCustomer(customerDO);
+    }
+
+    public void updateCustomerTokenByPhone(String mobile, String token) {
+        customerDao.updateCustomerToken(mobile, token);
     }
 }

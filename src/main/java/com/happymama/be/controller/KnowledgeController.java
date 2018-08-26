@@ -24,25 +24,32 @@ public class KnowledgeController {
     private KnowledgeService knowledgeService;
 
     @RequestMapping("/app/to/knowledge/list")
-    public String toKnowledgeList(@RequestParam(required = false, defaultValue = "10") int limit,
-                                  @RequestParam(required = false, defaultValue = "1") int page,
-                                  ModelMap modelMap) {
+    public String toKnowledgeList(
+            @RequestParam(required = false, defaultValue = "0") int parentId,
+            @RequestParam(required = false, defaultValue = "10") int limit,
+            @RequestParam(required = false, defaultValue = "1") int page,
+            @RequestParam String loc,
+            ModelMap modelMap) {
         if (limit > 100) {
             limit = Constant.pageSize;
         }
         PageView<KnowledgeDO> pageView = new PageView<>(limit, page);
-        QueryResult<KnowledgeDO> qr = knowledgeService.getKnowledgeList(pageView.getFirstResult(), pageView.getMaxresult());
+        QueryResult<KnowledgeDO> qr = knowledgeService.getKnowledgeListByParentId(parentId, pageView.getFirstResult(), pageView.getMaxresult());
         pageView.setQueryResult(qr);
         modelMap.addAttribute("pageView", pageView);
+        modelMap.addAttribute("loc", loc);
+        modelMap.addAttribute("parentId", parentId);
         return "/knowledge/list";
     }
 
     @RequestMapping(value = "/app/{id}/knowledge/view", method = RequestMethod.GET)
-    public String viewKnowledge(@PathVariable int id, ModelMap modelMap
+    public String viewKnowledge(@RequestParam(required = false, defaultValue = "") String loc,
+                                @PathVariable int id, ModelMap modelMap
 
     ) {
         KnowledgeDO knowledgeDO = knowledgeService.getKnowledgeById(id);
         modelMap.addAttribute("knowledgeDO", knowledgeDO);
+        modelMap.addAttribute("loc", loc);
         return "/knowledge/view";
     }
 
