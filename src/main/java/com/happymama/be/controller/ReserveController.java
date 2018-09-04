@@ -6,7 +6,6 @@ import com.happymama.be.model.RecommendDO;
 import com.happymama.be.service.CustomerService;
 import com.happymama.be.service.OrderService;
 import com.happymama.be.service.RecommendService;
-import com.happymama.be.utils.StringUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;

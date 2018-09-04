@@ -3,6 +3,7 @@ package com.happymama.be.utils;
 import com.happymama.be.model.CourseOrderDO;
 import org.apache.commons.collections.*;
 import org.apache.commons.lang3.RandomStringUtils;
+import org.apache.commons.lang3.StringUtils;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;

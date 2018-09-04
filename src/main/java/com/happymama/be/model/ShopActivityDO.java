@@ -18,10 +18,11 @@ public class ShopActivityDO {
     private String name;
     private String img;
     private int shopId;
-    private float price;
+    private int price;
     private float discount;
-    private float realPrice;
+    private int realPrice;
     private Date startDate;
     private Date endDate;
     private Date created;
+    private ShopDO shopDO;
 }

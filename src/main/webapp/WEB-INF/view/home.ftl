@@ -122,7 +122,7 @@
                     </li>
 
                     <li class="page__item small_icon ">
-                        <a class="item__href">
+                        <a class="item__href" href="${base}/shop/activity/detail.do?id=2">
                             <div class="item__avatar">
                                 <div class="active hide"></div>
                                 <img class="avatar__img"
@@ -133,8 +133,8 @@
                         </a>
                     </li>
 
-                    <li class="page__item small_icon  third_line">
-                        <a class="item__href">
+                    <li class="page__item small_icon">
+                        <a class="item__href" href="${base}/shop/activity/detail.do?id=3">
                             <div class="item__avatar">
                                 <div class="active hide"></div>
                                 <img class="avatar__img"
@@ -145,8 +145,8 @@
                         </a>
                     </li>
 
-                    <li class="page__item small_icon  ">
-                        <a class="item__href">
+                    <li class="page__item small_icon">
+                        <a class="item__href" href="${base}/shop/activity/detail.do?id=4">
                             <div class="item__avatar">
                                 <div class="active hide"></div>
                                 <img class="avatar__img"
@@ -157,8 +157,8 @@
                         </a>
                     </li>
 
-                    <li class="page__item small_icon  third_line">
-                    <a class="item__href" >
+                    <li class="page__item small_icon">
+                    <a class="item__href" href="${base}/shop/activity/detail.do?id=5">
                         <div class="item__avatar">
                             <div class="active hide"></div>
                             <img class="avatar__img" src="${base}/images/icon9.jpg">
@@ -168,8 +168,8 @@
                     </a>
                     </li>
 
-                    <li class="page__item small_icon  third_line">
-                    <a class="item__href" >
+                    <li class="page__item small_icon">
+                    <a class="item__href" href="${base}/shop/activity/detail.do?id=6">
                         <div class="item__avatar">
                             <div class="active hide"></div>
                             <img class="avatar__img" src="${base}/images/icon10.png">

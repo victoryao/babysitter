@@ -1,0 +1,1661 @@
+.footbtn {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    background-color: rgba(255, 255, 255, .9)
+}
+
+.footbtn_h {
+    height: 74px
+}
+
+em, i {
+    font-style: normal
+}
+
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0
+}
+
+.clearfix {
+    *zoom: 1
+}
+
+input, select, textarea {
+    outline: 0;
+    border: 0;
+    background: 0 0
+}
+
+input {
+    -webkit-appearance: none
+}
+
+textarea {
+    resize: none
+}
+
+.bg_c {
+    background: #f1f2f6
+}
+
+.card_first-wrap ul {
+    position: relative;
+    padding-left: 15px;
+    background: #fff;
+    z-index: 1
+}
+
+.card_first-wrap ul a {
+    display: block;
+    margin-left: -15px
+}
+
+.card_first-wrap ul a:active {
+    background: #f8f8f8
+}
+
+.card_first-wrap ul li {
+    position: relative;
+    font: 13px/19px arial;
+    color: #848c99;
+    padding: 23px 0 23px 76px;
+    margin-left: 15px;
+    z-index: 5;
+    height: 90px
+}
+
+.card_first-wrap ul li .middle {
+    display: table-cell;
+    vertical-align: middle;
+    height: 44px
+}
+
+.card_first-wrap ul li h1 {
+    font: 19px/25px arial;
+    color: #292d33
+}
+
+.card_first-wrap ul li span {
+    position: absolute;
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    background: url(//static.daojia.com/fe/h5/app/css/images/card_first_icon_44ea004.png) no-repeat center;
+    background-size: 60px;
+    left: 0;
+    top: 50%;
+    margin-top: -30px
+}
+
+.card_first-wrap ul li .span1 {
+    background-position: center 0
+}
+
+.card_first-wrap ul li .span2 {
+    background-position: center -65px
+}
+
+.card_first-wrap ul li .span3 {
+    background-position: center -130px
+}
+
+.card_first-wrap ul li .span4 {
+    background-position: center -195px
+}
+
+.card_first-wrap ul li .span5 {
+    background-position: center -260px
+}
+
+.card_first-wrap ul li em {
+    position: absolute;
+    right: 25px;
+    top: 50%;
+    margin-top: -4px
+}
+
+.card_first-wrap .text-B {
+    font: 14px/19px arial;
+    color: #848c99;
+    text-align: center;
+    padding: 18px 0 32.77777777777778%
+}
+
+.card_first-wrap .text-B a {
+    color: #848c99
+}
+
+.slide {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 10px
+}
+
+.slide:after {
+    content: '';
+    display: block;
+    width: 100%;
+    padding-top: 32%
+}
+
+.slide ul {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%
+}
+
+.slide li {
+    list-style: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%
+}
+
+.slide li:first-child {
+    z-index: 1
+}
+
+.slide li img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border: 0
+}
+
+.slide .dot {
+    position: absolute;
+    left: 0;
+    bottom: 5px;
+    width: 100%;
+    text-align: center;
+    z-index: 5;
+    font-size: 0
+}
+
+.slide .dot span {
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    margin-left: 5px;
+    border: 1px solid #fff;
+    border-radius: 50%
+}
+
+.slide .dot .cur {
+    background-color: #fff
+}
+
+.card_weiKaiTong_wrap-w {
+    position: relative;
+    height: 148px;
+    margin-top: 3rem
+}
+
+.card_weiKaiTong_wrap {
+    position: absolute;
+    width: 100%;
+    height: 148px;
+    top: 50%;
+    left: 0;
+    margin-top: -74px;
+    text-align: center
+}
+
+.card_weiKaiTong_wrap img {
+    width: 100px;
+    display: inline-block;
+    margin-bottom: 12px
+}
+
+.card_weiKaiTong_wrap p {
+    width: 100%;
+    font: 13px/18px arial;
+    color: #848d99
+}
+
+.card_list {
+    position: relative;
+    font: 16px/20px arial;
+    background: #fff
+}
+
+.card_list li {
+    position: relative
+}
+
+.card_list div {
+    position: relative;
+    padding: 21px 68px 17px 0
+}
+
+.card_list li a {
+    display: block;
+    padding-left: 15px
+}
+
+.card_list div .icon {
+    position: absolute;
+    width: 44px;
+    height: 32px;
+    left: -60px;
+    top: 50%;
+    margin-top: -16px;
+    background: url(//static.daojia.com/fe/h5/app/css/images/card_cardIconNew_ec307e6.png) no-repeat center;
+    background-size: 44px
+}
+
+.card_list div .icon_ty {
+    background-position: center 1px
+}
+
+.card_list div .icon_dr {
+    background-position: center -279px
+}
+
+.card_list div .icon_y {
+    background-position: center -69px
+}
+
+.card_list div .icon_j {
+    background-position: center -103px
+}
+
+.card_list div .icon_bj {
+    background-position: center -139px
+}
+
+.card_list div .icon_zs {
+    background-position: center -173px
+}
+
+.card_list div p span {
+    float: left
+}
+
+.Limit {
+    display: inline-block;
+    background: #e84345;
+    font: 11px/15px arial;
+    color: #fff;
+    border-radius: 2px;
+    margin: 1px 0 0 2px;
+    padding: 1px 3px
+}
+
+.card_list div p em {
+    font: 14px/17px arial;
+    color: #e84345;
+    margin-right: 5px
+}
+
+.card_list div p i {
+    font-size: 11px;
+    color: #c7cbd2
+}
+
+.card_list div p .line {
+    text-decoration: line-through
+}
+
+.card_list li input {
+    position: absolute;
+    width: 66px;
+    height: 29px;
+    font-size: 12px;
+    color: #e84345;
+    border: solid 1px #e84345;
+    border-radius: 4px;
+    right: 0;
+    top: 50%;
+    margin: -15px 15px 0 0
+}
+
+.card_list li input:active {
+    background: #e84345;
+    color: #fff
+}
+
+.card_Details_wrap {
+    padding: 10px 15px 0;
+    font-size: 10px;
+    color: #7c828c;
+    background: #fff;
+    margin-bottom: 10px
+}
+
+.card_Details_wrap table {
+    border-collapse: collapse
+}
+
+.card_Details_wrap table tr:nth-child(1) {
+    height: 30px;
+    color: #fff
+}
+
+.card_Details_wrap table th {
+    background: #e84345;
+    border: 0;
+    padding: 0 2px
+}
+
+.card_Details_wrap table td {
+    height: 30px;
+    text-align: center;
+    border: 1px solid #f2f4f7
+}
+
+.card_Details_wrap table tr:nth-child(odd) {
+    background: #fbfbfc
+}
+
+.card_Details_wrap table tr:nth-child(even) {
+    background: #fff
+}
+
+.notice {
+    padding: 20px 15px 16px
+}
+
+.notice-p {
+    padding: 20px 0 0
+}
+
+.notice-M {
+    margin-bottom: 25px
+}
+
+.notice .title {
+    margin-bottom: 20px
+}
+
+.notice .title p {
+    width: 100%;
+    position: relative
+}
+
+.notice .title p span {
+    position: absolute;
+    height: 18px;
+    padding: 0 10px;
+    display: inline-block;
+    font: 11px/18px arial;
+    color: #848c99;
+    top: 50%;
+    left: 50%;
+    margin: -9px 0 0 -34px;
+    background: #f7f8fa;
+    z-index: 1
+}
+
+.notice .title p .span5word {
+    margin-left: -40px
+}
+
+.notice .title p .span-M {
+    margin: -9px 0 0 -70px
+}
+
+.notice .content {
+    color: #848c99
+}
+
+.notice .content p, .notice p {
+    position: relative;
+    font: 12px/18px arial;
+    padding-left: 19px;
+    text-align: justify
+}
+
+.notice .content p span {
+    position: absolute;
+    height: 18px;
+    left: 5px;
+    top: 0
+}
+
+.notice p {
+    padding: 0
+}
+
+.notice .p-notice {
+    color: #848c99;
+    padding-top: 15px
+}
+
+.card_Details_ul {
+    font: 14px/19 pxarial;
+    color: #525a66
+}
+
+.card_Details_ul li {
+    position: relative;
+    border: solid 1px #f2f4f7;
+    border-radius: 4px;
+    margin-bottom: 5px;
+    background: #fbfbfc
+}
+
+.card_Details_ul li .title {
+    background: #fff;
+    position: relative;
+    border-radius: 4px;
+    padding: 0 40px 0 15px
+}
+
+.card_Details_ul li .Vertical-center {
+    position: relative;
+    font: 16px/20px arial;
+    color: #292d33;
+    overflow: hidden;
+    display: table-cell;
+    vertical-align: middle;
+    height: 60px
+}
+
+.card_Details_ul li p span {
+    float: left;
+    margin-right: 5px
+}
+
+.card_Details_ul li p em {
+    font-size: 14px;
+    color: #e84345
+}
+
+.card_Details_ul li .title i {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: solid 1px #c9c9c9;
+    border-radius: 20px;
+    right: 10px;
+    top: 50%;
+    margin-top: -10px
+}
+
+.card_Details_ul li .title .i-active {
+    background: url(//static.daojia.com/fe/h5/app/css/images/card_cardIconNew_ec307e6.png) no-repeat center;
+    background-size: 40px;
+    background-position: center -226px;
+    border: 0
+}
+
+.card_Details_ul li .content {
+    padding: 8px 0 8px 15px;
+    background: #fbfbfc;
+    border-radius: 0 0 4px 4px;
+    display: none;
+    overflow: hidden
+}
+
+.card_Details_ul li .content h5 {
+    font-weight: 400;
+    font: 14px/17px arial;
+    margin-bottom: 8px
+}
+
+.card_Details_ul li .content p {
+    display: inline-block;
+    width: 50%;
+    font-size: 12px;
+    padding: 0;
+    background: 0 0;
+    float: left
+}
+
+.card_Details_ul li .content p span {
+    display: inline-block;
+    width: 82px;
+    margin-right: 0
+}
+
+.card_Details_ul label {
+    position: absolute;
+    right: 40px;
+    top: 10px;
+    width: 85px
+}
+
+.button-B {
+    position: fixed;
+    width: 100%;
+    height: 0;
+    left: 0;
+    bottom: 0;
+    background: #e84345;
+    color: #fff;
+    font-size: 19px;
+    z-index: 100;
+    display: block;
+    border-radius: 0;
+    -webkit-transition: height .2s;
+    transition: height .2s;
+    margin-bottom: 0
+}
+
+.button-B:active {
+    background: #c13a3e;
+    color: #d6d6d6
+}
+
+.card_changeResult-head {
+    position: relative;
+    padding: 28px 15px 28px 90px;
+    background: #fff;
+    font: 19px/25px arial;
+    color: #292d33
+}
+
+.card_changeResult-head img {
+    position: absolute;
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    left: 10px;
+    top: 50%;
+    margin-top: -40px
+}
+
+.card_changeResult-wrap {
+    position: relative;
+    padding: 15px 15px 30px
+}
+
+.card_changeResult-wrap .warn {
+    position: relative;
+    padding: 0 10px 0 34px;
+    font: 13px/18px arial;
+    color: #848c99;
+    text-align: justify;
+    margin-bottom: 10px
+}
+
+.card_changeResult-wrap .use {
+    text-align: center
+}
+
+.card_changeResult-wrap .use input {
+    font-size: 12px;
+    padding: 8px 25px;
+    border: solid 1px #b2b8c2;
+    border-radius: 18px;
+    color: #848c99
+}
+
+.card_changeResult-wrap .use input:active {
+    background: #e3e3e3
+}
+
+.card_changeResult-wrap .warn img {
+    position: absolute;
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    left: 10px;
+    top: 1px
+}
+
+.card_changeResult-QRcode {
+    padding: 10px;
+    position: absolute;
+    width: 246px;
+    border: dashed 1px #c6ccd5;
+    left: 50%;
+    margin-left: -123px;
+    bottom: 30px
+}
+
+.card_changeResult-QRcode img {
+    position: absolute;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border: 0;
+    left: 10px;
+    top: 50%;
+    margin-top: -25px
+}
+
+.card_changeResult-QRcode p {
+    padding-left: 60px;
+    text-align: justify;
+    font: 12px/19px arial
+}
+
+.card_own-head {
+    text-align: center;
+    height: 80px;
+    background: #848c9a
+}
+
+.card_own-head p {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    height: 80px
+}
+
+.card_own-head p span {
+    position: absolute;
+    display: inline-block;
+    width: 100%;
+    height: 28px;
+    top: 50%;
+    left: 0;
+    margin: -14px 0 0 0;
+    text-align: center
+}
+
+.card_own-head p span em {
+    display: inline-block;
+    position: relative;
+    color: #fff;
+    font: 14px/28px arial;
+    padding-left: 42px
+}
+
+.card_own-head p span i {
+    display: inline-block;
+    position: absolute;
+    background: url(//static.daojia.com/fe/h5/app/css/images/card_own_icon_93ce1e6.png) no-repeat center;
+    background-size: 80px;
+    height: 28px;
+    left: 0;
+    top: 0
+}
+
+.card_own-head p span .left {
+    width: 34px;
+    background-position: center -111px
+}
+
+.card_own-head p span .right {
+    width: 37px;
+    background-position: center -26px
+}
+
+.card_own-head a {
+    width: 50%;
+    height: 80px;
+    display: inline-block
+}
+
+.card_own-head a:active {
+    background: #7a828f
+}
+
+.card_privilege-head {
+    padding: 43px 0 26px;
+    text-align: center
+}
+
+.card_privilege-head img {
+    width: 153px;
+    display: inline-block
+}
+
+.card_privilege-wrap h1 {
+    font: 22px/28px arial;
+    font-weight: 400;
+    color: #292d33;
+    text-align: center
+}
+
+.card_privilege-wrap .title {
+    padding: 0 60px
+}
+
+.card_privilege-wrap .notice .title p span {
+    background: #fff;
+    color: #b9b9b9
+}
+
+.card_privilege-wrap ul {
+    position: relative;
+    padding: 12px 65px;
+    overflow-y: scroll;
+    margin-top: -15px
+}
+
+.card_privilege-wrap li {
+    position: relative;
+    padding-bottom: 23px;
+    width: 100%
+}
+
+.card_privilege-wrap ul li:nth-last-child(1) {
+    padding-bottom: 0
+}
+
+.card_privilege-wrap li span, .card_privilege-wrap li em {
+    position: absolute;
+    display: inline-block;
+    font: 14px/20px arial;
+    color: #292d33;
+    background: #fff;
+    margin-top: -10px
+}
+
+.card_privilege-wrap li span {
+    top: 0;
+    left: 0;
+    padding-right: 7px
+}
+
+.card_privilege-wrap li em {
+    top: 0;
+    right: 0;
+    padding-left: 7px
+}
+
+.card_privilege-wrap ul:after {
+    content: "";
+    display: block;
+    position: fixed;
+    width: 100%;
+    height: 38px;
+    bottom: 18px;
+    left: 0;
+    background: -webkit-linear-gradient(top, rgba(255, 255, 255, .1), rgba(255, 255, 255, .9));
+    background: linear-gradient(top, rgba(255, 255, 255, .1), rgba(255, 255, 255, .9))
+}
+
+.tab {
+    width: 100%;
+    position: relative;
+    padding: 10px 0;
+    margin: -10px 0 0;
+    background: #fff;
+    font-size: 16px
+}
+
+.tab li {
+    position: relative;
+    width: 50%;
+    float: left;
+    text-align: center;
+    z-index: 5
+}
+
+.tab span {
+    position: absolute;
+    display: inline-block;
+    width: 50%;
+    height: 4px;
+    left: 0;
+    bottom: 11px;
+    text-align: center;
+    -webkit-transition-duration: .2s;
+    transition-duration: .2s
+}
+
+.tab span em {
+    display: inline-block;
+    width: 90px;
+    height: 2px;
+    background: #e7454b
+}
+
+.tab .change {
+    left: 50%
+}
+
+.tab .active {
+    color: #e6474c
+}
+
+.spacing {
+    height: 10px;
+    background: #f1f2f6
+}
+
+.card_first-wrap2 {
+    /*display: none;*/
+    padding: 0 15px
+}
+
+.card_first-wrap2 .account {
+    position: relative;
+    padding: 18px 0 20px;
+    font: 19px/24px arial;
+    color: #292d33
+}
+
+.card_first-wrap2 .account span {
+    font-size: 12px
+}
+
+.card_first-wrap2 .account label {
+    position: absolute;
+    display: inline-block;
+    width: 50px;
+    height: 64px;
+    top: 0;
+    right: 0
+}
+
+.card_first-wrap2 .account em {
+    display: inline-block;
+    position: absolute;
+    font: 12px/20px arial;
+    color: #848c99;
+    padding: 0 8px;
+    border: solid 1px #b2b8c2;
+    border-radius: 4px;
+    right: 0;
+    top: 50%;
+    margin-top: -14px
+}
+
+.card_first-wrap2 .account em:active {
+    background: #e3e3e3
+}
+
+.input-wrap {
+    position: relative;
+    margin-bottom: 20px
+}
+
+.input-wrap-B {
+    margin-bottom: 10px
+}
+
+.input-wrap input {
+    width: 100%;
+    padding: 12px 15px;
+    border: solid 1px #cdd1d8;
+    border-radius: 0;
+    font-size: 16px;
+    color: #292d33
+}
+
+.input-wrap span {
+    position: absolute;
+    width: 42px;
+    height: 100%;
+    right: 0;
+    top: 0
+}
+
+.input-wrap img {
+    position: absolute;
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    color: #fff;
+    left: 50%;
+    top: 50%;
+    margin: -7px 0 0 -7px
+}
+
+.big-button-B {
+    height: 44px;
+    width: 100%;
+    font-size: 19px;
+    color: #f9d3d4;
+    background: #f08f92;
+    border-radius: 4px;
+    margin-bottom: 17px
+}
+
+.big-button-B-active {
+    opacity: 1;
+    background: #e6454a
+}
+
+.big-button-B:active {
+    background: #c13a3e
+}
+
+.illustration {
+    font: 12px/17px arial;
+    color: #848c99;
+    padding-bottom: 56px
+}
+
+.exchange-code {
+    display: block
+}
+
+.input-wrap .exchange-code-input {
+    padding-right: 42px;
+    background: #fbfbfc
+}
+
+.alteration-phone {
+    padding-top: 20px;
+    /*display: none*/
+}
+
+.alteration-phone .input-wrap .verification-code-input {
+    padding-right: 122px
+}
+
+.alteration-phone .input-wrap .verification-code-input-img {
+    padding-right: 100px
+}
+
+.alteration-phone .input-wrap .verification-code-span {
+    position: absolute;
+    width: 128px;
+    height: 68%;
+    right: 1px;
+    top: 1px;
+    margin: 6px 0;
+    text-align: center;
+    webkit-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+.alteration-phone .input-wrap .verification-code-span:active {
+    background: #f8f8f8
+}
+
+.alteration-phone .input-wrap .verification-code-span-img {
+    position: absolute;
+    width: 100px;
+    height: 100%;
+    top: 0;
+    right: 0
+}
+
+.alteration-phone .input-wrap .verification-code-span-img img {
+    display: inline-block;
+    width: 90px;
+    height: 30px;
+    margin: 0;
+    left: 5px;
+    top: 7px
+}
+
+.alteration-phone .input-wrap span input {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border: 0;
+    text-align: center;
+    color: #e6454a;
+    font-size: 16px;
+    padding: 0
+}
+
+.card_lr_Purchase-notice {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    background: #f7f8fa;
+    width: 100%
+}
+
+.spacing-B {
+    height: 118px
+}
+
+.card_lr_purchaseSuccess-wrap {
+    text-align: center;
+    padding-top: 96px;
+    font: 13px/17px arial
+}
+
+.card_lr_purchaseSuccess-wrap img {
+    display: inline-block;
+    width: 203px;
+    height: 109px;
+    margin-bottom: 14px
+}
+
+.card_lr_purchaseSuccess-wrap h3 {
+    font: 18px/32px arial;
+    color: #292d33;
+    font-weight: 400
+}
+
+.card_lr_purchaseSuccess-wrap .bottom {
+    margin-bottom: 66px
+}
+
+.card_lr_purchaseSuccess-wrap .bottom2 {
+    margin-bottom: 8px
+}
+
+.card_lr_purchaseSuccess-wrap input, .card_lr_purchaseFailure-wrap input {
+    display: inline-block;
+    width: 148px;
+    height: 32px;
+    border: solid 1px #e6454a;
+    border-radius: 16px;
+    margin-bottom: 95px;
+    color: #e6454a;
+    font-size: 15px
+}
+
+.card_lr_purchaseSuccess-wrap input:active {
+    background: #e6454a;
+    color: #fff
+}
+
+.card_lr_purchaseFailure-wrap {
+    text-align: center;
+    padding-top: 130px;
+    font: 13px/28px arial;
+    height: 100%
+}
+
+.card_lr_purchaseFailure-wrap h3 {
+    font: 24px/37px arial;
+    color: #292d33
+}
+
+.card_lr_purchaseFailure-wrap input {
+    margin-bottom: 0;
+    position: absolute;
+    left: 50%;
+    margin-left: -74px;
+    bottom: 96px
+}
+
+.card_lr_purchaseFailure-wrap input:active {
+    background: #e6454a;
+    color: #fff
+}
+
+footer {
+    padding: 6px 0 16px;
+    text-align: center
+}
+
+footer a {
+    display: inline-block;
+    padding: 7px 20px;
+    border: solid 1px #848c9a;
+    border-radius: 18px;
+    margin-bottom: 10px
+}
+
+footer a:active {
+    background: #e3e3e3
+}
+
+footer a i {
+    float: left;
+    width: 15px;
+    height: 15px;
+    margin: 2px 5px 0 0;
+    background: url(//static.daojia.com/fe/h5/app/css/images/card_cardIconNew_ec307e6.png) no-repeat center;
+    background-size: 44px;
+    background-position: center -218px
+}
+
+footer a em {
+    float: left;
+    font: 16px/19px arial
+}
+
+footer p {
+    font: 12px/19px arial;
+    color: #848c99
+}
+
+.adaptive-table {
+    width: 100%
+}
+
+.adaptive-table th {
+    width: 10%
+}
+
+.adaptive-table th:first-child {
+    width: 15%
+}
+
+.tmore {
+    height: 40px;
+    line-height: 40px;
+    color: #e84345;
+    text-align: center
+}
+
+.tmore em {
+    margin-right: 4px
+}
+
+.templine-own:after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    height: 1px;
+    background-color: #d4d8de;
+    -webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+    -webkit-transform-origin: 0 1px;
+    transform-origin: 0 1px
+}
+
+.templine-own-card:after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    height: 1px;
+    background-color: #2592cb;
+    -webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+    -webkit-transform-origin: 0 1px;
+    transform-origin: 0 1px
+}
+
+.templine-own-card-fs:after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    height: 1px;
+    background-color: #e06fa0;
+    -webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+    -webkit-transform-origin: 0 1px;
+    transform-origin: 0 1px
+}
+
+.templine-own-card-ls:after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    height: 1px;
+    background-color: #24d7b1;
+    -webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+    -webkit-transform-origin: 0 1px;
+    transform-origin: 0 1px
+}
+
+.fbar_btn_choice:before, .table_piclist .txtsm:before, .fbar_tap_lr ul:before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    height: 1px;
+    background-color: #e8ebf0;
+    -webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0
+}
+
+.line_1pxR:before {
+    content: '';
+    display: block;
+    position: absolute;
+    height: 100%;
+    right: -1px;
+    top: 10px;
+    width: 1px;
+    height: 60px;
+    background-color: #777f8c;
+    -webkit-transform: scaleX(0.5);
+    transform: scaleX(0.5);
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0
+}
+
+.line_1pxR_tab-li:before {
+    content: '';
+    display: block;
+    position: absolute;
+    height: 100%;
+    right: 0;
+    top: 0;
+    width: 1px;
+    background-color: #e8ebf0;
+    -webkit-transform: scaleX(0.5);
+    transform: scaleX(0.5);
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0
+}
+
+.line_1pxL:before {
+    content: '';
+    display: block;
+    position: absolute;
+    height: 100%;
+    left: 0;
+    top: 0;
+    width: 1px;
+    background-color: #e8ebf0;
+    -webkit-transform: scaleX(0.5);
+    transform: scaleX(0.5);
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0
+}
+
+.triangleB {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-top: solid #e84345 1px;
+    border-right: solid #e84345 1px;
+    -webkit-transform: rotate(135deg);
+    transform: rotate(135deg);
+    margin-bottom: 2px
+}
+
+.triangleT {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-top: solid #e84345 1px;
+    border-right: solid #e84345 1px;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    margin-bottom: -3px
+}
+
+.triangleR {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-top: solid #00376b 1px;
+    border-right: solid #00376b 1px;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg)
+}
+
+.triangleR-fs {
+    border-top: solid #8a264f 1px;
+    border-right: solid #8a264f 1px
+}
+
+.triangleR-ls {
+    border-top: solid #025944 1px;
+    border-right: solid #025944 1px
+}
+
+.triangleR-hs {
+    border-top: solid #a2a8b2 1px;
+    border-right: solid #a2a8b2 1px
+}
+
+.temp_div {
+    height: 50px
+}
+
+.f14c {
+    font-size: 14px;
+    color: #525a66
+}
+
+.card-line {
+    width: 100%;
+    border: solid 1px #5dc0f2;
+    border-radius: 4px;
+    margin-bottom: 14px
+}
+
+.card-line-B {
+    margin-bottom: 10px
+}
+
+.card-main {
+    position: relative;
+    padding: 17px 20px 20px;
+    border: solid 1px #70dbfc;
+    border-radius: 2px;
+    background: -webkit-linear-gradient(top, rgba(80, 220, 255, .8), rgba(52, 189, 255, .9));
+    background: linear-gradient(top, rgba(80, 220, 255, .8), rgba(52, 189, 255, .9))
+}
+
+.card-line-fs {
+    border: solid 1px #e1a3c0
+}
+
+.card-main-fs {
+    border: solid 1px #ffc3df;
+    background: -webkit-linear-gradient(top, rgba(255, 168, 211, .8), rgba(255, 138, 191, .9));
+    background: linear-gradient(top, rgba(155, 168, 211, .8), rgba(255, 138, 191, .9))
+}
+
+.card-line-ls {
+    border: solid 1px #7bceb6
+}
+
+.card-main-ls {
+    border: solid 1px #89f5d5;
+    background: -webkit-linear-gradient(top, rgba(84, 241, 195, .8), rgba(20, 211, 172, .9));
+    background: linear-gradient(top, rgba(84, 241, 195, .8), rgba(20, 211, 172, .9))
+}
+
+.card-main .img1 {
+    width: 182px;
+    height: 101%;
+    position: absolute;
+    left: 0;
+    top: -1px
+}
+
+.card-main div {
+    width: 50px;
+    height: 75px;
+    border-top: solid 1px #e5e5ea;
+    position: absolute;
+    right: 28px;
+    top: -3px;
+    background: url(//static.daojia.com/fe/h5/app/css/images/card_result_memberIcon_92c690b.png) no-repeat center;
+    background-size: 50px;
+    text-align: center;
+    z-index: 1
+}
+
+.card-main div a {
+    display: block;
+    width: 100%;
+    height: 100%
+}
+
+.card-main div span {
+    display: inline-block;
+    font-size: 10px;
+    color: #00376b;
+    padding-top: 40px
+}
+
+.card-main div .cfs {
+    color: #881a4b
+}
+
+.card-main div .cls {
+    color: #047056
+}
+
+.card-main .top-p {
+    position: relative;
+    font: 24px/28px arial;
+    color: #0a427b;
+    padding-bottom: 41px;
+    margin-bottom: 18px
+}
+
+.card-main .top-p-fs {
+    color: #881a4b
+}
+
+.card-main .top-p-ls {
+    color: #025944
+}
+
+.card-main .top-p span {
+    display: inline-block;
+    font-size: 12px;
+    vertical-align: middle
+}
+
+.card-main .bottom-p {
+    font: 15px/17px arial;
+    color: #fff
+}
+
+.card-main .bottom-p em {
+    float: left;
+    text-shadow: #3eb3f1 1px 1px 0
+}
+
+.card-main .bottom-p .fs {
+    text-shadow: #d67da7 1px 1px 0
+}
+
+.card-main .bottom-p .ls {
+    text-shadow: #1baf93 1px 1px 0
+}
+
+.card-main .bottom-p i {
+    float: right;
+    font-size: 12px;
+    color: #00376b
+}
+
+.card-main .bottom-p .cfs {
+    color: #8a264f
+}
+
+.card-main .bottom-p .cls {
+    color: #025944
+}
+
+.list_card {
+    padding: 10px 15px
+}
+
+.list_card li {
+    position: relative;
+    margin-bottom: 10px;
+    background-color: #fff;
+    border: 1px solid #e8ebf0;
+    border-radius: 2px
+}
+
+.list_card li:after {
+    position: absolute;
+    content: "";
+    display: block;
+    width: 48px;
+    top: 10px;
+    bottom: 10px;
+    right: 0;
+    border-left: 1px solid #eee
+}
+
+.list_card li:before {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    margin-top: -13px;
+    content: "";
+    display: block;
+    width: 25px;
+    height: 25px;
+    background: url(//static.daojia.com/fe/h5/app/css/images/card_icon_choice_19f87e5.png) no-repeat center 0;
+    background-size: 25px
+}
+
+.list_card li.active {
+    border: 1px solid #e6454a
+}
+
+.list_card li.active:before {
+    background-position: 0 -25px
+}
+
+.list_card li .card_name {
+    position: relative;
+    margin: 0 60px 0 15px;
+    font-size: 18px;
+    color: #292d33;
+    height: 40px;
+    line-height: 40px
+}
+
+.list_card li .card_name:after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    height: 1px;
+    background-color: #e8ebf0;
+    -webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+    -webkit-transform-origin: 0 1px;
+    transform-origin: 0 1px
+}
+
+.list_card li .card_name span {
+    vertical-align: middle
+}
+
+.list_card li .card_name span.card_sm {
+    font-size: 13px;
+    color: #848c99;
+    margin-left: 5px
+}
+
+.list_card li .card_info {
+    padding: 10px 15px;
+    line-height: 20px
+}
+
+.list_card li .card_info p {
+}
+
+.pop_alert {
+    display: none;
+    z-index: 10;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .7)
+}
+
+.pop_alert .popbox {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 240px;
+    margin: -100px 0 0 -120px;
+    border-radius: 5px;
+    background-color: #fff
+}
+
+.pop_alert .popcon {
+    text-align: center;
+    padding: 10px 10px 0
+}
+
+.pop_alert .popcon .tit {
+    line-height: 16px;
+    padding-top: 5px
+}
+
+.pop_alert .popcon .con {
+    font-size: 12px;
+    line-height: 20px;
+    color: #666
+}
+
+.pop_alert .popcon .con p {
+    margin: 10px 0
+}
+
+.pop_alert .popcon .con p.tal {
+    text-align: left
+}
+
+.pop_alert .popcon .con ul {
+    text-align: left;
+    margin-top: 5px
+}
+
+.pop_alert .popcon .con li {
+    border-bottom: 1px dotted #eee;
+    padding: 3px 0
+}
+
+.pop_alert .popcon .con li span {
+    display: inline-block;
+    width: 60px
+}
+
+.footer {
+    position: fixed;
+    padding: 15px;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    background: #f7f8fa
+}
+
+.footer a {
+    display: inline-block;
+    width: 100%;
+    height: 44px;
+    text-align: center;
+    color: #848c99;
+    font: 19px/44px arial;
+    border: solid 1px #b2b8c2;
+    border-radius: 4px
+}
+
+.footer a:active {
+    background: #e1e3e8
+}
+
+.kthyk_spacing-B {
+    height: 59px
+}
+
+.card_wuKeYongKa_wrap {
+    padding-top: 140px;
+    text-align: center;
+    color: #848d99
+}
+
+.card_wuKeYongKa_wrap img {
+    display: inline-block;
+    width: 100px
+}
+
+.lrj2016 {
+    position: absolute;
+    bottom: 120px;
+    left: 50%;
+    width: 246px;
+    margin-left: -123px;
+    text-align: center
+}
+
+.lrj2016 .tit {
+    margin-bottom: 10px;
+    font-size: 11px;
+    color: #848c99
+}
+
+.lrj2016 .btn {
+    display: block;
+    height: 36px;
+    background: #fff url(//static.daojia.com/fe/h5/app/css/images/lrj2016_txt_back_162b56e.png) no-repeat center;
+    background-size: 155px;
+    border: 1px solid #d0d1d4;
+    border-radius: 4px
+}
+
+.lrj2016 .btn:active {
+    background-color: #e8ebf0
+}

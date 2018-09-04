@@ -17,4 +17,5 @@ public class CustomerDO {
     private String phone;
     private String address;
     private String token;
+    private String openId;
 }

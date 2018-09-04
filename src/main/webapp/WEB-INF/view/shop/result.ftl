@@ -26,57 +26,56 @@
           href="https://happymama.oss-cn-beijing.aliyuncs.com/bitbug_favicon.ico">
 
 
-    <script>
-
-        function onBridgeReady() {
-            alert(${maps});
-            var appId = $("pay").appId;
-            var ts = $("pay").timeStamp;
-            var ns = $("pay").nonceStr;
-            var pa = $("pay").packages;
-            var st = $("pay").signType;
-            var ps = $("pay").paySign;
-
-            WeixinJSBridge.invoke(
-                    'getBrandWCPayRequest', {
-                        "appId": appId,     //公众号名称，由商户传入
-                        "timeStamp": ts,         //时间戳，自1970年以来的秒数
-                        "nonceStr": ns, //随机串
-                        "package": pa,
-                        "signType": st,         //微信签名方式：
-                        "paySign": ps //微信签名
-                    },
-                    function (res) {
-                        alert(res.err_msg);
-                        if (res.err_msg == "get_brand_wcpay_request:ok") {
-                            // 使用以上方式判断前端返回,微信团队郑重提示：
-                            //res.err_msg将在用户支付成功后返回ok，但并不保证它绝对可靠。
-                        }
-                    });
-        }
-        if (typeof WeixinJSBridge == "undefined") {
-            if (document.addEventListener) {
-                document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
-            } else if (document.attachEvent) {
-                document.attachEvent('WeixinJSBridgeReady', onBridgeReady);
-                document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
-            }
-        } else {
-            onBridgeReady();
-        }
-    </script>
-
 </head>
 
 <body>
 
+<input type="hidden" id="appId" value='${pay.appId}'>
+<input type="hidden" id="timeStamp" value='${pay.timeStamp}'>
+<input type="hidden" id="nonceStr" value='${pay.nonceStr}'>
+<input type="hidden" id="package" value='${pay.packages}'>
+<input type="hidden" id="signType" value='${pay.signType}'>
+<input type="hidden" id="paySign" value='${pay.paySign}'>
 
-<input type="hidden" id="appId" value='$("pay").appId'>
-<input type="hidden" id="timeStamp" value='$("pay").appId'>
-<input type="hidden" id="nonceStr" value='$("pay").appId'>
-<input type="hidden" id="package" value='$("pay").appId'>
-<input type="hidden" id="signType" value='$("pay").appId'>
-<input type="hidden" id="paySign" value='$("pay").appId'>
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+<script>
+
+    function onBridgeReady() {
+        var appId = $("#appId").val();
+        var ts = $("#timeStamp").val();
+        var ns = $("#nonceStr").val();
+        var pa = $("#package").val();
+        var st = $("#signType").val();
+        var ps = $("#paySign").val();
+
+        WeixinJSBridge.invoke(
+                'getBrandWCPayRequest', {
+                    "appId": appId,     //公众号名称，由商户传入
+                    "timeStamp": ts,         //时间戳，自1970年以来的秒数
+                    "nonceStr": ns, //随机串
+                    "package": pa,
+                    "signType": st,         //微信签名方式：
+                    "paySign": ps //微信签名
+                },
+                function (res) {
+                    if (res.err_msg == "get_brand_wcpay_request:ok") {
+                        window.location.href = '${base}/shop/order/list.do?openId=${pay.openId}';
+                        // 使用以上方式判断前端返回,微信团队郑重提示：
+                        //res.err_msg将在用户支付成功后返回ok，但并不保证它绝对可靠。
+                    }
+                });
+    }
+    if (typeof WeixinJSBridge == "undefined") {
+        if (document.addEventListener) {
+            document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
+        } else if (document.attachEvent) {
+            document.attachEvent('WeixinJSBridgeReady', onBridgeReady);
+            document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
+        }
+//            onBridgeReady();
+    } else {
+        onBridgeReady();
+    }
+</script>
+
 </body>
 </html>

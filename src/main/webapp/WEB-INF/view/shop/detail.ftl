@@ -9,7 +9,7 @@
     <meta name="format-detection" content="telephone=no"/>
     <meta content="email=no" name="format-detection"/>
 
-    <title>新手妈妈团购</title>
+    <title>${shopActivityDO.name}</title>
     <meta name="description"
           content="北京快乐妈咪科技有限公司是由一群有爱心有激情的奶爸与月嫂创始建设，着力搭建一个孕妈和月嫂的深度交流平台。目前的核心服务包括培训、月嫂、育儿嫂、催乳师、产后护理、小儿推拿、月子餐等母婴服务的预定与咨询，用户可结合自身实际情况，分价格、分地域、分年限进行快速搜索，可以周为单位进行服务评价、付款，是专业且具有保障的孕妈社区。"/>
     <meta name="aplus-xplug" content="NONE">
@@ -29,16 +29,19 @@
     <link rel="stylesheet" href="${base}/css/common.css">
     <link rel="stylesheet" href="${base}/css/getTicketPopup.css" data-outlink>
     <link rel="stylesheet" href="//static.daojia.com/assets/project/dj-m/pkg/detail/detail_2595ae0.css">
+    <script>
+        $(document).ready(function () {
+            var price = $("#price").val();
+            $("#priceSpan").html(price / 100 + "元");
+        });
+    </script>
+
 </head>
 
 <body data-pagetype="serveDetail">
 
-<input type="hidden" id="appId">
-<input type="hidden" id="timeStamp">
-<input type="hidden" id="nonceStr">
-<input type="hidden" id="package">
-<input type="hidden" id="signType">
-<input type="hidden" id="paySign">
+
+<input type="hidden" id="price" value="${shopActivityDO.realPrice}">
 
 <div class="topbar-holder"></div>
 
@@ -58,15 +61,19 @@
                     <img class="picone"
                          src="${shopDO.img}"/>
                 </div>
-                <div class="tit"><h1 class="tit_custom">${shopActivityDO.name}</h1></div>
+                <div class="tit" style="padding: 5px"><h1 class="tit_custom">${shopActivityDO.name}</h1></div>
 
-                <div class="price-box">
+                <div class="price-box" style="padding: 5px">
                     <div class="price">
-                        <span class="showPricek">${shopActivityDO.realPrice}元</span>
+                        <span class="showPricek" id="priceSpan"></span>
                     </div>
                     <div class="tags">
                         <span class="tag_hot">${shopActivityDO.discount}折</span>
                     </div>
+                </div>
+
+                <div style="padding: 5px">
+                    地址：${shopDO.address}
                 </div>
             </div>
             <div class="shop-info">
@@ -157,6 +164,9 @@
             <p>
                 <img src="${shopActivityDO.img}"/>
             </p>
+        <#list images as image>
+            <p><img src="${image}"/></p>
+        </#list>
         </div>
     </div>
 
@@ -165,6 +175,7 @@
         <div class="con_u">
             <p>${shopDO.intro}</p>
             <p><img src="${shopDO.descImg}"/></p>
+
         </div>
     </div>
 
@@ -175,8 +186,8 @@
         </div>
         <div class="con">
             <ol class="box-yyxz">
-                <li class="yyxz-dd-xy">使用新手妈咪平台前，请充分了解并同意《新手妈咪用户协议》。交易前充分沟通，明确包括但不限于服务项、金额、服务时间等具体细节。</li>
-                <li class="yyxz-dd-wq">新手妈咪平台服务由第三方提供，强烈建议您在到家平台通过在线支付完成所有交易，并保留相应的证据以利于售后维权。</li>
+                <li class="yyxz-dd-xy">使用快乐妈咪平台前，请充分了解并同意《快乐妈咪用户协议》。交易前充分沟通，明确包括但不限于服务项、金额、服务时间等具体细节。</li>
+                <li class="yyxz-dd-wq">快乐妈咪平台服务由第三方提供，强烈建议您在到家平台通过在线支付完成所有交易，并保留相应的证据以利于售后维权。</li>
                 <li class="yyxz-dd-lx">如遇服务质量问题，可进行<a class="xd_report">举报</a></li>
             </ol>
         </div>
@@ -191,11 +202,11 @@
     <div class="footbar">
         <div class="foo_s2">
             <a href="javascript:;" class="btn_min btn_contact">联系客服</a>
-            <a href="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx679b7a7176d86d5b&redirect_uri=http%3a%2f%2fwww.klmami.cn%2fapp%2fshop%2fpay.do&response_type=code&scope=snsapi_base&state=123#wechat_redirect"
+            <a href="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx679b7a7176d86d5b&redirect_uri=http%3a%2f%2fwww.klmami.cn%2fapp%2fshop%2fpay.do&response_type=code&scope=snsapi_base&state=${shopActivityDO.id}#wechat_redirect"
 
             <#--"${base}/shop/pay.do" -->
 
-            class="btn_order" id="nextstep">
+               class="btn_order" id="nextstep">
                 立即支付
             </a>
         </div>

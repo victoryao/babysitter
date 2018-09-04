@@ -4,12 +4,11 @@ import com.happymama.be.constant.Constant;
 import com.happymama.be.model.CustomerDO;
 import com.happymama.be.model.EmployeeDO;
 import com.happymama.be.model.KnowledgeDO;
-import com.happymama.be.service.CustomerService;
-import com.happymama.be.service.EmployeeService;
-import com.happymama.be.service.KnowledgeService;
-import com.happymama.be.service.OrderService;
+import com.happymama.be.model.ShopActivityDO;
+import com.happymama.be.service.*;
 import com.happymama.be.utils.PageView;
 import com.happymama.be.utils.QueryResult;
+import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -19,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 @Controller
 public class NavController {
@@ -29,6 +29,8 @@ public class NavController {
     private CustomerService customerService;
     @Resource
     private EmployeeService employeeService;
+    @Resource
+    private ShopService shopService;
 
 
     @RequestMapping("/toMain")
@@ -102,6 +104,11 @@ public class NavController {
         if (StringUtils.isNotBlank(token)) {
             CustomerDO customerDO = customerService.getCustomerByToken(token);
             if (customerDO != null) {
+                modelMap.addAttribute("userLevel", "user");
+                List<ShopActivityDO> list = shopService.getShopActivityByMobile(customerDO.getPhone());
+                if (CollectionUtils.isNotEmpty(list)) {
+                    modelMap.addAttribute("userLevel", "shop");
+                }
                 modelMap.addAttribute("token", token);
                 modelMap.addAttribute("customerDO", customerDO);
                 return "/my/myPage";
@@ -125,10 +132,10 @@ public class NavController {
         return "/forum/list";
     }
 
-    @RequestMapping("/shop/detail")
-    public String toShopDetail(@RequestParam(required = false, defaultValue = "") String loc, ModelMap modelMap) {
-        modelMap.addAttribute("loc", loc);
-        return "/shop/detail";
+
+    @RequestMapping("/order/list")
+    public String toOrderListPage() {
+        return "/order/list";
     }
 
 }

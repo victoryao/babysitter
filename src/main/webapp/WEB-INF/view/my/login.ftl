@@ -2,6 +2,8 @@
 <!DOCTYPE HTML>
 <html>
 <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
     <script type="text/javascript" src="${base}/js/zepto.min.js"></script>
     <script type="text/javascript" src="${base}/js/miniMobile.js"></script>
     <link rel="stylesheet" type="text/css" href="${base}/css/miniMobile.css"/>
@@ -71,6 +73,7 @@
                            name="mobile">
                 </div>
             </div>
+            <input type="hidden" value="${openId}" name="openId">
 
             <div data-v-c2da3850="" class="input-wrap" style="display: none;" id="verifyCodeDiv">
                 <i data-v-c2da3850="" class="icon_protect"></i>

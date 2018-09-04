@@ -15,15 +15,18 @@ import java.util.Date;
 @NoArgsConstructor
 public class ShopOrderDO {
     private int id;
+    private String orderId;
+    private String prepayId;
     private int activityId;
     private int customerId;
     private String mobile;
-    private float price;
-    private float realPrice;
+    private int price;
+    private int realPrice;
     private String code;
     private String memo;
     private int type;
     private int status;
     private Date created;
     private Date updated;
+    private ShopActivityDO shopActivityDO;
 }

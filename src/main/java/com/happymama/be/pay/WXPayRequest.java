@@ -124,7 +124,6 @@ public class WXPayRequest {
         IWXPayDomain.DomainInfo domainInfo = new IWXPayDomain.DomainInfo("api.mch.weixin.qq.com", true);
         try {
             String result = requestOnce(domainInfo.domain, urlSuffix, uuid, data, connectTimeoutMs, readTimeoutMs, useCert);
-            System.out.println("result:" + result);
             elapsedTimeMillis = WXPayUtil.getCurrentTimestampMs() - startTimestampMs;
 //            config.getWXPayDomain().report(domainInfo.domain, elapsedTimeMillis, null);
             WXPayReport.getInstance(config).report(

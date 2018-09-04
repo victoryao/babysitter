@@ -18,4 +18,5 @@ public class PayModel {
     private String packages;
     private String signType;
     private String paySign;
+    private String openId;
 }

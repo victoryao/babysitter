@@ -43,7 +43,7 @@ public class WXPay {
             this.signType = WXPayConstants.SignType.MD5; // 沙箱环境
         }
         else {
-            this.signType = WXPayConstants.SignType.HMACSHA256;
+            this.signType = WXPayConstants.SignType.MD5;
         }
         this.wxPayRequest = new WXPayRequest(config);
     }

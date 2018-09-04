@@ -1,0 +1,67 @@
+.card_Details_wrap table {
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.adaptive-table th:first-child {
+    border-top-left-radius: 2px;
+}
+
+.adaptive-table th:last-child {
+    border-top-right-radius: 2px;
+}
+
+.adaptive-table tr:last-child td:first-child {
+    border-bottom-left-radius: 2px;
+}
+
+.adaptive-table tr:last-child td:last-child {
+    border-bottom-right-radius: 2px;
+}
+
+a:visited {
+    color: #292d33;
+}
+
+a {
+    color: #292d33;
+}
+
+.card_Details_wrap {
+    padding-top: 15px;
+}
+
+.card_list li input {
+    position: absolute;
+    width: 132px;
+    height: 57px;
+    font-size: 24px;
+    color: #e84345;
+    border: solid 1px #e84345;
+    border-radius: 4px;
+    right: -17px;
+    top: 49%;
+    margin: -29px 0px 0 0;
+    transform: scale(0.5);
+}
+
+.card_Details_wrap table td {
+    position: relative;
+    border: none;
+}
+
+.card_Details_wrap table td:before {
+    content: "";
+    pointer-events: none;
+    box-sizing: border-box;
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    left: 0;
+    top: 0;
+    border: 1px solid #f2f4f7;
+    -webkit-transform: scale(0.5);
+    -webkit-transform-origin: 0 0;
+    transform: scale(0.5);
+    transform-origin: 0 0;
+}

@@ -8,8 +8,8 @@ import org.apache.ibatis.annotations.*;
  */
 public interface CustomerDao {
 
-    @Insert("insert into `customer`(`name`,`phone`,`address`, `token`, `created`,`updated`) " +
-            "values(#{name}, #{phone}, #{address}, #{token}, now(), now())")
+    @Insert("insert into `customer`(`name`,`phone`,`address`, `token`, `openid`, `created`,`updated`) " +
+            "values(#{name}, #{phone}, #{address}, #{token}, #{openId}, now(), now())")
     @SelectKey(statement = "SELECT LAST_INSERT_ID() as id", keyProperty = "id", before = false, resultType = Integer.class)
     boolean addCustomer(CustomerDO customerDO);
 
@@ -25,6 +25,11 @@ public interface CustomerDao {
     @Update("update `customer` set `name` = #{name}, phone = #{phone}, address = #{address}, `updated` = now() where id = #{id}")
     void updateCustomer(CustomerDO customerDO);
 
-    @Update("update `customer` set `token` = #{token}, `updated` = now() where phone = #{mobile}")
-    void updateCustomerToken(@Param("mobile") String mobile, @Param("token") String token);
+    @Update({"<script>", "update `customer` set `token` = #{token}, ",
+            "<if test='openId != null'> `openId` = #{openId} ,</if> ",
+            "`updated` = now() where phone = #{mobile}", "</script>"})
+    void updateCustomerToken(@Param("mobile") String mobile, @Param("token") String token, @Param("openId") String openId);
+
+    @Select("select * from `customer` where openId = #{openId}")
+    CustomerDO getCustomerByOpenId(String openId);
 }

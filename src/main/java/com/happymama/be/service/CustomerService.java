@@ -36,12 +36,16 @@ public class CustomerService {
         return customerDao.getCustomerByToken(token);
     }
 
+    public CustomerDO getCustomerByOpenId(String openId) {
+        return customerDao.getCustomerByOpenId(openId);
+    }
+
 
     public void updateCustomer(CustomerDO customerDO) {
         customerDao.updateCustomer(customerDO);
     }
 
-    public void updateCustomerTokenByPhone(String mobile, String token) {
-        customerDao.updateCustomerToken(mobile, token);
+    public void updateCustomerTokenByPhone(String mobile, String token, String openId) {
+        customerDao.updateCustomerToken(mobile, token, openId);
     }
 }
