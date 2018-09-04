@@ -355,7 +355,7 @@
             <id>production</id>
             <properties>
                 <staging>dev</staging>
-                <mysql.host>127.0.0.1</mysql.host>
+                <mysql.host>118.190.150.214</mysql.host>
                 <mysql.database>happymama</mysql.database>
                 <mysql.port>3306</mysql.port>
                 <mysql.username>root</mysql.username>

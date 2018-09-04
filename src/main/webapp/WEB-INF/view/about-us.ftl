@@ -7,13 +7,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description"
-          content="北京快乐妈咪科技有限公司是由一群有爱心有激情的奶爸与月嫂创始建设，着力搭建一个孕妈和月嫂的深度交流平台。目前的核心服务包括培训、月嫂、育儿嫂、催乳师、产后护理、小儿推拿、月子餐等母婴服务的预定与咨询，用户可结合自身实际情况，分价格、分地域、分年限进行快速搜索，可以周为单位进行服务评价、付款，是专业且具有保障的孕妈社区。"/>
+          content="北京新手妈咪科技有限公司是由一群有爱心有激情的奶爸与月嫂创始建设，着力搭建一个孕妈和月嫂的深度交流平台。目前的核心服务包括培训、月嫂、育儿嫂、催乳师、产后护理、小儿推拿、月子餐等母婴服务的预定与咨询，用户可结合自身实际情况，分价格、分地域、分年限进行快速搜索，可以周为单位进行服务评价、付款，是专业且具有保障的孕妈社区。"/>
     <meta name="aplus-xplug" content="NONE">
-    <meta name="keyword" content="月嫂,培训,月嫂培训,育儿嫂,催乳师,小儿推拿师,产后恢复,月子膳食,营养师,快乐妈咪,推荐工作,高薪,家政"/>
+    <meta name="keyword" content="月嫂,培训,月嫂培训,育儿嫂,催乳师,小儿推拿师,产后恢复,月子膳食,营养师,新手妈咪,推荐工作,高薪,家政"/>
     <meta name="baidu-site-verification" content="71R86N1GBt" />
     <meta name="applicable-device" content="mobile">
 
-    <title>北京快乐妈咪科技有限公司</title>
+    <title>北京新手妈咪科技有限公司</title>
     <script type="text/javascript" src="${base}/js/jquery.js"></script>
     <script type="text/javascript" src="${base}/js/jquery.cookie.js"></script>
     <script type="text/javascript" src="${base}/js/zepto.min.js"></script>
@@ -62,22 +62,22 @@
                     <div class="col-md-7">
                         <div class="gt_who_we_wrap default_width">
                             <h5>我们是谁？</h5>
-                            <h4>北京快乐妈咪科技有限公司</h4>
+                            <h4>北京新手妈咪科技有限公司</h4>
                             <hr style="height:3px;border:none;border-top:3px ridge black;" />
                             <p>
-                                &nbsp;&nbsp;&nbsp;&nbsp;北京快乐妈咪科技有限公司是由资深月嫂与爱心奶爸创建而成。服务内容包括培训、月嫂、育儿嫂、催乳师、产后护理、小儿推拿、月子餐等母婴服务的预定与咨询，用户可结合自身实际情况，分价格、分地域、分年限进行快速搜索， 可以周为单位进行服务评价、付款，是专业且具有保障的孕妈公司。
+                                &nbsp;&nbsp;&nbsp;&nbsp;北京新手妈咪科技有限公司是由资深月嫂与爱心奶爸创建而成。服务内容包括培训、月嫂、育儿嫂、催乳师、产后护理、小儿推拿、月子餐等母婴服务的预定与咨询，用户可结合自身实际情况，分价格、分地域、分年限进行快速搜索， 可以周为单位进行服务评价、付款，是专业且具有保障的孕妈公司。
                             </p>
                             <p>
-                                &nbsp;&nbsp;&nbsp;&nbsp;快乐妈咪对月嫂进行严格把关，需通过笔试、面试、实际操作和心理测试等四道关卡，并接受快乐妈咪的定期回访，以客户评价为基础进行星级评定，与月嫂薪资直接挂钩。
+                                &nbsp;&nbsp;&nbsp;&nbsp;新手妈咪对月嫂进行严格把关，需通过笔试、面试、实际操作和心理测试等四道关卡，并接受新手妈咪的定期回访，以客户评价为基础进行星级评定，与月嫂薪资直接挂钩。
                             </p>
                             <p>
-                                &nbsp;&nbsp;&nbsp;&nbsp;快乐妈咪不仅输送月嫂，还自己培养月嫂。我们开展月嫂、催乳师、育儿师、催乳师、产后护理、小儿推拿、月子餐的资格培训。我们有严格专业的培训体系，拥有整套的培训课程，从理论培训到技能培训，从实际操作到工作实习全部有严格的培训标准。
+                                &nbsp;&nbsp;&nbsp;&nbsp;新手妈咪不仅输送月嫂，还自己培养月嫂。我们开展月嫂、催乳师、育儿师、催乳师、产后护理、小儿推拿、月子餐的资格培训。我们有严格专业的培训体系，拥有整套的培训课程，从理论培训到技能培训，从实际操作到工作实习全部有严格的培训标准。
                             </p>
                             <p>
-                                &nbsp;&nbsp;&nbsp;&nbsp;快乐妈咪积极引入第三方保障与扩展服务系统，与人保PICC达成独家战略合作，一个月百万保额，为妈妈、孩子、月嫂提供更完善的保障。
+                                &nbsp;&nbsp;&nbsp;&nbsp;新手妈咪积极引入第三方保障与扩展服务系统，与人保PICC达成独家战略合作，一个月百万保额，为妈妈、孩子、月嫂提供更完善的保障。
                             </p>
                             <p>
-                                &nbsp;&nbsp;&nbsp;&nbsp;快乐妈咪以做中国资深母婴服务专家为目标，全心全意为中国母婴提供高端专业的服务！
+                                &nbsp;&nbsp;&nbsp;&nbsp;新手妈咪以做中国资深母婴服务专家为目标，全心全意为中国母婴提供高端专业的服务！
                             </p>
                             <ul class="row">
                                 <li class="col-md-6 col-sm-6">
@@ -176,7 +176,7 @@
         <div class="gt_content_wrap">
             <div class="gt_hdg_1 default_width">
                 <h3>团队成员</h3>
-                <p>快乐妈咪是一个极富创造力和凝聚力的团队，整个团队致力于「让每个新生儿得到最优质的服务」，为孕妈打造全新体验。</p>
+                <p>新手妈咪是一个极富创造力和凝聚力的团队，整个团队致力于「让每个新生儿得到最优质的服务」，为孕妈打造全新体验。</p>
             </div>
             <!--Course Grid Wrap Start-->
             <section class="gt_courses_bg">
