@@ -88,7 +88,7 @@
 
             <div data-v-c2da3850="" class="submit-button">下一步</div>
             <div data-v-c2da3850="" class="agreement-wrap">
-                点击“下一步”,即同意<a data-v-c2da3850="" href="${base}/app/to/user/notice.do">《新手妈咪用户协议》</a>
+                点击“下一步”,即同意<a data-v-c2da3850="" href="${base}/app/to/user/notice.do">《快乐妈咪用户协议》</a>
             </div>
         </div>
     </form>
