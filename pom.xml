@@ -355,12 +355,12 @@
             <id>production</id>
             <properties>
                 <staging>dev</staging>
-                <mysql.host>118.190.150.214</mysql.host>
+                <mysql.host>172.31.159.74</mysql.host>
                 <mysql.database>happymama</mysql.database>
                 <mysql.port>3306</mysql.port>
                 <mysql.username>root</mysql.username>
                 <mysql.password>Viqxkj521</mysql.password>
-                <cache.host>127.0.0.1</cache.host>
+                <cache.host>172.31.159.74</cache.host>
                 <cache.port>6379</cache.port>
                 <cache.password></cache.password>
                 <quartz.autoStartup>false</quartz.autoStartup>

@@ -38,7 +38,9 @@ public class WXPayConfig {
         return "2314913f76436e8d1e55f9a48dca9a9b";
     }
 
-
+    public static String getToken() {
+        return "klmami";
+    }
     /**
      * 获取商户证书内容
      *

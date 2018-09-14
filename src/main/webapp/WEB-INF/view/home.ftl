@@ -177,67 +177,10 @@
 
 
         <ul class="list_pet">
-        <#list pageView.records as employee>
-            <li class="js-tracker ">
-                <a href="${base}/employee/${employee.id}/detail.do">
-                    <div class="picbox">
-                        <#if (employee.photo == "")>
-                            <img src="${base}/imgs/default.jpg"
-                                 height="80" width="80"/> </#if>
-                        <#if (employee.photo != "")>
-                            <img
-                                    src="/imgs/${employee.photo}" height="80"
-                                    width="80"/> </#if>
-                    </div>
-                    <div class="list-main">
-                        <div class="tit">
-                            <p class="title_name">${employee.name}</p>
-                            <span class="title_tag">金牌月嫂</span>
-                        </div>
 
-                        <div class="evaluate-info clearfix">
-                            <#list employee.courseOrderDOs as courseOrderDO>
-                                <div class="sell-info">${courseOrderDO.courseName}</div>
-                            </#list>
-                        </div>
-
-                        <div class="evaluate-info clearfix">
-                            <div class="score">
-                                <span>评分</span><span>${employee.score}星</span>
-                            </div>
-                            <div class="sell-info commentTags">
-                            </div>
-                        </div>
-
-                        <div class="evaluate-info clearfix">
-                            <div class="sell-info guarantee" style="">
-                                <span><i></i></span>
-                            </div>
-                        </div>
-
-                        <div class="price-wrap">
-                            <div class="price clearfix">
-                                <div class="price-num clearfix">
-                          <span class="pri_now">
-                            <span class="rmb">¥</span>
-                                                          <span> ${employee.salary}</span>
-                                                      </span>
-                                </div>
-                                <span class="price-icon pri_deposit">可优惠</span>
-                            </div>
-                        </div>
-                        <div class="store-info clearfix">
-                            <div class="info">
-                            ${employee.introduce}
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </li>
-        </#list>
         </ul>
 
-        <a href="${base}/employee/list.do" class="cnxh_over"><span>查看更多</span></a>
+        <#--<a href="${base}/employee/list.do" class="cnxh_over"><span>查看更多</span></a>-->
 
     </div>
 
