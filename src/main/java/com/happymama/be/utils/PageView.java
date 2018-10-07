@@ -16,7 +16,7 @@ public class PageView<T> {
 	/** 总记录数 **/
 	private long totalrecord;
 	/** 页码数量 **/
-	private int pagecode = 10;
+	private int pagecode = 5;
 	/** 要获取记录的开始索引 **/
 	public int getFirstResult() {
 		return (this.currentpage-1)*this.maxresult;

@@ -59,7 +59,7 @@
 
                     <li class="page__item">
                         <a class="item__href"
-                           href="${base}/app/to/babysitter.do?loc=home">
+                           href="${base}/to/yuersao/detail.do">
                             <div class="item__avatar">
                                 <div class="active hide"></div>
                                 <img src="${base}/images/icon2.png"

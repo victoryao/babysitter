@@ -147,4 +147,9 @@ public class NavController {
         return "/shop/yuesao_detail";
     }
 
+    @RequestMapping("/to/yuersao/detail")
+    public String toYuErSaoDetailPage() {
+        return "/shop/yuersao_detail";
+    }
+
 }
