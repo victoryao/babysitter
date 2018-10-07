@@ -14,7 +14,8 @@
 
     <link rel="stylesheet"
           href="//static.daojia.com/assets/project/universal_pay/styles/pay.e6d0250731944b2a599f889655c3d93a.css">
-
+    <link rel="shortcut icon" type="image/x-icon"
+          href="https://happymama.oss-cn-beijing.aliyuncs.com/bitbug_favicon.ico">
 </head>
 
 

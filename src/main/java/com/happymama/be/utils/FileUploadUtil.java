@@ -40,13 +40,22 @@ public class FileUploadUtil {
 
 
     public static void main(String[] args) {
-        File file = new File("/Users/yaoqiang/Desktop/banner2.jpg");
-        try {
-            uploadImg("banner2.jpg", new FileInputStream(file));
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
+        File file = new File("/Users/yaoqiang/imgs");
+        File[] files = file.listFiles();
+        for (File file2 : files) {
+            System.out.println(file2.getName());
+            try {
+                uploadImg(file2.getName(), new FileInputStream(file2));
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
         }
-
-        System.out.println(getImgUrl("banner2.jpg"));
+//        try {
+//            uploadImg("banner2.jpg", new FileInputStream(file));
+//        } catch (FileNotFoundException e) {
+//            e.printStackTrace();
+//        }
+//
+//        System.out.println(getImgUrl("banner2.jpg"));
     }
 }

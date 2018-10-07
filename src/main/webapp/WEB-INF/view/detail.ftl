@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8" />
     <title>商品详情页面</title>
+    <link rel="shortcut icon" type="image/x-icon"
+          href="https://happymama.oss-cn-beijing.aliyuncs.com/bitbug_favicon.ico">
     <meta http-equiv="content-type" content="text/html;charset=utf-8" />
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1" />
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui" />

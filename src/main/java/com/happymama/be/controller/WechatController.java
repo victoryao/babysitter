@@ -2,7 +2,7 @@ package com.happymama.be.controller;
 
 import com.happymama.be.exception.AesException;
 import com.happymama.be.service.WechatService;
-import com.happymama.be.utils.WXPublicUtils;
+import org.apache.commons.lang.StringUtils;
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
 import org.dom4j.Element;
@@ -27,7 +27,7 @@ public class WechatController {
     private WechatService wechatService;
 
     @RequestMapping("/user/send/message")
-    public void sendMessage(
+    public String sendMessage(
             @RequestBody(required = false) String body,
             HttpServletRequest request,
             ModelMap modelMap) throws AesException, UnsupportedEncodingException, DocumentException {
@@ -38,19 +38,26 @@ public class WechatController {
         String msgNonce = request.getParameter("nonce");
         String echostr = request.getParameter("echostr");
         System.out.println("body:" + body);
-        document = saxReader.read(new ByteArrayInputStream(body.getBytes("UTF-8")));
-        Element rootElt = document.getRootElement();
-        String openId = rootElt.elementText("FromUserName");
-        String eventKey = rootElt.elementText("EventKey");
-        System.out.println("FromUserName===" + openId);
-        System.out.println("eventKey===" + eventKey);
-//        if (WXPublicUtils.verifyUrl(msgSignature, msgTimestamp, msgNonce)) {
-//            return echostr;
-//        }
-        if ("123".equals(eventKey) || ("qrscene_123".equals(eventKey))) {
-            wechatService.sendMessage(openId);
+        System.out.println("echostr:" + echostr);
+        if (StringUtils.isNotBlank(body)) {
+            document = saxReader.read(new ByteArrayInputStream(body.getBytes("UTF-8")));
+            Element rootElt = document.getRootElement();
+            String openId = rootElt.elementText("FromUserName");
+            String eventKey = rootElt.elementText("EventKey");
+            System.out.println("FromUserName===" + openId);
+            System.out.println("eventKey===" + eventKey);
+            if ("123".equals(eventKey) || ("qrscene_123".equals(eventKey))) {
+                wechatService.sendMessage(openId);
+            }
         }
+
         wechatService.menuCreate();
+
+//        if (WXPublicUtils.verifyUrl(msgSignature, msgTimestamp, msgNonce)) {
+        return echostr;
+//        }
+
+
     }
 
     @RequestMapping("/user/qrcode")

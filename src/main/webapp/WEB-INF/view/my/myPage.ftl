@@ -16,7 +16,8 @@
     <link rel="stylesheet" type="text/css" href="${base}/css/animate.css"/>
     <link rel="stylesheet" href="${base}/css/swiper.min.css">
     <script src="${base}/js/swiper.min.js"></script>
-
+    <link rel="shortcut icon" type="image/x-icon"
+          href="https://happymama.oss-cn-beijing.aliyuncs.com/bitbug_favicon.ico">
     <link rel="stylesheet" href="${base}/css/frame_338829c.css">
     <link rel="stylesheet" href="${base}/css/common_16f528f.css">
     <link rel="stylesheet" href="${base}/css/home_f587618.css">

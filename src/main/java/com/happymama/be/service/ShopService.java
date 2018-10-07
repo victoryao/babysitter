@@ -26,6 +26,10 @@ public class ShopService {
         return shopDao.getShopActivityById(id);
     }
 
+    public ShopOrderDO getShopOrderByOrderId(String orderId) {
+        return shopDao.getShopOrderByOrderId(orderId);
+    }
+
     public List<ShopActivityDO> getShopActivityByMobile(String mobile) {
         return shopDao.getShopActivityByMobile(mobile);
     }

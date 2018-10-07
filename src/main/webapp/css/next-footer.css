@@ -1,0 +1,136 @@
+*, :after, :before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-tap-highlight-color: transparent;
+    outline: 0
+}
+
+.foo_s2 {
+    padding: 10px 10px 10px 12px;
+    height: 64px;
+    text-align: center;
+    display: flex;
+    display: -webkit-flex
+}
+
+.foo_s2 a {
+    display: block;
+    margin: 0 4px 0 0
+}
+
+.foo_s2 .btn_min {
+    position: relative;
+    -webkit-box-flex: 0;
+    -moz-flex-grow: 0;
+    -webkit-flex-grow: 0;
+    flex-grow: 0;
+    margin-top: -4px;
+    width: 52px;
+    height: 44px;
+    font-size: 12px;
+    color: #525A66;
+    line-height: 20px;
+    font-family: PingFangSC-Regular
+}
+
+.foo_s2 .btn_min:before {
+    display: block;
+    content: "";
+    margin: 6px auto 0;
+    width: 22px;
+    height: 22px;
+    background: url("https://happymama.oss-cn-beijing.aliyuncs.com/icons_shop_con_3884166.png") no-repeat;
+    background-size: 22px
+}
+
+.foo_s2 .btn_contact:before {
+    background-position: 0 -0
+}
+
+.foo_s2 .btn_contact:active:before, .foo_s2 .btn_contact .btn_contact_ed:before {
+    background-position: 0 -22px
+}
+
+.foo_s2 .btn_shop:before {
+    background-position: 0 -44px
+}
+
+.foo_s2 .btn_shop:active:before, .foo_s2 .btn_shop_ed:before {
+    background-position: 0 -66px
+}
+
+.foo_s2 .btn_favorites:before {
+    background-position: 0 -88px
+}
+
+.foo_s2 .btn_favorites:active:before, .foo_s2 .btn_favorites_ed:before {
+    background-position: 0 -110px
+}
+
+.foo_s2 .btn_favorites_ani:before {
+    animation: ani_favorites .5s forwards;
+    -webkit-animation: ani_favorites .5s forwards
+}
+
+.foo_s2 .btn_order {
+    -webkit-box-flex: 1;
+    -moz-flex-grow: 1;
+    -webkit-flex-grow: 1;
+    flex-grow: 1;
+    margin-left: 13px;
+    margin-right: 0;
+    height: 44px;
+    line-height: 44px;
+    background-color: #E6454A;
+    color: #fff;
+    font-size: 17px;
+    border-radius: 4px
+}
+
+.foo_s2 .btn_order:active {
+    background-color: #c13a3e;
+    color: #d6d6d6
+}
+
+.foo_s2 .btn_order_disable {
+    background-color: #ee9094;
+    color: #f4b5b8
+}
+
+.foo_s2 .btn_order_disable:active {
+    background-color: #ee9094;
+    color: #f4b5b8
+}
+
+.foo_s2 .btn_order_gray {
+    background-color: #E1E5EB;
+    color: #7A8899
+}
+
+.foo_s2 .btn_order_gray:active {
+    background-color: #E1E5EB;
+    color: #7A8899
+}
+
+.footbar a.btn_go {
+    display: block;
+    font-size: 12px;
+    width: 100px;
+    margin: 10px auto;
+    color: #9aa4b2;
+    border: 1px solid #d3d8e0;
+    border-radius: 40px;
+    height: 25px;
+    line-height: 23px;
+    text-align: center
+}
+
+.footbar_h {
+    height: 75px
+}
+
+.footbar_nofix {
+    position: static
+}

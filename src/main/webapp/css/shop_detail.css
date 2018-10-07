@@ -611,25 +611,13 @@ button.swiper-pagination-bullet {
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    -webkit-user-select: none
+    margin: 0; /*! padding:0; *//*! -webkit-user-select:none */
 }
 
-*, :after, :before {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    -webkit-tap-highlight-color: transparent;
-    -webkit-tap-highlight-color: transparent;
-    outline: 0
+*, :after, :before { /*! -webkit-box-sizing:border-box; *//*! -moz-box-sizing:border-box; *//*! box-sizing:border-box; *//*! -webkit-tap-highlight-color:transparent; *//*! -webkit-tap-highlight-color:transparent; *//*! outline:0 */
 }
 
-body {
-    font-size: 14px;
-    line-height: 20px;
-    font-family: PingFang-SC-Regular, "Helvetica Neue", STHeiti, "Microsoft Yahei", Tahoma, Simsun, sans-serif;
-    color: #292d33;
+body { /*! font-size:14px; *//*! line-height:20px; *//*! font-family:PingFang-SC-Regular,"Helvetica Neue",STHeiti,"Microsoft Yahei",Tahoma,Simsun,sans-serif; *//*! color:#292d33; */
     background: #f1f2f6
 }
 

@@ -5,10 +5,12 @@ import com.alibaba.fastjson.JSONObject;
 import com.google.common.collect.Maps;
 import com.happymama.be.cache.impl.SimpleRedisClientImpl;
 import com.happymama.be.enums.PayStatusEnum;
+import com.happymama.be.model.CouponDO;
 import com.happymama.be.model.PayModel;
 import com.happymama.be.model.ShopOrderDO;
 import com.happymama.be.pay.WXPay;
 import com.happymama.be.pay.WXPayConfig;
+import com.happymama.be.service.CouponService;
 import com.happymama.be.service.PayService;
 import com.happymama.be.service.ShopService;
 import com.happymama.be.service.SmsService;
@@ -17,6 +19,7 @@ import com.happymama.be.utils.MD5Utils;
 import com.happymama.be.utils.Utils;
 import com.happymama.be.utils.XMLUtil;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
@@ -35,6 +38,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.nio.charset.Charset;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -54,6 +58,8 @@ public class RestController {
     private ShopService shopService;
     @Resource
     private PayService payService;
+    @Resource
+    private CouponService couponService;
 
     @RequestMapping(value = "shop/order/verify", method = RequestMethod.POST, produces = "text/html;charset=UTF-8;")
     public String orderVerify(@RequestParam String mobile, @RequestParam String code) {
@@ -130,6 +136,11 @@ public class RestController {
 
             if (payService.process(map)) {
                 shopService.updateShopOrderStatusByOrderId(outTradeNo, PayStatusEnum.PAIED.getValue());
+                ShopOrderDO shopOrderDO = shopService.getShopOrderByOrderId(outTradeNo);
+                List<CouponDO> couponDOS = couponService.getCouponByMobileActivityId(shopOrderDO.getMobile(), shopOrderDO.getActivityId());
+                if (CollectionUtils.isNotEmpty(couponDOS)) {
+                    couponService.useCoupon(couponDOS.get(0).getId());
+                }
                 return WXResponse.wxPaySuccess();
             }
 

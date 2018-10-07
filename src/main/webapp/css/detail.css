@@ -629,7 +629,7 @@ body {
     line-height: 20px;
     font-family: PingFang-SC-Regular, "Helvetica Neue", STHeiti, "Microsoft Yahei", Tahoma, Simsun, sans-serif;
     color: #292d33;
-    background: #f1f2f6
+    /*background: #f1f2f6*/
 }
 
 a {
@@ -2410,7 +2410,7 @@ i.jingh {
     margin: 6px auto 0;
     width: 22px;
     height: 22px;
-    background: url(../../page/detail/img/icons_shop_con_3884166.png) no-repeat;
+    background: url("https://happymama.oss-cn-beijing.aliyuncs.com/icons_shop_con_3884166.png") no-repeat;
     background-size: 22px
 }
 

@@ -11,7 +11,7 @@ public class WXPayConfig {
      * @return App ID
      */
     public  static String getAppID() {
-        return "wx679b7a7176d86d5b";
+        return "wx408ebb6c68b9d640";
     }
 
 
@@ -21,7 +21,7 @@ public class WXPayConfig {
      * @return Mch ID
      */
     public static String getMchID() {
-        return "1512640631";
+        return "1515434011";
     }
 
 
@@ -35,11 +35,11 @@ public class WXPayConfig {
     }
 
     public static String getAPPKey() {
-        return "2314913f76436e8d1e55f9a48dca9a9b";
+        return "d2865be3fd907703cfcbe3126f8ca63f";
     }
 
     public static String getToken() {
-        return "klmami";
+        return "newmami";
     }
     /**
      * 获取商户证书内容

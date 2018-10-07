@@ -31,11 +31,12 @@ public class ReserveController {
             @RequestParam String name,
             @RequestParam String phone,
             @RequestParam(required = false, defaultValue = "0") int type,
+            @RequestParam(required = false, defaultValue = "0") int eId,
             @RequestParam(required = false, defaultValue = "") String address,
             @RequestParam(required = false, defaultValue = "") String memo,
             @RequestParam(required = false, defaultValue = "") String recommendMobile,
             ModelMap modelMap) {
-        OrderDO orderDO = orderService.addOrder(name, phone, address, type, memo, recommendMobile);
+        OrderDO orderDO = orderService.addOrder(name, phone, address, type, memo, eId);
 
         if (org.apache.commons.lang.StringUtils.isNotBlank(recommendMobile)) {
             CustomerDO recommendCustomer = CustomerDO.builder().name(recommendMobile).phone(recommendMobile).address(org.apache.commons.lang.StringUtils.EMPTY).build();
@@ -43,6 +44,7 @@ public class ReserveController {
             RecommendDO recommendDO = RecommendDO.builder().orderId(orderDO.getId()).price(0).customerId(recommendCustomer.getId()).build();
             recommendService.addRecommend(recommendDO);
         }
+
         return "/common/success";
     }
 

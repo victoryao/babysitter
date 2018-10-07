@@ -1,32 +1,36 @@
 <#assign base=request.contextPath />
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" style="font-size: 19px;">
 <head>
     <base id="base" href="${base}">
+    <link rel="shortcut icon" type="image/x-icon"
+          href="https://happymama.oss-cn-beijing.aliyuncs.com/bitbug_favicon.ico">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <meta name="description"
-          content="北京快乐妈咪科技有限公司是由一群有爱心有激情的奶爸与月嫂创始建设，着力搭建一个孕妈和月嫂的深度交流平台。目前的核心服务包括培训、月嫂、育儿嫂、催乳师、产后护理、小儿推拿、月子餐等母婴服务的预定与咨询，用户可结合自身实际情况，分价格、分地域、分年限进行快速搜索，可以周为单位进行服务评价、付款，是专业且具有保障的孕妈社区。"/>
+          content="北京新手妈咪科技有限公司是由一群有爱心有激情的奶爸与月嫂创始建设，着力搭建一个孕妈和月嫂的深度交流平台。目前的核心服务包括培训、月嫂、育儿嫂、催乳师、产后护理、小儿推拿、月子餐等母婴服务的预定与咨询，用户可结合自身实际情况，分价格、分地域、分年限进行快速搜索，可以周为单位进行服务评价、付款，是专业且具有保障的孕妈社区。"/>
     <meta name="aplus-xplug" content="NONE">
-    <meta name="keyword" content="月嫂,培训,月嫂培训,育儿嫂,催乳师,小儿推拿师,产后恢复,月子膳食,营养师,快乐妈咪,推荐工作,高薪,家政"/>
+    <meta name="keyword" content="月嫂,培训,月嫂培训,育儿嫂,催乳师,小儿推拿师,产后恢复,月子膳食,营养师,新手妈咪,推荐工作,高薪,家政"/>
     <meta name="baidu-site-verification" content="71R86N1GBt"/>
-
-    <title>快乐妈咪-${employeeDO.name}阿姨简历</title>
+    <title>新手妈咪-${employeeDO.name}阿姨简历</title>
     <script type="text/javascript" src="${base}/js/jquery.js"></script>
     <script type="text/javascript" src="${base}/js/jquery.cookie.js"></script>
-    <script type="text/javascript" src="${base}/js/rem.js"></script>
+    <#--<script type="text/javascript" src="${base}/js/rem.js"></script>-->
     <script type="text/javascript" src="${base}/js/swiper.min.js"></script>
+    <link rel="stylesheet" href="${base}/css/normalize.min.css">
+    <link rel="stylesheet" href="${base}/css/promote-style.css">
     <link rel="stylesheet" href="${base}/css/swiper.min.css">
     <link rel="stylesheet" href="${base}/css/resume.css">
     <link rel="stylesheet" href="${base}/css/ucenter.css">
     <link rel="stylesheet" type="text/css" href="${base}/css/main.im.css"/>
     <link rel="stylesheet" href="${base}/css/common_16f528f.css">
-    <link rel="stylesheet" href="${base}/css/footer.css">
+    <link rel="stylesheet" href="${base}/css/next-footer.css">
     <link rel="stylesheet" href="${base}/css/frame_338829c.css">
     <link rel="stylesheet" href="${base}/css/detail.css">
     <link rel="stylesheet" href="${base}/css/app.css">
+
 
     <script>
         $(document).ready(function () {
@@ -45,7 +49,7 @@
 </head>
 <body>
 <div class="resume">
-    <div align="center"><img src="/imgs/${employeeDO.photo}" alt="" width="250px" height="250px"></div>
+    <div align="center"><img src="${employeeDO.photo}" alt="" width="250px" height="250px"></div>
     <div class="field">
         <h1 class="title title_phone stonefont">${employeeDO.name}（女）
         </h1>
@@ -173,46 +177,33 @@
     </div>
 
 </div>
-<#include "/common/foot.ftl" >
 
-<script>
-    $(document).ready(function () {
-        /*调起大图 S*/
-        var mySwiper = new Swiper('.swiper-container2', {
-            loop: false,
-            pagination: '.swiper-pagination2',
-        })
-        $("#list").on("click", ".post img",
-                function () {
-                    var imgBox = $(this).parents(".post").find("img");
-                    var i = $(imgBox).index(this);
-                    $(".big_img .swiper-wrapper").html("")
+<!-- 底部栏 -->
+<div class="footbar">
+    <div class="foo_s2">
+        <a href="" class="btn_min btn_contact modal__trigger" data-modal="#modal2">联系客服</a>
 
-                    for (var j = 0, c = imgBox.length; j < c; j++) {
-                        $(".big_img .swiper-wrapper").append('<div class="swiper-slide"><div class="cell"><img src="' + imgBox.eq(j).attr("src") + '" / ></div></div>');
-                    }
-                    mySwiper.updateSlidesSize();
-                    mySwiper.updatePagination();
-                    $(".big_img").css({
-                        "z-index": 1001,
-                        "opacity": "1"
-                    });
-                    mySwiper.slideTo(i, 0, false);
-                    return false;
-                });
+        <a href="${base}/app/to/babysitter.do?eId=${employeeDO.id}&loc=home"
+           class="btn_order" id="nextstep">
+            立即预约
+        </a>
+    </div>
+</div>
 
-        $(".big_img").on("click",
-                function () {
-                    $(this).css({
-                        "z-index": "-1",
-                        "opacity": "0"
-                    });
-
-                });
-    });
-    /*调起大图 E*/
-
-
-</script>
+<div id="modal2" class="modal modal--align-top modal__bg" role="dialog" aria-hidden="true">
+    <div class="modal__dialog">
+        <div class="modal__content">
+            <h2 align="center">长按二维码加小助理咨询</h2>
+            <p><img src="${base}/extra-images/kefu.jpeg" alt=""/></p>
+            <a href="" class="modal__close demo-close">
+                <svg class="" viewBox="0 0 24 24">
+                    <path d="M19 6.41l-1.41-1.41-5.59 5.59-5.59-5.59-1.41 1.41 5.59 5.59-5.59 5.59 1.41 1.41 5.59-5.59 5.59 5.59 1.41-1.41-5.59-5.59z"/>
+                    <path d="M0 0h24v24h-24z" fill="none"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="${base}/js/index.js"></script>
 </body>
 </html>

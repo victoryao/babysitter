@@ -14,7 +14,7 @@ ul, ol {
 
 body {
     display: -webkit-box;
-    background: #f8fafb;
+    /*background: #f8fafb;*/
     -webkit-box-orient: vertical;
     -webkit-box-align: stretch
 }

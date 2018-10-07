@@ -4,6 +4,8 @@
 <head>
     <base id="base" href="${base}">
     <meta charset="utf-8">
+    <link rel="shortcut icon" type="image/x-icon"
+          href="https://happymama.oss-cn-beijing.aliyuncs.com/bitbug_favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
     <title>商家订单列表</title>
     <link href="${base}/css/djapp.css" rel="stylesheet" type="text/css"/>

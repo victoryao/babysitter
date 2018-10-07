@@ -4,17 +4,16 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.google.common.collect.Maps;
 import com.happymama.be.cache.impl.SimpleRedisClientImpl;
-import com.happymama.be.model.CustomerDO;
-import com.happymama.be.model.PayModel;
-import com.happymama.be.model.ShopActivityDO;
-import com.happymama.be.model.ShopOrderDO;
+import com.happymama.be.model.*;
 import com.happymama.be.pay.WXPay;
 import com.happymama.be.pay.WXPayConfig;
 import com.happymama.be.pay.WXPayUtil;
+import com.happymama.be.service.CouponService;
 import com.happymama.be.service.CustomerService;
 import com.happymama.be.service.ShopService;
 import com.happymama.be.utils.Utils;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.collections.CollectionUtils;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
@@ -30,6 +29,7 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.nio.charset.Charset;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
@@ -48,6 +48,8 @@ public class PayController {
     private SimpleRedisClientImpl simpleRedisClient;
     @Resource
     private ShopService shopService;
+    @Resource
+    private CouponService couponService;
 
     private static final String OPENID_KEY = "openid_";
 
@@ -94,6 +96,11 @@ public class PayController {
         String orderId = Utils.getId();
 
         String nonce = String.valueOf(System.currentTimeMillis());
+        int totalFee = shopActivityDO.getRealPrice();
+        List<CouponDO> couponDOS = couponService.getCouponByMobileActivityId(customerDO.getPhone(), shopActivityDO.getId());
+        if (CollectionUtils.isNotEmpty(couponDOS)) {
+            totalFee = shopActivityDO.getRealPrice() - couponDOS.get(0).getPrice();
+        }
 
         Map<String, String> reqData = Maps.newHashMap();
         reqData.put("appid", WXPayConfig.getAppID());
@@ -103,10 +110,10 @@ public class PayController {
         reqData.put("sign_type", "MD5");
         reqData.put("body", shopActivityDO.getName());
         reqData.put("out_trade_no", orderId);
-        reqData.put("total_fee", String.valueOf(shopActivityDO.getRealPrice()));
+        reqData.put("total_fee", String.valueOf(totalFee));
         reqData.put("spbill_create_ip", ip);
         reqData.put("trade_type", "JSAPI");
-        reqData.put("notify_url", "http://www.klmami.cn/app/pay/wx/callback.do");
+        reqData.put("notify_url", "http://www.newmami.cn/app/pay/wx/callback.do");
         reqData.put("openid", openId);
         Map map = Maps.newHashMap();
 
@@ -123,7 +130,7 @@ public class PayController {
         String prepayId = map.get("prepay_id").toString();
 
         shopService.addShopOrder(ShopOrderDO.builder().activityId(shopActivityDO.getId()).customerId(customerDO.getId())
-                .mobile(customerDO.getPhone()).price(shopActivityDO.getRealPrice()).orderId(orderId)
+                .mobile(customerDO.getPhone()).price(totalFee).orderId(orderId)
                 .code(shopActivityDO.getId() + "-" + Utils.generateCode(6)).prepayId(prepayId).build());
 
         String sign = WXPayUtil.MD5("appId=" + WXPayConfig.getAppID() + "&nonceStr=" + nonce + "&package=prepay_id="

@@ -23,13 +23,13 @@ public class OrderService {
         return orderDao.getOrderCount();
     }
 
-    public OrderDO addOrder(String name, String phone, String address, int type, String memo, String recommendMobile) {
+    public OrderDO addOrder(String name, String phone, String address, int type, String memo, int eId) {
 
         //客户逻辑处理
         CustomerDO customerDO = CustomerDO.builder().name(name).phone(phone).address(address).build();
         customerDO = customerService.addCustomer(customerDO);
 
-        OrderDO orderDO = OrderDO.builder().employeeId(0).customerId(customerDO.getId()).price(0).type(type).status(0)
+        OrderDO orderDO = OrderDO.builder().employeeId(eId).customerId(customerDO.getId()).price(0).type(type).status(0)
                 .memo(memo).realPrice(0).recommendPrice(0).build();
         orderDao.addOrder(orderDO);
 

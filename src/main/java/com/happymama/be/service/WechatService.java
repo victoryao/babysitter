@@ -56,24 +56,24 @@ public class WechatService {
                 "\"button\": [{" +
                 "\"type\": \"view\"," +
                 "\"name\": \"预约服务\"," +
-                "\"url\": \"http://klmami.cn/app\"" +
+                "\"url\": \"http://newmami.cn/app\"" +
                 "}," +
                 "{" +
                 "\"name\": \"月嫂服务\"," +
                 "\"sub_button\": [{" +
                 "\"type\": \"view\"," +
                 "\"name\": \"月嫂推荐\"," +
-                "\"url\": \"http://klmami.cn/app/employee/list.do\"" +
+                "\"url\": \"http://newmami.cn/app/employee/list.do\"" +
                 "}," +
                 "{" +
                 "\"type\": \"view\"," +
                 "\"name\": \"月嫂课堂\"," +
-                "\"url\": \"http://www.klmami.cn/app/app/topic/list.do?loc=knowledge\"" +
+                "\"url\": \"http://www.newmami.cn/app/app/topic/list.do?loc=knowledge\"" +
                 "}," +
                 "{" +
                 "\"type\": \"view\"," +
-                "\"name\": \"快乐社区\"," +
-                "\"url\": \"http://klmami.cn/app/forum/0/list.do?loc=forum\"" +
+                "\"name\": \"新手社区\"," +
+                "\"url\": \"http://newmami.cn/app/forum/0/list.do?loc=forum\"" +
                 "}" +
                 "]" +
                 "}," +
@@ -82,17 +82,17 @@ public class WechatService {
                 "\"sub_button\": [{" +
                 "\"type\": \"view\"," +
                 "\"name\": \"课程培训\"," +
-                "\"url\": \"http://klmami.cn/app/app/to/course.do\"" +
+                "\"url\": \"http://www.newmami.cn/course.do\"" +
                 "}," +
                 "{" +
                 "\"type\": \"view\"," +
                 "\"name\": \"关于我们\"," +
-                "\"url\": \"http://klmami.cn/app/app/to/about-us.do\"" +
+                "\"url\": \"http://newmami.cn/about-us.do\"" +
                 "}," +
                 "{" +
                 "\"type\": \"view\"," +
                 "\"name\": \"联系我们\"," +
-                "\"url\": \"http://klmami.cn/app/app/to/contact-us.do\"" +
+                "\"url\": \"http://www.newmami.cn/contact-us.do\"" +
                 "}" +
                 "]" +
                 "}" +
@@ -123,14 +123,14 @@ public class WechatService {
                 "{" +
                 "\"title\":\"Happy Day\"," +
                 "\"description\":\"Is Really A Happy Day\"," +
-                "\"url\":\"http://www.klmami.cn/about-us.do\"," +
-                "\"picurl\":\"http://www.klmami.cn/extra-images/brander.jpeg\"" +
+                "\"url\":\"http://www.newmami.cn/about-us.do\"," +
+                "\"picurl\":\"http://www.newmami.cn/extra-images/brander.jpeg\"" +
                 "}," +
                 "{" +
                 "\"title\":\"Happy Day\"," +
                 "\"description\":\"Is Really A Happy Day\"," +
-                "\"url\":\"http://www.klmami.cn/employee.do\"," +
-                "\"picurl\":\"http://www.klmami.cn/extra-images/e3.jpeg\"" +
+                "\"url\":\"http://www.newmami.cn/employee.do\"," +
+                "\"picurl\":\"http://www.newmami.cn/extra-images/e3.jpeg\"" +
                 "}" +
                 "]}}";
         System.out.println(data);

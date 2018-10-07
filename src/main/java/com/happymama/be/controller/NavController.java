@@ -44,9 +44,13 @@ public class NavController {
     }
 
     @RequestMapping("/app/to/babysitter")
-    public String toLoginPage(@RequestParam(required = false, defaultValue = "") String loc, ModelMap modelMap) {
+    public String toLoginPage(
+            @RequestParam(required = false, defaultValue = "") String loc,
+            @RequestParam(required = false, defaultValue = "0") int eId,
+            ModelMap modelMap) {
         modelMap.addAttribute("count", orderService.getOrderCount() + 12300);
         modelMap.addAttribute("loc", loc);
+        modelMap.addAttribute("eId", eId);
         return "babysitter_form";
     }
 
@@ -136,6 +140,11 @@ public class NavController {
     @RequestMapping("/order/list")
     public String toOrderListPage() {
         return "/order/list";
+    }
+
+    @RequestMapping("/to/yuesao/detail")
+    public String toYueSaoDetailPage() {
+        return "/shop/yuesao_detail";
     }
 
 }

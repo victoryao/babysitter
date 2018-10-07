@@ -16,6 +16,7 @@ public interface ShopDao {
     @Select("select * from shop_activity where id = #{id}")
     ShopActivityDO getShopActivityById(@Param("id") int id);
 
+
     @Select("select * from shop_activity where mobile = #{mobile}")
     List<ShopActivityDO> getShopActivityByMobile(@Param("mobile") String mobile);
 
@@ -26,6 +27,9 @@ public interface ShopDao {
             "values(#{activityId}, #{orderId}, #{prepayId}, #{customerId}, #{mobile}, #{price}, #{realPrice}, #{code}, #{status}, now() , now())")
     @SelectKey(statement = "SELECT LAST_INSERT_ID() as id", keyProperty = "id", before = false, resultType = Integer.class)
     boolean addShopOrder(ShopOrderDO shopOrderDO);
+
+    @Select("select * from shop_order where order_id = #{orderId}")
+    ShopOrderDO getShopOrderByOrderId(@Param("orderId") String orderId);
 
     @Update("update shop_order set status = #{status} where id = #{id}")
     boolean updateShopOrderStatus(@Param("id") int id, @Param("status") int status);

@@ -14,7 +14,8 @@
     <link rel="stylesheet" type="text/css" href="${base}/css/animate.css"/>
     <link rel="stylesheet" href="${base}/css/swiper.min.css">
     <script src="${base}/js/swiper.min.js"></script>
-
+    <link rel="shortcut icon" type="image/x-icon"
+          href="https://happymama.oss-cn-beijing.aliyuncs.com/bitbug_favicon.ico">
     <link rel="stylesheet" href="${base}/css/frame_338829c.css">
     <link rel="stylesheet" href="${base}/css/common_16f528f.css">
     <link rel="stylesheet" href="${base}/css/home_f587618.css">
@@ -88,7 +89,7 @@
 
             <div data-v-c2da3850="" class="submit-button">下一步</div>
             <div data-v-c2da3850="" class="agreement-wrap">
-                点击“下一步”,即同意<a data-v-c2da3850="" href="${base}/app/to/user/notice.do">《快乐妈咪用户协议》</a>
+                点击“下一步”,即同意<a data-v-c2da3850="" href="${base}/app/to/user/notice.do">《新手妈咪用户协议》</a>
             </div>
         </div>
     </form>

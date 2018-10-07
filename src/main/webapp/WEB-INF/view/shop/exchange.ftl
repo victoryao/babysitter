@@ -7,6 +7,8 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
     <title>订单验证</title>
+    <link rel="shortcut icon" type="image/x-icon"
+          href="https://happymama.oss-cn-beijing.aliyuncs.com/bitbug_favicon.ico">
     <script type="text/javascript" src="${base}/js/jquery.js"></script>
     <script type="text/javascript" src="${base}/js/jquery.cookie.js"></script>
     <link href="${base}/css/djapp.css" rel="stylesheet" type="text/css"/>

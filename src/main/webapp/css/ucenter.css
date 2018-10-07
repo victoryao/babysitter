@@ -264,6 +264,7 @@ article, aside, details, figcaption, figure, footer, header, main, nav, section,
     margin-top: 32px;
     padding-top: 5px;
     margin-bottom: 25px;
+    padding-bottom: 60px;
     clear: both
 }
 

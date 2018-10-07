@@ -10,7 +10,8 @@
     <meta name="author" content="">
 
     <title>用户登陆</title>
-
+      <link rel="shortcut icon" type="image/x-icon"
+            href="https://happymama.oss-cn-beijing.aliyuncs.com/bitbug_favicon.ico">
     <!-- Bootstrap core CSS -->
     <link href="${base}/css/bootstrap.min.css" rel="stylesheet">
 
