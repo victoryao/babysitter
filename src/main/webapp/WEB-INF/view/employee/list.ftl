@@ -91,7 +91,7 @@
                                  height="80" width="80"/> </#if>
                         <#if (employee.photo != "")>
                             <img
-                                    src="/imgs/${employee.photo}" height="80"
+                                    src="${employee.photo}" height="80"
                                     width="80"/> </#if>
                     </div>
                     <div class="list-main">

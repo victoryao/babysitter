@@ -45,7 +45,7 @@
 </head>
 <body>
 <div class="resume">
-    <div align="center"><img src="/imgs/${employeeDO.photo}" alt="" width="250px" height="250px"></div>
+    <div align="center"><img src="${employeeDO.photo}" alt="" width="250px" height="250px"></div>
     <div class="field">
         <h1 class="title title_phone stonefont">${employeeDO.name}（女）
         </h1>
