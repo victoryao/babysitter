@@ -154,7 +154,7 @@
         </div>
         <div class="con">
             <ol class="box-yyxz">
-                <li class="yyxz-dd-xy">使用新手妈咪平台前，请充分了解并同意《新手妈咪用户协议》。交易前充分沟通，明确包括但不限于服务项、金额、服务时间等具体细节。</li>
+                <li class="yyxz-dd-xy">使用新手妈咪平台前，请充分了解并同意<a href="${base}/app/to/user/notice.do">《新手妈咪用户协议》</a>。交易前充分沟通，明确包括但不限于服务项、金额、服务时间等具体细节。</li>
                 <li class="yyxz-dd-wq">新手妈咪平台服务由第三方提供，强烈建议您在到家平台通过在线支付完成所有交易，并保留相应的证据以利于售后维权。</li>
                 <li class="yyxz-dd-lx">如遇服务质量问题，可进行<a class="xd_report">举报</a></li>
             </ol>

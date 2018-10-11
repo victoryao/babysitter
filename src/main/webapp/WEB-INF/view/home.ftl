@@ -33,6 +33,17 @@
     <link rel="stylesheet" href="${base}/css/home_f587618.css">
     <link rel="stylesheet" href="${base}/css/footer.css">
 
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var mySwiper = new Swiper('.swiper-container', {
+                direction: 'horizontal',
+                loop: true,
+                slidesPerView: 3,
+                spaceBetween: 5
+            })
+        });
+    </script>
+
 </head>
 
 <body class="fadeIn animated">
@@ -146,28 +157,72 @@
                     </li>
 
                     <li class="page__item small_icon">
-                    <a class="item__href" href="${base}/shop/activity/detail.do?id=12">
-                        <div class="item__avatar">
-                            <div class="active hide"></div>
-                            <img class="avatar__img" src="${base}/images/icon9.jpg">
-                            <div class="item_dot"></div>
-                        </div>
-                        <div class="item__name">小儿推拿</div>
-                    </a>
+                        <a class="item__href" href="${base}/shop/activity/detail.do?id=12">
+                            <div class="item__avatar">
+                                <div class="active hide"></div>
+                                <img class="avatar__img" src="${base}/images/icon9.jpg">
+                                <div class="item_dot"></div>
+                            </div>
+                            <div class="item__name">小儿推拿</div>
+                        </a>
                     </li>
 
                     <li class="page__item small_icon">
-                    <a class="item__href" href="${base}/shop/activity/detail.do?id=13">
-                        <div class="item__avatar">
-                            <div class="active hide"></div>
-                            <img class="avatar__img" src="${base}/images/icon10.png">
-                            <div class="item_dot"></div>
-                        </div>
-                        <div class="item__name">保洁</div>
-                    </a>
+                        <a class="item__href" href="${base}/shop/activity/detail.do?id=13">
+                            <div class="item__avatar">
+                                <div class="active hide"></div>
+                                <img class="avatar__img" src="${base}/images/icon10.png">
+                                <div class="item_dot"></div>
+                            </div>
+                            <div class="item__name">保洁</div>
+                        </a>
                     </li>
                 </ul>
             </div>
+        </div>
+    </div>
+
+
+    <div class="wx-index__djservice__choicecon home-choicecon">
+        <h5><span>优惠团购-即将来袭</span></h5>
+        <div class="swiper-container wx-index__djservice__swiper lasta">
+            <ul class="imgtxtlist swiper-wrapper home-choicecon-list">
+                <li class="swiper-slide home-choicecon-item">
+                    <a href="">
+                        <p>宝宝摄影</p>
+                        <p class="sub">记录精彩回忆</p>
+                        <img src="https://images.daojia.com/dop/custom/b406829e665c2a10739660eaf2f917e3.png"/>
+                    </a>
+                </li>
+                <li class="swiper-slide home-choicecon-item">
+                    <a href="">
+                        <p>产后修复</p>
+                        <p class="sub">永保完美身材</p>
+                        <img src="https://images.daojia.com/dop/custom/d11b6e30fb0daae4a68837fbf777a664.png"/>
+                    </a>
+                </li>
+                <li class="swiper-slide home-choicecon-item">
+                    <a href="">
+                        <p>亲子游泳</p>
+                        <p class="sub">同享受水中乐趣</p>
+                        <img src="https://images.daojia.com/fwwx/078043cc9d404fb211c6f5b2a0f9f9b3.png"/>
+                    </a>
+                </li>
+                <li class="swiper-slide home-choicecon-item">
+                    <a href="">
+                        <p>宝宝早教</p>
+                        <p class="sub">赢在起跑线</p>
+                        <img src="https://images.daojia.com/meishi/8ad4bb330953fe1afc3e1ed6e2a63768.png"/>
+                    </a>
+                </li>
+                <li class="swiper-slide home-choicecon-item">
+                    <a href="">
+                        <p>四维彩超</p>
+                        <p class="sub">健康早知道</p>
+                        <img src="https://images.daojia.com/liren/fd1de4c832f24f2cf2cd21ac58edfd30.png"/>
+                    </a>
+                </li>
+            </ul>
         </div>
     </div>
 

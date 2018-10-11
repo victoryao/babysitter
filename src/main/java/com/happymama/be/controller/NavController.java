@@ -152,4 +152,9 @@ public class NavController {
         return "/shop/yuersao_detail";
     }
 
+    @RequestMapping("/to/mini/class")
+    public String toMiniClassPage() {
+        return "/miniclass/miniClass";
+    }
+
 }

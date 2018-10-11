@@ -64,9 +64,9 @@
         查看全部订单</p></a></div>
 </div>
 
-<div class="myaddr ico mt0 "><a href="${base}/app/to/course.do">课程培训</a></div>
-<div class="jifen ico mt0 "><a href="${base}/app/to/about-us.do">关于我们</a></div>
-<div class="myfav ico mt0 "><a href="${base}/app/to/contact-us.do"> 联系我们</a></div>
+<div class="myaddr ico mt0 "><a href="http://newmami.cn/course.do">课程培训</a></div>
+<div class="jifen ico mt0 "><a href="http://newmami.cn/about-us.do">关于我们</a></div>
+<div class="myfav ico mt0 "><a href="http://newmami.cn/contact-us.do"> 联系我们</a></div>
 <#if userLevel = "shop">
 <div class="imsshop mt0 ico" id="shop"><a
         href="${base}/shop/mobile/activity/list.do?mobile=${customerDO.phone}">商家验证</a></div>

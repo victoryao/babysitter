@@ -121,16 +121,9 @@ public class WechatService {
         HttpPost httpPost = new HttpPost(url);
         String data = "{\"touser\":\"" + openId + "\",\"msgtype\":\"news\",\"news\":{\"articles\":[" +
                 "{" +
-                "\"title\":\"Happy Day\"," +
-                "\"description\":\"Is Really A Happy Day\"," +
-                "\"url\":\"http://www.newmami.cn/about-us.do\"," +
-                "\"picurl\":\"http://www.newmami.cn/extra-images/brander.jpeg\"" +
-                "}," +
-                "{" +
-                "\"title\":\"Happy Day\"," +
-                "\"description\":\"Is Really A Happy Day\"," +
-                "\"url\":\"http://www.newmami.cn/employee.do\"," +
-                "\"picurl\":\"http://www.newmami.cn/extra-images/e3.jpeg\"" +
+                "\"title\":\"【点击进入听课群】新生儿喂养,听我来支招\"," +
+                "\"url\":\"http://www.newmami.cn/app/to/mini/class.do\"," +
+                "\"picurl\":\"https://happymama.oss-cn-beijing.aliyuncs.com/0670bf582d354b5b9d31e3278b5db442.jpeg\"" +
                 "}" +
                 "]}}";
         System.out.println(data);
