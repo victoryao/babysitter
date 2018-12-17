@@ -47,7 +47,10 @@ public class WechatController {
             System.out.println("FromUserName===" + openId);
             System.out.println("eventKey===" + eventKey);
             if ("123".equals(eventKey) || ("qrscene_123".equals(eventKey))) {
-                wechatService.sendMessage(openId);
+                wechatService.sendMessage(openId, "123");
+            }
+            if ("124".equals(eventKey) || ("qrscene_124".equals(eventKey))) {
+                wechatService.sendMessage(openId, "124");
             }
         }
 
@@ -62,9 +65,9 @@ public class WechatController {
 
     @RequestMapping("/user/qrcode")
     public String sendQRCode(
-            @RequestParam(required = false, defaultValue = "") String openId,
+            @RequestParam(required = false, defaultValue = "") String sceneId,
             ModelMap modelMap) {
-        return wechatService.getQRCode();
+        return wechatService.getQRCode(sceneId);
     }
 
 }

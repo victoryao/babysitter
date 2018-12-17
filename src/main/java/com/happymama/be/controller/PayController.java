@@ -1,7 +1,6 @@
 package com.happymama.be.controller;
 
 import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONObject;
 import com.google.common.collect.Maps;
 import com.happymama.be.cache.impl.SimpleRedisClientImpl;
 import com.happymama.be.model.*;
@@ -11,15 +10,11 @@ import com.happymama.be.pay.WXPayUtil;
 import com.happymama.be.service.CouponService;
 import com.happymama.be.service.CustomerService;
 import com.happymama.be.service.ShopService;
+import com.happymama.be.service.UtilService;
 import com.happymama.be.utils.Utils;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections.CollectionUtils;
-import org.apache.http.HttpEntity;
-import org.apache.http.client.methods.CloseableHttpResponse;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.CloseableHttpClient;
-import org.apache.http.util.EntityUtils;
-import org.springframework.http.ResponseEntity;
+import org.apache.commons.lang.StringUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,11 +22,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
-import java.io.IOException;
-import java.nio.charset.Charset;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.TimeUnit;
 
 /**
  * Created by yaoqiang on 2018/8/18.
@@ -40,8 +32,7 @@ import java.util.concurrent.TimeUnit;
 @Slf4j
 public class PayController {
 
-    @Resource
-    private CloseableHttpClient httpClient;
+
     @Resource
     private CustomerService customerService;
     @Resource
@@ -50,6 +41,8 @@ public class PayController {
     private ShopService shopService;
     @Resource
     private CouponService couponService;
+    @Resource
+    private UtilService utilService;
 
     private static final String OPENID_KEY = "openid_";
 
@@ -65,15 +58,25 @@ public class PayController {
             @RequestParam(required = false, defaultValue = "0") String code,
             HttpServletRequest request,
             @RequestParam String state,
+            @RequestParam(required = false, defaultValue = "") String redirectUrl,
+            @RequestParam(required = false, defaultValue = "") String scope,
+            @RequestParam(required = false, defaultValue = "") String phone,
+            @RequestParam(required = false, defaultValue = "") String address,
+            @RequestParam(required = false, defaultValue = "") String name,
+            @RequestParam(required = false, defaultValue = "") String idcard,
             ModelMap modelMap) throws Exception {
 
-        String openId = getOpenIdByCode(code);
+        System.out.println("redirectUrl=" + redirectUrl);
+        WeChatModel weChatModel = utilService.getOpenIdByCode(code, scope);
 
+        String openId = weChatModel.getOpenId();
         modelMap.addAttribute("openId", openId);
         CustomerDO customerDO = customerService.getCustomerByOpenId(openId);
 
         if (customerDO == null) {
-            simpleRedisClient.set(OPENID_KEY + openId, "/shop/activity/detail.do?id=" + state, 1800, TimeUnit.SECONDS);
+//            simpleRedisClient.set(OPENID_KEY + openId, "/shop/activity/detail.do?id=" + state, 1800, TimeUnit.SECONDS);
+            modelMap.addAttribute("redirectUrl", redirectUrl);
+            modelMap.addAttribute("weChatModel", weChatModel);
             return "/my/login";
         }
 
@@ -130,8 +133,9 @@ public class PayController {
         String prepayId = map.get("prepay_id").toString();
 
         shopService.addShopOrder(ShopOrderDO.builder().activityId(shopActivityDO.getId()).customerId(customerDO.getId())
-                .mobile(customerDO.getPhone()).price(totalFee).orderId(orderId)
-                .code(shopActivityDO.getId() + "-" + Utils.generateCode(6)).prepayId(prepayId).build());
+                .mobile(StringUtils.isBlank(phone) ? customerDO.getPhone() : phone).address(address).price(totalFee).orderId(orderId).realPrice(totalFee)
+                .code(shopActivityDO.getId() + "-" + Utils.generateCode(6)).prepayId(prepayId)
+                .name(name).idcard(idcard).build());
 
         String sign = WXPayUtil.MD5("appId=" + WXPayConfig.getAppID() + "&nonceStr=" + nonce + "&package=prepay_id="
                 + prepayId + "&signType=MD5" + "&timeStamp=" + ts + "&key=" + WXPayConfig.getKey()).toUpperCase();
@@ -140,18 +144,9 @@ public class PayController {
                 .nonceStr(nonce).signType("MD5").paySign(sign).openId(openId).build();
 
         modelMap.addAttribute("pay", pay);
+        modelMap.addAttribute("redirectUrl", redirectUrl);
         return "/shop/result";
     }
 
-
-    private String getOpenIdByCode(String code) throws IOException {
-        HttpGet get = new HttpGet("https://api.weixin.qq.com/sns/oauth2/access_token?appid=" + WXPayConfig.getAppID() + "&secret=" +
-                WXPayConfig.getAPPKey() + "&code=" + code + "&grant_type=authorization_code");
-        CloseableHttpResponse response = httpClient.execute(get);
-        HttpEntity entity = response.getEntity();
-        String res = EntityUtils.toString(entity, Charset.forName("UTF-8"));
-        JSONObject jsonObject = JSON.parseObject(res);
-        return jsonObject.getString("openid");
-    }
 
 }

@@ -39,6 +39,10 @@ public class UserController {
     public String sso(@RequestParam String mobile,
                       @RequestParam String capt,
                       @RequestParam(required = false, defaultValue = "") String openId,
+                      @RequestParam(required = false, defaultValue = "") int sex,
+                      @RequestParam(required = false, defaultValue = "") String nickName,
+                      @RequestParam(required = false, defaultValue = "") String img,
+                      @RequestParam(required = false, defaultValue = "") String redirectUrl,
                       ModelMap modelMap) {
         if (!Utils.isNumberValidate(mobile)) {
             return "/my/login";
@@ -56,10 +60,11 @@ public class UserController {
         if (StringUtils.isBlank(openId)) openId = null;
         if (customerDO == null) { //注册
             customerDO = CustomerDO.builder().phone(mobile).name(mobile).address(StringUtils.EMPTY)
+                    .sex(sex).nickName(nickName).img(img)
                     .openId(openId).token(token).build();
             customerService.addCustomer(customerDO);
         } else {
-            customerService.updateCustomerTokenByPhone(mobile, token, openId);
+            customerService.updateCustomerTokenByPhone(mobile, token, openId, img, nickName, sex);
         }
 
         modelMap.addAttribute("userLevel", "user");
@@ -72,7 +77,8 @@ public class UserController {
         modelMap.addAttribute("mobile", mobile);
         modelMap.addAttribute("customerDO", customerDO);
         modelMap.addAttribute("openId", openId);
-        modelMap.addAttribute("redirectURL", "/app/" + simpleRedisClient.get(OPENID_KEY + openId));
+
+        modelMap.addAttribute("redirectURL", "/app/" + redirectUrl);
         return "/my/myPage";
     }
 

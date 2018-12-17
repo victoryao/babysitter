@@ -33,7 +33,6 @@
 
             $(".uploadBtn").hide();
 
-
             $("#submit-message").click(function () {
                 var content = $.trim($('textarea[name="content"]').val());
                 if (content.length == 0) {
@@ -43,9 +42,7 @@
                 $(".uploadBtn").click();
             });
 
-
         });
-
 
     </script>
 

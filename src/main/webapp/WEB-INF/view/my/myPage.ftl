@@ -31,7 +31,8 @@
             $.cookie('kl_token', '${token}', {expires: 120, path: '/'});
             var redirectUrl = $("#redirectURL").val();
             var openId = $("#openId").val();
-            if (openId != "") {
+            var token = $("#token").val();
+            if (openId != "" || token != "") {
                 window.location.href = redirectUrl;
             }
 

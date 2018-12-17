@@ -1,6 +1,7 @@
 package com.happymama.be.utils;
 
 import com.happymama.be.exception.AesException;
+import org.apache.commons.codec.digest.DigestUtils;
 
 import java.security.MessageDigest;
 import java.util.Arrays;
@@ -36,17 +37,32 @@ public class SHA1 {
 
             StringBuffer hexstr = new StringBuffer();
             String shaHex = "";
-            for (int i = 0; i < digest.length; i++) {
-                shaHex = Integer.toHexString(digest[i] & 0xFF);
-                if (shaHex.length() < 2) {
-                    hexstr.append(0);
-                }
-                hexstr.append(shaHex);
-            }
+            doSha(digest, hexstr);
             return hexstr.toString();
         } catch (Exception e) {
             e.printStackTrace();
             throw new AesException(AesException.ComputeSignatureError);
+        }
+    }
+
+
+    public static String getSHA1(String str) throws AesException {
+        return DigestUtils.shaHex(str);
+    }
+
+    public static void main(String[] args) throws Exception{
+        String s = getSHA1("jsapi_ticket=LIKLckvwlJT9cWIhEQTwfAGsc8IiRcsMcRGLFcizQ-Wp26ecNdOroHap-gm-wPTPM4gx9Ym68yfgWgVfwGIRFg&noncestr=1540917722048&timestamp=1540917722&url=http://www.newmami.cn/app/shop/activity/detail.do?id=9");
+        System.out.println(s);
+    }
+
+    private static void doSha(byte[] digest, StringBuffer hexstr) {
+        String shaHex;
+        for (int i = 0; i < digest.length; i++) {
+            shaHex = Integer.toHexString(digest[i] & 0xFF);
+            if (shaHex.length() < 2) {
+                hexstr.append(0);
+            }
+            hexstr.append(shaHex);
         }
     }
 

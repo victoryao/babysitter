@@ -1,11 +1,20 @@
 package com.happymama.be.utils;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import com.happymama.be.model.CourseOrderDO;
+import com.happymama.be.pay.WXPayConfig;
 import org.apache.commons.collections.*;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.http.HttpEntity;
+import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.util.EntityUtils;
 
 import javax.servlet.http.HttpServletRequest;
+import java.io.IOException;
+import java.nio.charset.Charset;
 import java.util.List;
 import java.util.UUID;
 import java.util.regex.Pattern;
@@ -98,5 +107,7 @@ public class Utils {
         String regex = "^1\\d{10}$";
         return Pattern.matches(regex, cellphone);
     }
+
+
 
 }

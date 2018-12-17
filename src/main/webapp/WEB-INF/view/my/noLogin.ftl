@@ -45,10 +45,10 @@
     </a>
 </div>
 
+<div class="myaddr ico mt0 "><a href="http://newmami.cn/course.do">课程培训</a></div>
+<div class="jifen ico mt0 "><a href="http://newmami.cn/about-us.do">关于我们</a></div>
+<div class="myfav ico mt0 "><a href="http://newmami.cn/contact-us.do"> 联系我们</a></div>
 
-<div class="myaddr ico mt0 "><a href="${base}/app/to/course.do">课程培训</a></div>
-<div class="jifen ico mt0 "><a href="${base}/app/to/about-us.do">关于我们</a></div>
-<div class="myfav ico mt0 "><a href="${base}/app/to/contact-us.do"> 联系我们</a></div>
 <#--<div class="myfav ico" id="appdownload"><a>下载APP<p>超快速度，超省流量</p></a></div>-->
 <div style="height: 20px"></div>
 

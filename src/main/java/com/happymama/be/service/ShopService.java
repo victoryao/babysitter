@@ -26,6 +26,10 @@ public class ShopService {
         return shopDao.getShopActivityById(id);
     }
 
+    public List<ShopActivityDO> getShopActivityByParentId(int parentId) {
+        return shopDao.getShopActivityByParentId(parentId);
+    }
+
     public ShopOrderDO getShopOrderByOrderId(String orderId) {
         return shopDao.getShopOrderByOrderId(orderId);
     }
@@ -56,6 +60,10 @@ public class ShopService {
 
     public List<ShopOrderDO> getShopOrderListByCustomerId(int customerId) {
         return shopDao.getShopOrderListByCustomerId(customerId);
+    }
+
+    public List<ShopActivityDO> getActivityListByType(int type) {
+        return shopDao.getActivityListByType(type);
     }
 
     public List<ShopOrderDO> getShopOrderListByMobile(String mobile) {

@@ -20,8 +20,8 @@
 
     <script type="text/javascript" src="${base}/js/jquery.js"></script>
     <script type="text/javascript" src="${base}/js/jquery.cookie.js"></script>
-
-    <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+    <script type="text/javascript" src="${base}/js/tabulous.js"></script>
+    <script type="text/javascript" src="http://res2.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
 
     <link rel="shortcut icon" type="image/x-icon"
           href="https://happymama.oss-cn-beijing.aliyuncs.com/bitbug_favicon.ico">
@@ -29,17 +29,99 @@
     <link rel="stylesheet" href="${base}/css/shop_frame.css">
     <link rel="stylesheet" href="${base}/css/common.css">
     <link rel="stylesheet" href="${base}/css/getTicketPopup.css" data-outlink>
-<#--<link rel="stylesheet" href="${base}/css/shop_detail.css" data-outlink>-->
     <link rel="stylesheet" href="//static.daojia.com/assets/project/dj-m/pkg/detail/detail_2595ae0.css">
     <link rel="stylesheet" href="${base}/css/normalize.min.css">
     <link rel="stylesheet" href="${base}/css/promote-style.css">
+    <link rel="stylesheet" href="${base}/css/tab-style.css">
 
+    <style>
+        .centerdiv {
+            display: table-cell;
+            vertical-align: middle;
+            text-align: center;
+            display: table-cell;
+        }
+    </style>
     <script>
+
         $(document).ready(function () {
+            $.cookie('kl_token', '${token}', {expires: 120, path: '/'});
+            $.get("${base}/activity/is/join.do?accessToken=" + ${token} +"&activityId="+${shopActivityDO.id}, function(data){
+                if(data == "true"){
+                    $("#nextpay").attr("href","#");
+                    $("#nextpay").text("已报名");
+                }
+            });
+
+        });
+
+        wx.ready(function () {
+
+            wx.onMenuShareAppMessage({
+                title: '${shopActivityDO.name}', // 分享标题
+                imgUrl: '${shopActivityDO.img}',
+                desc: '${shopActivityDO.desc}',
+                success: function () {
+                    // 用户确认分享后执行的回调函数
+                },
+                cancel: function () {
+                    // 用户取消分享后执行的回调函数
+                }
+            });
+
+            wx.onMenuShareTimeline({
+                title: '${shopActivityDO.name}', // 分享标题
+                imgUrl: '${shopActivityDO.img}',
+                desc: '${shopActivityDO.desc}',
+                success: function () {
+                    // 用户确认分享后执行的回调函数
+                },
+                cancel: function () {
+                    // 用户取消分享后执行的回调函数
+                }
+            });
+
+        });
+
+        wx.config({
+            debug: false,
+            appId: '${pay.appId}',
+            timestamp: '${pay.timeStamp}',
+            nonceStr: '${pay.nonceStr}',
+            signature: '${pay.paySign}',
+            jsApiList: [
+                'onMenuShareTimeline',
+                'onMenuShareAppMessage',
+                'onMenuShareQQ',
+                'onMenuShareWeibo',
+                'onMenuShareQZone'
+            ]
+        });
+
+        $(document).ready(function () {
+            $('#tabs').tabulous();
+            $("#atabs-1").click();
             var price = $("#price").val();
             var oldPrice = $("#oldPrice").val();
             $("#priceSpan").html(price / 100 + "元");
             $("#oldPriceSpan").html("原价：<s>" + oldPrice / 100 + "元</s>");
+
+            $(".tab").click(function () {
+                var aId = $(this).attr("title");
+                $("#activityId").val(aId);
+                var price = $(this).find(".childRealPrice").val();
+                var oldPrice = $(this).find(".childPrice").val();
+                $("#priceSpan").html(price / 100 + "元");
+                $("#oldPriceSpan").html("原价：<s>" + oldPrice / 100 + "元</s>");
+                aId = $("#activityId").val();
+                if ($("#transferType").val() == 0) {
+                    $("#nextpay").attr("href", "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx408ebb6c68b9d640&redirect_uri=http%3a%2f%2fwww.newmami.cn%2fapp%2fshop%2fpay.do%3fredirectUrl%3d%2fshop%2factivity%2fdetail.do%3fid%3d" + aId + "&response_type=code&scope=snsapi_base&state=" + aId + "#wechat_redirect");
+                } else {
+                    $("#nextstep").attr("href", "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx408ebb6c68b9d640&redirect_uri=http%3a%2f%2fnewmami.cn%2fapp%2fshop%2fto%2fpay.do%3fredirectUrl%3d%2fshop%2factivity%2fdetail.do%3fid%3d" + aId + "&response_type=code&scope=snsapi_base&state=" + aId + "#wechat_redirect");
+                }
+
+            });
+
         });
     </script>
 
@@ -47,9 +129,10 @@
 
 <body data-pagetype="serveDetail">
 
-
 <input type="hidden" id="price" value="${shopActivityDO.realPrice}">
 <input type="hidden" id="oldPrice" value="${shopActivityDO.price}">
+<input type="hidden" id="activityId" value="${shopActivityDO.id}">
+<input type="hidden" id="transferType" value="${transferType}">
 
 <div class="topbar-holder"></div>
 
@@ -84,12 +167,13 @@
                     </#if>
                     </div>
 
-
                 </div>
 
                 <div style="padding: 5px"><br/>
                     地址：${shopDO.address}
+
                 </div>
+
             </div>
             <div class="shop-info">
                 <div class="ustar">
@@ -123,14 +207,48 @@
     </div>
 
 
-    <!-- 服务报价区 报价单 -->
+
+
+<#if shopActivityDO.isParent == 1>
+    <div id="tabs">
+        <ul>
+            <#list children as child>
+                <#if child_index == 0>
+                    <li><a id="a${child.tab}" href="#${child.tab}" class="tab" title="${child.id}">
+                        <input type="hidden" class="childRealPrice" value="${child.realPrice}">
+                        <input type="hidden" class="childDiscount" value="${child.discount}">
+                        <input type="hidden" class="childPrice" value="${child.price}">
+                    ${child.name}</a></li>
+                <#else>
+                    <li><a id="a${child.tab}" href="#${child.tab}" class="tab" title="${child.id}">
+                        <input type="hidden" class="childRealPrice" value="${child.realPrice}">
+                        <input type="hidden" class="childDiscount" value="${child.discount}">
+                        <input type="hidden" class="childPrice" value="${child.price}">
+                    ${child.name}</a></li>
+                </#if>
+            </#list>
+        </ul>
+        <div id="tabs_container">
+
+            <#list children as child>
+                <div id="${child.tab}"
+                     class="make_transist hidescale showscale centerdiv">
+                    <#list child.images as img>
+                        <img src="${img}">
+                    </#list>
+                </div>
+            </#list>
+        </div><!--End tabs container-->
+    </div><!--End tabs-->
+</#if>
 
     <!-- 服务详情区域 -->
     <div class="block block_detail mb10">
-        <div class="title border-b"><h2>服务详情</h2></div>
+        <div class="title border-b">
+            <h2>服务详情</h2></div>
         <div class="con_u">
             <p>
-                <img src="${shopActivityDO.img}"/>
+            ${shopActivityDO.desc}
             </p>
         <#list images as image>
             <p><img src="${image}"/></p>
@@ -154,7 +272,8 @@
         </div>
         <div class="con">
             <ol class="box-yyxz">
-                <li class="yyxz-dd-xy">使用新手妈咪平台前，请充分了解并同意<a href="${base}/app/to/user/notice.do">《新手妈咪用户协议》</a>。交易前充分沟通，明确包括但不限于服务项、金额、服务时间等具体细节。</li>
+                <li class="yyxz-dd-xy">使用新手妈咪平台前，请充分了解并同意<a href="${base}/app/to/user/notice.do">《新手妈咪用户协议》</a>。交易前充分沟通，明确包括但不限于服务项、金额、服务时间等具体细节。
+                </li>
                 <li class="yyxz-dd-wq">新手妈咪平台服务由第三方提供，强烈建议您在到家平台通过在线支付完成所有交易，并保留相应的证据以利于售后维权。</li>
                 <li class="yyxz-dd-lx">如遇服务质量问题，可进行<a class="xd_report">举报</a></li>
             </ol>
@@ -170,13 +289,29 @@
     <div class="footbar">
         <div class="foo_s2">
             <a href="" class="btn_min btn_contact modal__trigger" data-modal="#modal2">联系客服</a>
-            <a href="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx408ebb6c68b9d640&redirect_uri=http%3a%2f%2fwww.newmami.cn%2fapp%2fshop%2fpay.do&response_type=code&scope=snsapi_base&state=${shopActivityDO.id}#wechat_redirect"
 
-            <#--"${base}/shop/pay.do" -->
+        <#if (transferType == 1)>
+            <a class="btn_order"
+               href="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx408ebb6c68b9d640&redirect_uri=http%3a%2f%2fnewmami.cn%2fapp%2fshop%2fto%2fpay.do%3fredirectUrl%3d%2fshop%2factivity%2fdetail.do%3fid%3d${shopActivityDO.id}&response_type=code&scope=snsapi_base&state=${shopActivityDO.id}#wechat_redirect"
+               id="nextstep">
+                立即预约
+            </a>
+        </#if>
 
-               class="btn_order" id="nextstep">
+        <#if (transferType == 0)>
+            <a href="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx408ebb6c68b9d640&redirect_uri=http%3a%2f%2fwww.newmami.cn%2fapp%2fshop%2fpay.do%3fredirectUrl%3d%2fshop%2factivity%2fdetail.do%3fid%3d${shopActivityDO.id}&response_type=code&scope=snsapi_base&state=${shopActivityDO.id}#wechat_redirect"
+               class="btn_order" id="nextpay">
                 立即支付
             </a>
+        </#if>
+
+        <#if (transferType == 2)>
+            <a href="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx408ebb6c68b9d640&redirect_uri=http%3a%2f%2fwww.newmami.cn%2fapp%2factivity%2fjoin.do%3fscope%3dsnsapi_userinfo%26id%3d${shopActivityDO.id}%26redirectUrl%3d%2fshop%2factivity%2fdetail.do%3fid%3d${shopActivityDO.id}&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect"
+               class="btn_order" id="nextpay">
+                我要报名
+            </a>
+        </#if>
+
         </div>
     </div>
 </div>

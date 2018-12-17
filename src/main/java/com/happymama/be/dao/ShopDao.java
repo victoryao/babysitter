@@ -16,6 +16,9 @@ public interface ShopDao {
     @Select("select * from shop_activity where id = #{id}")
     ShopActivityDO getShopActivityById(@Param("id") int id);
 
+    @Select("select * from shop_activity where parent_id = #{parentId}")
+    List<ShopActivityDO> getShopActivityByParentId(@Param("parentId") int parentId);
+
 
     @Select("select * from shop_activity where mobile = #{mobile}")
     List<ShopActivityDO> getShopActivityByMobile(@Param("mobile") String mobile);
@@ -23,8 +26,8 @@ public interface ShopDao {
     @Select("select * from shop where id = #{id}")
     ShopDO getShopById(@Param("id") int id);
 
-    @Insert("insert into shop_order(`activity_id`, `order_id`, `prepay_id`, `customer_id`, `mobile`, `price` , `real_price`, `code`, `status`, `created`, `updated`) " +
-            "values(#{activityId}, #{orderId}, #{prepayId}, #{customerId}, #{mobile}, #{price}, #{realPrice}, #{code}, #{status}, now() , now())")
+    @Insert("insert into shop_order(`activity_id`, `order_id`, `prepay_id`, `customer_id`, `mobile`, `price` , `real_price`, `code`, `status`, `created`, `updated`, `address`,  `name`, `idcard`, `co`) " +
+            "values(#{activityId}, #{orderId}, #{prepayId}, #{customerId}, #{mobile}, #{price}, #{realPrice}, #{code}, #{status}, now() , now(), #{address}, #{name}, #{idcard}, 3)")
     @SelectKey(statement = "SELECT LAST_INSERT_ID() as id", keyProperty = "id", before = false, resultType = Integer.class)
     boolean addShopOrder(ShopOrderDO shopOrderDO);
 
@@ -48,4 +51,7 @@ public interface ShopDao {
 
     @Select("select img from shop_activity_img where activity_id = #{activityId} order by `order` asc")
     List<String> getActivityImgListByActivityId(@Param("activityId") int activityId);
+
+    @Select("select * from shop_activity where type = #{type} order by created desc limit 10")
+    List<ShopActivityDO> getActivityListByType(int type);
 }

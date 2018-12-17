@@ -192,14 +192,7 @@ li {
     font-family: "PingFangSC-Regular", "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Heiti SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
 }
 
-.wx-index__icon {
-    display: block;
-    margin: 0 auto;
-    background-repeat: no-repeat;
-    background-size: 172px 50px;
-    width: 25px;
-    height: 25px;
-}
+
 
 .wx-index__footer .box ul li {
     position: relative;
@@ -225,6 +218,14 @@ li {
     background-position: -75px 0;
 }
 
+.wx-index-shop__icon {
+    display: block;
+    margin: 0 auto;
+    background-repeat: no-repeat;
+    width: 25px;
+    height: 25px;
+}
+
 .wx-index__icon {
     display: block;
     margin: 0 auto;
@@ -232,7 +233,6 @@ li {
     background-size: 172px 50px;
     width: 25px;
     height: 25px;
-
 }
 
 .wx-index__footer--title {

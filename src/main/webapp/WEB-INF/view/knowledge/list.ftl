@@ -92,6 +92,6 @@
     </ul>
 <#include "../../share/paging.ftl" >
 </div>
-<#include "/common/foot.ftl" >
+<#--<#include "/common/foot.ftl" >-->
 </body>
 </html>

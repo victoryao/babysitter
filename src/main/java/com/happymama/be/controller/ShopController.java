@@ -1,11 +1,14 @@
 package com.happymama.be.controller;
 
-import com.happymama.be.model.CustomerDO;
-import com.happymama.be.model.ShopActivityDO;
-import com.happymama.be.model.ShopDO;
-import com.happymama.be.model.ShopOrderDO;
-import com.happymama.be.service.CustomerService;
-import com.happymama.be.service.ShopService;
+import com.google.common.collect.Lists;
+import com.happymama.be.cache.impl.SimpleRedisClientImpl;
+import com.happymama.be.enums.ActivityParentEnum;
+import com.happymama.be.enums.ActivityTypEnum;
+import com.happymama.be.model.*;
+import com.happymama.be.pay.WXPayConfig;
+import com.happymama.be.pay.WXPayUtil;
+import com.happymama.be.service.*;
+import com.happymama.be.utils.SHA1;
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.stereotype.Controller;
@@ -14,7 +17,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import java.io.IOException;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Created by yaoqiang on 2018/8/18.
@@ -26,6 +32,60 @@ public class ShopController {
     private ShopService shopService;
     @Resource
     private CustomerService customerService;
+    @Resource
+    private CouponService couponService;
+    @Resource
+    private SimpleRedisClientImpl simpleRedisClient;
+    @Resource
+    private WechatService wechatService;
+    @Resource
+    private UtilService utilService;
+    @Resource
+    private ActivityJoinService activityJoinService;
+
+    private static final String OPENID_KEY = "openid_";
+
+
+    @RequestMapping("/activity/list")
+    public String getActivityList(
+            @RequestParam(required = false, defaultValue = "0") int type,
+            ModelMap modelMap) {
+        List<ShopActivityDO> list = shopService.getActivityListByType(type);
+        modelMap.addAttribute("activities", list);
+        return "/activity/list";
+    }
+
+    @RequestMapping("/activity/join")
+    public String activityJoin(
+            @RequestParam(required = false, defaultValue = "0") String code,
+            HttpServletRequest request,
+            @RequestParam String state,
+            @RequestParam(required = false, defaultValue = "") String redirectUrl,
+            @RequestParam(required = false, defaultValue = "") String scope,
+            @RequestParam(required = false, defaultValue = "") int id,
+            ModelMap modelMap) throws IOException {
+
+        ShopActivityDO shopActivityDO = shopService.getShopActivityById(id);
+        WeChatModel weChatModel = utilService.getOpenIdByCode(code, scope);
+        String openId = weChatModel.getOpenId();
+        modelMap.addAttribute("openId", openId);
+        CustomerDO customerDO = customerService.getCustomerByOpenId(openId);
+
+        if (customerDO == null) {
+            modelMap.addAttribute("redirectUrl", redirectUrl);
+            modelMap.addAttribute("weChatModel", weChatModel);
+            return "/my/login";
+        }
+
+        ActivityJoinDO activityJoinDO = ActivityJoinDO.builder().activityId(id).userId(customerDO.getId()).build();
+        activityJoinService.addActivityJoin(activityJoinDO);
+        modelMap.addAttribute("token", customerDO.getToken());
+
+        modelMap.addAttribute("shopActivityDO", shopActivityDO);
+
+        modelMap.addAttribute("phone", customerDO.getPhone());
+        return "/app/" + redirectUrl;
+    }
 
     @RequestMapping("/shop/mobile/activity/list")
     public String getShopActivityByMobile(
@@ -47,17 +107,98 @@ public class ShopController {
         return "/shop/exchange";
     }
 
+
+    @RequestMapping("shop/to/pay")
+    public String toPay(
+            @RequestParam(required = false, defaultValue = "0") String code,
+            HttpServletRequest request,
+            @RequestParam String state,
+            @RequestParam(required = false, defaultValue = "") String redirectUrl,
+            @RequestParam(required = false, defaultValue = "") String scope,
+            ModelMap modelMap) throws Exception {
+
+        WeChatModel weChatModel = utilService.getOpenIdByCode(code, scope);
+        String openId = weChatModel.getOpenId();
+        CustomerDO customerDO = customerService.getCustomerByOpenId(openId);
+        modelMap.addAttribute("openId", openId);
+        if (customerDO == null) {
+            modelMap.addAttribute("redirectUrl", redirectUrl);
+            return "/my/login";
+        }
+
+        ShopActivityDO shopActivityDO = shopService.getShopActivityById(Integer.parseInt(state));
+
+        if (shopActivityDO != null) {
+            int realPrice = shopActivityDO.getRealPrice();
+            shopActivityDO.setRealPrice(shopActivityDO.getRealPrice());
+            ShopDO shopDO = shopService.getShopById(shopActivityDO.getShopId());
+            modelMap.addAttribute("shopDO", shopDO);
+
+            modelMap.addAttribute("coupon", 0);
+
+            List<CouponDO> couponDOS = couponService.getCouponByMobileActivityId(customerDO.getPhone(), shopActivityDO.getId());
+            if (CollectionUtils.isNotEmpty(couponDOS)) {
+                realPrice = shopActivityDO.getRealPrice() - couponDOS.get(0).getPrice();
+                modelMap.addAttribute("coupon", couponDOS.get(0).getPrice());
+
+            }
+
+            modelMap.addAttribute("realPrice", realPrice);
+            modelMap.addAttribute("price", shopActivityDO.getRealPrice());
+        }
+
+
+        modelMap.addAttribute("shopActivityDO", shopActivityDO);
+
+        modelMap.addAttribute("phone", customerDO.getPhone());
+        return "/shop/toPay";
+    }
+
     @RequestMapping("/shop/activity/detail")
-    public String getShopActivityDetail(
-            @RequestParam(required = false, defaultValue = "0") int id,
-            ModelMap modelMap) {
+    public String getShopActivityDetail(HttpServletRequest request,
+                                        @RequestParam(required = false, defaultValue = "0") int id,
+                                        @RequestParam(required = false, defaultValue = "") String from,
+                                        ModelMap modelMap) throws Exception {
+
+        String ts = String.valueOf(System.currentTimeMillis() / 1000);
+        String nonce = String.valueOf(System.currentTimeMillis());
+
+        String jsApiTicket = wechatService.getJsapiTicket(wechatService.getAccessToken());
+
+        String url = request.getScheme() + "://newmami.cn" +
+                "/app/shop/activity/detail.do?id=" + id;
+        if (StringUtils.isNotBlank(from)) {
+            url += "&from=" + from;
+        }
+
+        String sign = SHA1.getSHA1("jsapi_ticket=" + jsApiTicket + "&noncestr=" + nonce + "&timestamp=" + ts + "&url=" + url);
+
+        PayModel pay = PayModel.builder().appId(WXPayConfig.getAppID()).timeStamp(ts)
+                .nonceStr(nonce).paySign(sign).build();
+
+        modelMap.addAttribute("pay", pay);
+
         ShopActivityDO shopActivityDO = shopService.getShopActivityById(id);
+        List<ShopActivityDO> shopActivityDOS = Lists.newArrayList();
         if (shopActivityDO != null) {
             shopActivityDO.setDiscount(shopActivityDO.getDiscount() * 10);
             shopActivityDO.setRealPrice(shopActivityDO.getRealPrice());
             ShopDO shopDO = shopService.getShopById(shopActivityDO.getShopId());
             modelMap.addAttribute("shopDO", shopDO);
+            modelMap.addAttribute("transferType", ActivityTypEnum.getTransferType(shopActivityDO.getType()));
+            int index = 0;
+            if (shopActivityDO.getIsParent() == ActivityParentEnum.PARENT.getType()) {
+                shopActivityDOS = shopService.getShopActivityByParentId(shopActivityDO.getId());
+                if (CollectionUtils.isNotEmpty(shopActivityDOS)) {
+                    for (ShopActivityDO s : shopActivityDOS) {
+                        s.setImages(shopService.getActivityImgListByActivityId(s.getId()));
+                        s.setTab("tabs-" + (++index));
+                    }
+                }
+
+            }
         }
+        modelMap.addAttribute("children", shopActivityDOS);
         List<String> images = shopService.getActivityImgListByActivityId(id);
         modelMap.addAttribute("shopActivityDO", shopActivityDO);
         modelMap.addAttribute("images", images);

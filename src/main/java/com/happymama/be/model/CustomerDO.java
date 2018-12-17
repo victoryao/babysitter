@@ -18,5 +18,8 @@ public class CustomerDO {
     private String address;
     private String token;
     private String openId;
+    private String img;
+    private String nickName;
+    private int sex;
 
 }

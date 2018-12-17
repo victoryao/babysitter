@@ -20,6 +20,9 @@ public class ShopOrderDO {
     private int activityId;
     private int customerId;
     private String mobile;
+    private String address;
+    private String name;
+    private String idcard;
     private int price;
     private int realPrice;
     private String code;

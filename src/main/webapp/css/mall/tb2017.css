@@ -1,0 +1,167 @@
+body, button, input, select, textarea {
+    font-family: 'Microsoft YaHei','helvetica neue',tahoma,'hiragino sans gb',stheiti,'wenquanyi micro hei',\5FAE\8F6F\96C5\9ED1,\5B8B\4F53,sans-serif;
+    -ms-text-autospace: ideograph-alpha ideograph-numeric ideograph-parenthesis;
+    text-autospace: ideograph-alpha ideograph-numeric ideograph-parenthesis;
+}
+.body-wrap {
+    width: 100%;
+    max-width:640px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.list-item,.list-item .coupon-amount-icon {
+    box-sizing: border-box;
+    display: inline-block
+}
+
+
+.recommend {
+    background: #f6f6f6;
+    padding-top: 3px;
+    padding-bottom: 6px;
+}
+
+.dashed {
+    border-bottom: 1px dashed #c7c7c7
+}
+
+
+.list-item {
+    float: left;
+    width: 47%;
+    position: relative;
+    margin: 2% 0 0 2%;
+    border: 1px solid #d9d9d9;
+    background: #fff
+}
+
+.list-item .c-red {
+    color:#FE4E4E
+}
+
+.list-item .big-price {
+    font-size: 14px;
+    font-weight: 700
+}
+
+.list-item .p-top {
+    position: relative;
+    top: 5px;
+}
+
+.list-item .coupon-con .coupon-amount-price {
+    float: right;
+    color: #9b9b9b;
+    font-size: 12px;
+    height: 30px;
+    top: 5px;
+    position: relative;
+}
+
+.list-item .coupon-amount-icon {
+    position: relative;
+    border: 1px solid #FE4E4E;
+    height: 20px;
+    color: #FE4E4E;
+    overflow: hidden;
+    padding: 0 4px 0 28px;
+    font-size: 12px;
+    line-height: 20px;
+    border-radius: 2px;
+}
+
+.list-item .coupon-amount-icon span {
+    position: relative;
+    top: -1px;
+}
+
+.list-item .coupon-amount-icon .icon-left {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
+    line-height: 20px;
+    text-align: center;
+    /*background: #FE4E4E;*/
+    background:-webkit-linear-gradient(left, #FE4E4E, #FF7373);
+    color: #fff;
+    left: 0;
+    top: -1px;
+
+}
+
+.list-item .line2 {
+    display: -webkit-box;
+    overflow: hidden
+}
+
+.list-item .tmall-icon {
+    display: inline-block;
+    margin-right: 4px;
+    width: 12px;
+    height: 12px;
+    background: url(../images/tb2017_tm.png);
+    background-size: cover;
+    vertical-align: text-bottom
+}
+
+.list-item .hr {
+    height: 1px;
+    width: 100%;
+    background: url(../images/tb2017_hr.png) no-repeat;
+    background-size: cover;
+    margin: 4px 0 0
+}
+
+.list-item .info-con {
+    padding: 0 4px;
+}
+
+.list-item .info-con .list-item-name {
+    font-size: 12px;
+    line-height: 16px;
+    margin-top: 5px;
+}
+
+.list-item .info-con .price_sell {
+    font-size: 12px;
+    color: #9b9b9b;
+    position: relative;
+    margin-top: 4px;
+}
+
+.list-item .info-con .price_sell .sell-num {
+    position: absolute;
+    right: 0
+}
+
+.list-item .img-con {
+    position: relative;
+    max-height: auto;
+    max-width: auto;
+    overflow: hidden
+}
+
+.list-item .img-con .coupon-icon {
+    position: absolute;
+    top: 0;
+    left: 4px;
+    width: 41px;
+    height: 38px;
+    background: url(../images/tb2017_yhq.png) no-repeat;
+    background-size: cover
+}
+
+.list-item .img-con .coupon-icon .coupon-amount {
+    margin-top: 16px;
+    color: #fff;
+    font-size: 12px;
+    text-align: center
+}
+
+.list-item .img-con .coupon-icon .coupon-amount span {
+    font-size: 15px;
+    margin-left: 1px;
+}

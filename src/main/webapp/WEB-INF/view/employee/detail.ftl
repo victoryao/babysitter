@@ -19,6 +19,8 @@
     <script type="text/javascript" src="${base}/js/jquery.cookie.js"></script>
     <#--<script type="text/javascript" src="${base}/js/rem.js"></script>-->
     <script type="text/javascript" src="${base}/js/swiper.min.js"></script>
+    <script type="text/javascript" src="http://res2.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
+
     <link rel="stylesheet" href="${base}/css/normalize.min.css">
     <link rel="stylesheet" href="${base}/css/promote-style.css">
     <link rel="stylesheet" href="${base}/css/swiper.min.css">
@@ -33,6 +35,50 @@
 
 
     <script>
+
+        wx.ready(function () {
+
+            wx.onMenuShareAppMessage({
+                title: '${employeeDO.name}', // 分享标题
+                imgUrl: '${employeeDO.photo}',
+                desc: '新手妈咪-${employeeDO.name}阿姨简历',
+                success: function () {
+                    // 用户确认分享后执行的回调函数
+                },
+                cancel: function () {
+                    // 用户取消分享后执行的回调函数
+                }
+            });
+
+            wx.onMenuShareTimeline({
+                title: '${employeeDO.name}', // 分享标题
+                imgUrl: '${employeeDO.photo}',
+                desc: '新手妈咪-${employeeDO.name}阿姨简历',
+                success: function () {
+                    // 用户确认分享后执行的回调函数
+                },
+                cancel: function () {
+                    // 用户取消分享后执行的回调函数
+                }
+            });
+
+        });
+
+        wx.config({
+            debug: false,
+            appId: '${pay.appId}',
+            timestamp: '${pay.timeStamp}',
+            nonceStr: '${pay.nonceStr}',
+            signature: '${pay.paySign}',
+            jsApiList: [
+                'onMenuShareTimeline',
+                'onMenuShareAppMessage',
+                'onMenuShareQQ',
+                'onMenuShareWeibo',
+                'onMenuShareQZone'
+            ]
+        });
+
         $(document).ready(function () {
             var token = $.cookie('kl_token');
             $("#accessToken").val(token);

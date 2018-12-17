@@ -23,6 +23,17 @@
                     </a>
                 </li>
 
+                <li class="item__shop">
+                    <a href="${base}/forum/0/list.do?loc=forum" class="footer">
+                        <div class="icon">
+                            <i class="wx-index-shop__icon"
+                               style="background-image: url(&quot;${base}/images/shop.png&quot;);"></i>
+                        </div>
+                        <div class="wx-index__footer--title">商城</div>
+                        <div class="spot" id="messageSpot"></div>
+                    </a>
+                </li>
+
                 <li class="item__message <#if loc='forum'>active</#if>">
                     <a href="${base}/forum/0/list.do?loc=forum" class="footer">
                         <div class="icon">

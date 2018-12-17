@@ -70,7 +70,7 @@
             <div class="container">
                 <div class="gt_copyright_des">
                     <p>Copyright © <a href="#">新手妈咪 </a> 2018. All rights reserved.</p>
-                    <span>Created by: <a href="#">klmami.cn</a></span>
+                    <span>Created by: <a href="#">newmami.cn</a></span>
                 </div>
             </div>
         </div>

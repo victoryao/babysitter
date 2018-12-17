@@ -31,7 +31,7 @@ public class FileUploadUtil {
     }
 
     public static String getImgUrl(String imgName) {
-        String style = "image/resize,m_fixed,w_110,h_110";
+        String style = "image/resize,m_fixed,w_330,h_330";
         GetObjectRequest request = new GetObjectRequest(bucketName, imgName);
         request.setProcess(style);
         OSSObject metadata = ossClient.getObject(request);

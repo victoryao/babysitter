@@ -8,8 +8,8 @@ import org.apache.ibatis.annotations.*;
  */
 public interface CustomerDao {
 
-    @Insert("insert into `customer`(`name`,`phone`,`address`, `token`, `openid`, `created`,`updated`) " +
-            "values(#{name}, #{phone}, #{address}, #{token}, #{openId}, now(), now())")
+    @Insert("insert into `customer`(`name`,`phone`,`address`, `token`, `openid`, `nick_name`, `sex`, `img` ,`created`,`updated`) " +
+            "values(#{name}, #{phone}, #{address}, #{token}, #{openId}, #{nickName}, #{sex}, #{img}, now(), now())")
     @SelectKey(statement = "SELECT LAST_INSERT_ID() as id", keyProperty = "id", before = false, resultType = Integer.class)
     boolean addCustomer(CustomerDO customerDO);
 
@@ -27,8 +27,10 @@ public interface CustomerDao {
 
     @Update({"<script>", "update `customer` set `token` = #{token}, ",
             "<if test='openId != null'> `openId` = #{openId} ,</if> ",
+            " img = #{img}, nick_name = #{nickName}, sex = #{sex} ,",
             "`updated` = now() where phone = #{mobile}", "</script>"})
-    void updateCustomerToken(@Param("mobile") String mobile, @Param("token") String token, @Param("openId") String openId);
+    void updateCustomerToken(@Param("mobile") String mobile, @Param("token") String token, @Param("openId") String openId
+            , @Param("img") String img, @Param("nickName") String nickName, @Param("sex") int sex);
 
     @Select("select * from `customer` where openId = #{openId}")
     CustomerDO getCustomerByOpenId(String openId);

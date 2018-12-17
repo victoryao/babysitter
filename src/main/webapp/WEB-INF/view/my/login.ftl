@@ -75,6 +75,10 @@
                 </div>
             </div>
             <input type="hidden" value="${openId}" name="openId">
+            <input type="hidden" value="${redirectUrl}" name="redirectUrl">
+            <input type="hidden" value="${weChatModel.nickName}" name="nickName">
+            <input type="hidden" value="${weChatModel.sex}" name="sex">
+            <input type="hidden" value="${weChatModel.headImgUrl}" name="img">
 
             <div data-v-c2da3850="" class="input-wrap" style="display: none;" id="verifyCodeDiv">
                 <i data-v-c2da3850="" class="icon_protect"></i>
@@ -95,6 +99,6 @@
     </form>
 </div>
 
-<#include "/common/foot.ftl" >
+
 </body>
 </html>

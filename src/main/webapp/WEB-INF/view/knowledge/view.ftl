@@ -60,6 +60,6 @@
 
 </div>
 
-<#include "/common/foot.ftl" >
+<#--<#include "/common/foot.ftl" >-->
 </body>
 </html>

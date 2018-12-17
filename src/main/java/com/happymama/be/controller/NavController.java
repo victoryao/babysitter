@@ -43,6 +43,12 @@ public class NavController {
         return "home";
     }
 
+    @RequestMapping("/toBaike")
+    public String toBaikePage(@RequestParam(required = false, defaultValue = "") String loc, ModelMap modelMap) {
+        modelMap.addAttribute("loc", loc);
+        return "baike_home";
+    }
+
     @RequestMapping("/app/to/babysitter")
     public String toLoginPage(
             @RequestParam(required = false, defaultValue = "") String loc,
@@ -136,7 +142,6 @@ public class NavController {
         return "/forum/list";
     }
 
-
     @RequestMapping("/order/list")
     public String toOrderListPage() {
         return "/order/list";
@@ -155,6 +160,22 @@ public class NavController {
     @RequestMapping("/to/mini/class")
     public String toMiniClassPage() {
         return "/miniclass/miniClass";
+    }
+
+    @RequestMapping("/to/pay")
+    public String toPayPage() {
+        return "/shop/toPay";
+    }
+
+
+    @RequestMapping("/mall/home")
+    public String toMallHomePage() {
+        return "/mall/home";
+    }
+
+    @RequestMapping("/baby/gender/test")
+    public String babyGenderTest() {
+        return "/tool/baby-gender-test";
     }
 
 }

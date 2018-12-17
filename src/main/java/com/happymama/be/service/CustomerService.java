@@ -45,7 +45,7 @@ public class CustomerService {
         customerDao.updateCustomer(customerDO);
     }
 
-    public void updateCustomerTokenByPhone(String mobile, String token, String openId) {
-        customerDao.updateCustomerToken(mobile, token, openId);
+    public void updateCustomerTokenByPhone(String mobile, String token, String openId, String img, String nickName, int sex) {
+        customerDao.updateCustomerToken(mobile, token, openId, img, nickName, sex);
     }
 }

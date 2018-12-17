@@ -1,15 +1,16 @@
 package com.happymama.be.controller;
 
 import com.happymama.be.constant.Constant;
-import com.happymama.be.model.CourseOrderDO;
-import com.happymama.be.model.CustomerDO;
-import com.happymama.be.model.EmployeeCommentDO;
-import com.happymama.be.model.EmployeeDO;
+import com.happymama.be.exception.AesException;
+import com.happymama.be.model.*;
+import com.happymama.be.pay.WXPayConfig;
 import com.happymama.be.service.CourseService;
 import com.happymama.be.service.EmployeeCommentService;
 import com.happymama.be.service.EmployeeService;
+import com.happymama.be.service.WechatService;
 import com.happymama.be.utils.PageView;
 import com.happymama.be.utils.QueryResult;
+import com.happymama.be.utils.SHA1;
 import com.happymama.be.utils.Utils;
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang.StringUtils;
@@ -34,7 +35,8 @@ public class EmployeeController {
     private CourseService courseService;
     @Resource
     private EmployeeCommentService employeeCommentService;
-
+    @Resource
+    private WechatService wechatService;
 
     @RequestMapping("/employee/list")
     public String toEmployeeListPage(
@@ -63,7 +65,26 @@ public class EmployeeController {
     @RequestMapping("/employee/{id}/detail")
     public String toEmployeeDetailPage(
             @PathVariable int id,
-            ModelMap modelMap) {
+            @RequestParam(required = false, defaultValue = "") String from,
+            ModelMap modelMap) throws AesException {
+
+        String ts = String.valueOf(System.currentTimeMillis() / 1000);
+        String nonce = String.valueOf(System.currentTimeMillis());
+
+        String jsApiTicket = wechatService.getJsapiTicket(wechatService.getAccessToken());
+
+        String url = "http://newmami.cn/app/employee/" + id + "/detail.do";
+        if (StringUtils.isNotBlank(from)) {
+            url += "?from=" + from;
+        }
+
+        String sign = SHA1.getSHA1("jsapi_ticket=" + jsApiTicket + "&noncestr=" + nonce + "&timestamp=" + ts + "&url=" + url);
+
+        PayModel pay = PayModel.builder().appId(WXPayConfig.getAppID()).timeStamp(ts)
+                .nonceStr(nonce).paySign(sign).build();
+
+        modelMap.addAttribute("pay", pay);
+
         List<Integer> positionList = employeeService.getPositionListByEmployeeId(id);
         String types = "";
         if (!org.springframework.util.CollectionUtils.isEmpty(positionList)) {

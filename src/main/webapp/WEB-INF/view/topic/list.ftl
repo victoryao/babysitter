@@ -34,6 +34,6 @@
         href="${base}/app/topic/list.do?parentId=${topic.id}&loc=knowledge">${topic.name}</a></div>
 </#list>
 
-<#include "/common/foot.ftl" >
+<#--<#include "/common/foot.ftl" >-->
 </body>
 </html>

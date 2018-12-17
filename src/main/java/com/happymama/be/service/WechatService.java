@@ -29,17 +29,12 @@ public class WechatService {
     @Resource
     private CloseableHttpClient httpClient;
 
-
     public String getAccessToken() {
         String url = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid="
                 + WXPayConfig.getAppID() + "&secret=" + WXPayConfig.getAPPKey();
         HttpGet get = new HttpGet(url);
         try {
-            CloseableHttpResponse response = httpClient.execute(get);
-            HttpEntity entity = response.getEntity();
-            String res = EntityUtils.toString(entity, Charset.forName("UTF-8"));
-            JSONObject jsonObject = JSON.parseObject(res);
-            return jsonObject.getString("access_token");
+            return httpGet(get, "access_token");
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -47,15 +42,36 @@ public class WechatService {
 
     }
 
+
+    public String getJsapiTicket(String accessToken) {
+        String url = "https://api.weixin.qq.com/cgi-bin/ticket/getticket?access_token=" + accessToken + "&type=jsapi";
+        HttpGet get = new HttpGet(url);
+        try {
+            return httpGet(get, "ticket");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+
+    }
+
+    private String httpGet(HttpGet get, String access_token) throws IOException {
+        CloseableHttpResponse response = httpClient.execute(get);
+        HttpEntity entity = response.getEntity();
+        String res = EntityUtils.toString(entity, Charset.forName("UTF-8"));
+        JSONObject jsonObject = JSON.parseObject(res);
+        return jsonObject.getString(access_token);
+    }
+
     public void menuCreate() {
         String accessToken = getAccessToken();
         String url = "https://api.weixin.qq.com/cgi-bin/menu/create?access_token=" + accessToken;
         HttpPost httpPost = new HttpPost(url);
 
-        String data = "{" +
+        /*String data = "{" +
                 "\"button\": [{" +
                 "\"type\": \"view\"," +
-                "\"name\": \"预约服务\"," +
+                "\"name\": \"百科\"," +
                 "\"url\": \"http://newmami.cn/app\"" +
                 "}," +
                 "{" +
@@ -97,6 +113,34 @@ public class WechatService {
                 "]" +
                 "}" +
                 "]" +
+                "}";*/
+
+        String data = "{" +
+                "\"button\": [{" +
+                "\"type\": \"view\"," +
+                "\"name\": \"母婴百科\"," +
+                "\"url\": \"http://www.newmami.cn/app/app/topic/list.do?loc=knowledge\"" +
+                "}," +
+                "{" +
+                "\"name\": \"孕产服务\"," +
+                "\"sub_button\": [" +
+                "{" +
+                "\"type\": \"view\"," +
+                "\"name\": \"活动\"," +
+                "\"url\": \"http://www.newmami.cn/app//activity/list.do?type=9\"" +
+                "}" +
+                "]" +
+                "}," +
+                "{" +
+                "\"name\": \"我的社群\"," +
+                "\"sub_button\": [{" +
+                "\"type\": \"view\"," +
+                "\"name\": \"我要加群\"," +
+                "\"url\": \"http://newmami.cn/app/to/mini/class.do\"" +
+                "}" +
+                "]" +
+                "}" +
+                "]" +
                 "}";
         System.out.println(data);
         StringEntity postEntity = new StringEntity(data, "UTF-8");
@@ -115,17 +159,11 @@ public class WechatService {
 
     }
 
-    public void sendMessage(String openId) {
+    public void sendMessage(String openId, String key) {
         String accessToken = getAccessToken();
         String url = "https://api.weixin.qq.com/cgi-bin/message/custom/send?access_token=" + accessToken;
         HttpPost httpPost = new HttpPost(url);
-        String data = "{\"touser\":\"" + openId + "\",\"msgtype\":\"news\",\"news\":{\"articles\":[" +
-                "{" +
-                "\"title\":\"【点击进入听课群】新生儿喂养,听我来支招\"," +
-                "\"url\":\"http://www.newmami.cn/app/to/mini/class.do\"," +
-                "\"picurl\":\"https://happymama.oss-cn-beijing.aliyuncs.com/0670bf582d354b5b9d31e3278b5db442.jpeg\"" +
-                "}" +
-                "]}}";
+        String data = getMiniWeiYangClass(openId, key);
         System.out.println(data);
         StringEntity postEntity = new StringEntity(data, "UTF-8");
         httpPost.addHeader("Content-Type", "text/xml");
@@ -142,11 +180,31 @@ public class WechatService {
         }
     }
 
-    public String getQRCode() {
+    private String getMiniWeiYangClass(String openId, String key) {
+        if ("123".equals(key))
+            return "{\"touser\":\"" + openId + "\",\"msgtype\":\"news\",\"news\":{\"articles\":[" +
+                    "{" +
+                    "\"title\":\"【点击直接听课】新生儿喂养,听我来支招\"," +
+                    "\"url\":\"https://mp.weixin.qq.com/s/mUIy4jF6O2DjwoxKeXDPqw\"," +
+                    "\"picurl\":\"http://www.newmami.cn/app/images/miniclass.jpeg\"" +
+                    "}" +
+                    "]}}";
+        if ("124".equals(key))
+            return "{\"touser\":\"" + openId + "\",\"msgtype\":\"news\",\"news\":{\"articles\":[" +
+                    "{" +
+                    "\"title\":\"【点击进入听课群】孕期心理保健,听我来支招\"," +
+                    "\"url\":\"http://newmami.cn/app/to/mini/class.do\"," +
+                    "\"picurl\":\"https://happymama.oss-cn-beijing.aliyuncs.com/6a1ed65e9ab8ed20693a0cd2485e2498.gif\"" +
+                    "}" +
+                    "]}}";
+        return "";
+    }
+
+    public String getQRCode(String sceneId) {
         String accessToken = getAccessToken();
         String url = "https://api.weixin.qq.com/cgi-bin/qrcode/create?access_token=" + accessToken;
         System.out.println("url:" + url);
-        String data = "{\"action_name\": \"QR_LIMIT_SCENE\", \"action_info\": {\"scene\": {\"scene_id\": 123}}}";
+        String data = "{\"action_name\": \"QR_LIMIT_SCENE\", \"action_info\": {\"scene\": {\"scene_id\": " + sceneId + "}}}";
         StringEntity postEntity = new StringEntity(data, "UTF-8");
         HttpPost httpPost = new HttpPost(url);
         httpPost.addHeader("Content-Type", "text/xml");

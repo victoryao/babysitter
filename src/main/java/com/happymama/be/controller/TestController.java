@@ -49,7 +49,7 @@ public class TestController {
 
     @RequestMapping("/knowledge/get")
     public String getKnowledge() throws IOException {
-        String res = getResponseByUrl("http://baike.putibaby.com");
+        String res = getResponseByUrl("https://baike.putibaby.com");
 //        System.out.println(res);
         Document doc = Jsoup.parse(res);
         Elements elements = doc.getElementsByClass("firstmenuTable");
@@ -92,8 +92,8 @@ public class TestController {
         try {
             url = url.replace(" ", "");
             HttpGet get = new HttpGet(url);
-            get.addHeader("User-Agent", agent);
-            get.addHeader("Host", "xindebaby.com");
+//            get.addHeader("User-Agent", agent);
+//            get.addHeader("Host", "xindebaby.com");
 //            get.setHeader("Referer", "http://mp.weixinbridge.com/mp/wapredirect?url=http%3A%2F%2Fxindebaby.com%2Fhospital%2F126%2F&action=appmsg_redirect&uin=777&biz=MzIyMDIyMjEwNg==&mid=402919222&idx=1&type=0&scene=0");
             CloseableHttpResponse response = httpClient.execute(get);
             HttpEntity entity = response.getEntity();
@@ -131,7 +131,7 @@ public class TestController {
                 if (ps.size() == 0) continue;
                 Element p = ps.get(0);
                 KnowledgeDO knowledgeDO = KnowledgeDO.builder().title(a.text())
-                        .content(articles.get(0).text()).summary(p.text()).type(type).build();
+                        .content(articles.get(0).html()).summary(p.text()).type(type).build();
                 knowledgeDao.addKnowledge(knowledgeDO);
             }
         }

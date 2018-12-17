@@ -45,13 +45,15 @@
                     <div class="uhead">
                         <img src="${shopOrderDO.shopActivityDO.shopDO.img}"/>
                     </div>
-                    <div class="tittxt">${shopOrderDO.shopActivityDO.name}</div>
+                    <div class="tittxt">${shopOrderDO.shopActivityDO.name}(预约电话：${shopOrderDO.shopActivityDO.phone})
+                    </div>
                     <div class="titzt">
                         <#if shopOrderDO.status='0'>待支付</#if>
                         <#if shopOrderDO.status='1'>已支付</#if>
                         <#if shopOrderDO.status='2'>已完成</#if>
                     </div>
                 </div>
+
                 <div class="pricebar">
                     <div class="txt slh">
                         <span>验证码：<b><font color="red">${shopOrderDO.code}</font></b>(消费时请出示)</span>
