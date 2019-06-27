@@ -14,7 +14,7 @@ import lombok.*;
 public class WeChatModel {
     private String openId;
     private String nickName;
-    private String sex;
+    private int sex;
     private String headImgUrl;
     private String accessToken;
 

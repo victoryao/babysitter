@@ -162,6 +162,11 @@ public class NavController {
         return "/miniclass/miniClass";
     }
 
+    @RequestMapping("/to/join")
+    public String toJoinPage() {
+        return "/miniclass/join";
+    }
+
     @RequestMapping("/to/pay")
     public String toPayPage() {
         return "/shop/toPay";

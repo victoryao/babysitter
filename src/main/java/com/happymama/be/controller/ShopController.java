@@ -4,6 +4,7 @@ import com.google.common.collect.Lists;
 import com.happymama.be.cache.impl.SimpleRedisClientImpl;
 import com.happymama.be.enums.ActivityParentEnum;
 import com.happymama.be.enums.ActivityTypEnum;
+import com.happymama.be.exception.AesException;
 import com.happymama.be.model.*;
 import com.happymama.be.pay.WXPayConfig;
 import com.happymama.be.pay.WXPayUtil;
@@ -59,14 +60,31 @@ public class ShopController {
     public String activityJoin(
             @RequestParam(required = false, defaultValue = "0") String code,
             HttpServletRequest request,
-            @RequestParam String state,
-            @RequestParam(required = false, defaultValue = "") String redirectUrl,
-            @RequestParam(required = false, defaultValue = "") String scope,
-            @RequestParam(required = false, defaultValue = "") int id,
-            ModelMap modelMap) throws IOException {
+            @RequestParam(required = false, defaultValue = "") String state,
+            ModelMap modelMap) throws IOException, AesException {
 
+        String ts = String.valueOf(System.currentTimeMillis() / 1000);
+        String nonce = String.valueOf(System.currentTimeMillis());
+        String url = request.getScheme() + "://newmami.cn" +
+                "/app/activity/join.do?code=" + code + "&state=" + state;
+        String jsApiTicket = wechatService.getJsapiTicket(wechatService.getAccessToken());
+        String sign = SHA1.getSHA1("jsapi_ticket=" + jsApiTicket + "&noncestr=" + nonce + "&timestamp=" + ts + "&url=" + url);
+        PayModel pay = PayModel.builder().appId(WXPayConfig.getAppID()).timeStamp(ts)
+                .nonceStr(nonce).paySign(sign).build();
+        modelMap.addAttribute("pay", pay);
+
+        String redirectUrl = "/shop/activity/detail.do?id=" + state;
+        int id = Integer.parseInt(state);
         ShopActivityDO shopActivityDO = shopService.getShopActivityById(id);
-        WeChatModel weChatModel = utilService.getOpenIdByCode(code, scope);
+        if (shopActivityDO != null) {
+            shopActivityDO.setDiscount(shopActivityDO.getDiscount() * 10);
+            shopActivityDO.setRealPrice(shopActivityDO.getRealPrice());
+            ShopDO shopDO = shopService.getShopById(shopActivityDO.getShopId());
+            modelMap.addAttribute("shopDO", shopDO);
+            modelMap.addAttribute("transferType", ActivityTypEnum.getTransferType(shopActivityDO.getType()));
+            System.out.println("transferType =============" + ActivityTypEnum.getTransferType(shopActivityDO.getType()));
+        }
+        WeChatModel weChatModel = utilService.getOpenIdByCode(code, "snsapi_userinfo");
         String openId = weChatModel.getOpenId();
         modelMap.addAttribute("openId", openId);
         CustomerDO customerDO = customerService.getCustomerByOpenId(openId);
@@ -77,14 +95,17 @@ public class ShopController {
             return "/my/login";
         }
 
+        customerService.updateCustomer(CustomerDO.builder().id(customerDO.getId()).img(weChatModel.getHeadImgUrl()).nickName(weChatModel.getNickName())
+        .sex(weChatModel.getSex()).build());
+
         ActivityJoinDO activityJoinDO = ActivityJoinDO.builder().activityId(id).userId(customerDO.getId()).build();
         activityJoinService.addActivityJoin(activityJoinDO);
         modelMap.addAttribute("token", customerDO.getToken());
-
         modelMap.addAttribute("shopActivityDO", shopActivityDO);
-
         modelMap.addAttribute("phone", customerDO.getPhone());
-        return "/app/" + redirectUrl;
+        List<String> images = shopService.getActivityImgListByActivityId(id);
+        modelMap.addAttribute("images", images);
+        return "/shop/detail";
     }
 
     @RequestMapping("/shop/mobile/activity/list")
@@ -156,7 +177,7 @@ public class ShopController {
 
     @RequestMapping("/shop/activity/detail")
     public String getShopActivityDetail(HttpServletRequest request,
-                                        @RequestParam(required = false, defaultValue = "0") int id,
+                                        @RequestParam(required = false, defaultValue = "15") int id,
                                         @RequestParam(required = false, defaultValue = "") String from,
                                         ModelMap modelMap) throws Exception {
 

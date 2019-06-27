@@ -76,10 +76,11 @@
             </div>
             <input type="hidden" value="${openId}" name="openId">
             <input type="hidden" value="${redirectUrl}" name="redirectUrl">
+        <#if weChatModel ? exists>
             <input type="hidden" value="${weChatModel.nickName}" name="nickName">
             <input type="hidden" value="${weChatModel.sex}" name="sex">
             <input type="hidden" value="${weChatModel.headImgUrl}" name="img">
-
+        </#if>
             <div data-v-c2da3850="" class="input-wrap" style="display: none;" id="verifyCodeDiv">
                 <i data-v-c2da3850="" class="icon_protect"></i>
                 <div data-v-c2da3850="" class="input-box">
@@ -93,7 +94,7 @@
 
             <div data-v-c2da3850="" class="submit-button">下一步</div>
             <div data-v-c2da3850="" class="agreement-wrap">
-                点击“下一步”,即同意<a data-v-c2da3850="" href="${base}/app/to/user/notice.do">《新手妈咪用户协议》</a>
+                点击“下一步”,即同意<a data-v-c2da3850="" href="${base}/app/to/user/notice.do">《新新妈咪用户协议》</a>
             </div>
         </div>
     </form>

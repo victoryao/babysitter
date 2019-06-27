@@ -10,11 +10,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <meta name="description"
-          content="北京新手妈咪科技有限公司是由一群有爱心有激情的奶爸与月嫂创始建设，着力搭建一个孕妈和月嫂的深度交流平台。目前的核心服务包括培训、月嫂、育儿嫂、催乳师、产后护理、小儿推拿、月子餐等母婴服务的预定与咨询，用户可结合自身实际情况，分价格、分地域、分年限进行快速搜索，可以周为单位进行服务评价、付款，是专业且具有保障的孕妈社区。"/>
+          content="北京新新妈咪科技有限公司是由一群有爱心有激情的奶爸与月嫂创始建设，着力搭建一个孕妈和月嫂的深度交流平台。目前的核心服务包括培训、月嫂、育儿嫂、催乳师、产后护理、小儿推拿、月子餐等母婴服务的预定与咨询，用户可结合自身实际情况，分价格、分地域、分年限进行快速搜索，可以周为单位进行服务评价、付款，是专业且具有保障的孕妈社区。"/>
     <meta name="aplus-xplug" content="NONE">
-    <meta name="keyword" content="月嫂,培训,月嫂培训,育儿嫂,催乳师,小儿推拿师,产后恢复,月子膳食,营养师,新手妈咪,推荐工作,高薪,家政"/>
-    <meta name="baidu-site-verification" content="71R86N1GBt"/>
-    <title>新手妈咪-${employeeDO.name}阿姨简历</title>
+    <meta name="keyword" content="月嫂,培训,月嫂培训,育儿嫂,催乳师,小儿推拿师,产后恢复,月子膳食,营养师,新新妈咪,推荐工作,高薪,家政"/>
+    <meta name="baidu-site-verification" content="ZbacBBPSZU"/>
+    <title>新新妈咪-${employeeDO.name}阿姨简历</title>
     <script type="text/javascript" src="${base}/js/jquery.js"></script>
     <script type="text/javascript" src="${base}/js/jquery.cookie.js"></script>
     <#--<script type="text/javascript" src="${base}/js/rem.js"></script>-->
@@ -23,7 +23,6 @@
 
     <link rel="stylesheet" href="${base}/css/normalize.min.css">
     <link rel="stylesheet" href="${base}/css/promote-style.css">
-    <link rel="stylesheet" href="${base}/css/swiper.min.css">
     <link rel="stylesheet" href="${base}/css/resume.css">
     <link rel="stylesheet" href="${base}/css/ucenter.css">
     <link rel="stylesheet" type="text/css" href="${base}/css/main.im.css"/>
@@ -41,7 +40,7 @@
             wx.onMenuShareAppMessage({
                 title: '${employeeDO.name}', // 分享标题
                 imgUrl: '${employeeDO.photo}',
-                desc: '新手妈咪-${employeeDO.name}阿姨简历',
+                desc: '新新妈咪-${employeeDO.name}阿姨简历',
                 success: function () {
                     // 用户确认分享后执行的回调函数
                 },
@@ -53,7 +52,7 @@
             wx.onMenuShareTimeline({
                 title: '${employeeDO.name}', // 分享标题
                 imgUrl: '${employeeDO.photo}',
-                desc: '新手妈咪-${employeeDO.name}阿姨简历',
+                desc: '新新妈咪-${employeeDO.name}阿姨简历',
                 success: function () {
                     // 用户确认分享后执行的回调函数
                 },
@@ -95,7 +94,7 @@
 </head>
 <body>
 <div class="resume">
-    <div align="center"><img src="${employeeDO.photo}" alt="" width="250px" height="250px"></div>
+    <div align="center"><img src="${employeeDO.photo}" alt="" width="250px"></div>
     <div class="field">
         <h1 class="title title_phone stonefont">${employeeDO.name}（女）
         </h1>
@@ -164,6 +163,7 @@
             </dd>
         </dl>
     </div>
+
     <!--工作经验-->
     <div class="field">
         <h2 class="field-title">个人简介</h2>
@@ -172,6 +172,45 @@
         </div>
     </div>
 
+    <div id="list">
+        <!--生活照-->
+    <#if lifePhotos?? && (lifePhotos?size > 0) >
+        <div class="field">
+            <h2 class="field-title">生活照</h2>
+            <div>
+                <div class="po-cmt">
+                    <div class="po-hd">
+                        <p class="post">
+                            <#list lifePhotos as image>
+                                <img class="list-img" src="${image}"/>
+                            </#list>
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </#if>
+
+        <!--月子餐-->
+    <#if foodPhotos?? && (foodPhotos?size > 0) >
+        <div class="field">
+            <h2 class="field-title">月子餐</h2>
+            <div>
+                <div class="po-cmt">
+                    <div class="po-hd">
+                        <p class="post">
+                            <#list foodPhotos as image>
+                                <img class="list-img" src="${image}"/>
+                            </#list>
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </#if>
+    </div>
 
     <!-- 评价区域 -->
     <div class="block block_com mb10">
@@ -250,6 +289,54 @@
         </div>
     </div>
 </div>
+
+<div class="big_img">
+    <div class="swiper-container2">
+        <div class="swiper-wrapper">
+
+        </div>
+    </div>
+    <div class="swiper-pagination2"></div>
+</div>
+
 <script type="text/javascript" src="${base}/js/index.js"></script>
+<script>
+    $(document).ready(function () {
+        /*调起大图 S*/
+        var mySwiper = new Swiper('.swiper-container2', {
+            loop: false,
+            pagination: '.swiper-pagination2'
+        });
+
+        $("#list").on("click", ".post img",
+                function () {
+                    var imgBox = $(this).parents(".post").find("img");
+                    var i = $(imgBox).index(this);
+                    $(".big_img .swiper-wrapper").html("");
+
+                    for (var j = 0, c = imgBox.length; j < c; j++) {
+                        $(".big_img .swiper-wrapper").append('<div class="swiper-slide"><div class="cell"><img src="' + imgBox.eq(j).attr("src") + '" / ></div></div>');
+                    }
+                    mySwiper.updateSlidesSize();
+                    mySwiper.updatePagination();
+                    $(".big_img").css({
+                        "z-index": 1001,
+                        "opacity": "1"
+                    });
+                    mySwiper.slideTo(i, 0, false);
+                    return false;
+                });
+
+        $(".big_img").on("click",
+                function () {
+                    $(this).css({
+                        "z-index": "-1",
+                        "opacity": "0"
+                    });
+
+                });
+    });
+    /*调起大图 E*/
+</script>
 </body>
 </html>

@@ -11,10 +11,10 @@
 
     <title>${shopActivityDO.name}</title>
     <meta name="description"
-          content="北京新手妈咪科技有限公司是由一群有爱心有激情的奶爸与月嫂创始建设，着力搭建一个孕妈和月嫂的深度交流平台。目前的核心服务包括培训、月嫂、育儿嫂、催乳师、产后护理、小儿推拿、月子餐等母婴服务的预定与咨询，用户可结合自身实际情况，分价格、分地域、分年限进行快速搜索，可以周为单位进行服务评价、付款，是专业且具有保障的孕妈社区。"/>
+          content="北京新新妈咪科技有限公司是由一群有爱心有激情的奶爸与月嫂创始建设，着力搭建一个孕妈和月嫂的深度交流平台。目前的核心服务包括培训、月嫂、育儿嫂、催乳师、产后护理、小儿推拿、月子餐等母婴服务的预定与咨询，用户可结合自身实际情况，分价格、分地域、分年限进行快速搜索，可以周为单位进行服务评价、付款，是专业且具有保障的孕妈社区。"/>
     <meta name="aplus-xplug" content="NONE">
-    <meta name="keyword" content="月嫂,培训,月嫂培训,育儿嫂,催乳师,小儿推拿师,产后恢复,月子膳食,营养师,新手妈咪,推荐工作,高薪,家政"/>
-    <meta name="baidu-site-verification" content="71R86N1GBt"/>
+    <meta name="keyword" content="月嫂,培训,月嫂培训,育儿嫂,催乳师,小儿推拿师,产后恢复,月子膳食,营养师,新新妈咪,推荐工作,高薪,家政"/>
+    <meta name="baidu-site-verification" content="ZbacBBPSZU"/>
 
     <meta name="applicable-device" content="mobile">
 
@@ -45,13 +45,27 @@
     <script>
 
         $(document).ready(function () {
-            $.cookie('kl_token', '${token}', {expires: 120, path: '/'});
-            $.get("${base}/activity/is/join.do?accessToken=" + ${token} +"&activityId="+${shopActivityDO.id}, function(data){
-                if(data == "true"){
-                    $("#nextpay").attr("href","#");
-                    $("#nextpay").text("已报名");
-                }
-            });
+
+            var token = $("#accessToken").val();
+            if (token != '') {
+                $.cookie('kl_token', '${token}', {expires: 120, path: '/'});
+            }
+
+            token = $.cookie('kl_token');
+            if (token != '') {
+                $.get("${base}/activity/is/join.do", {
+                    activityId: '${shopActivityDO.id}',
+                    accessToken: '${token}'
+                }, function (data) {
+                    if (data) {
+                        $("#nextpay").text("已报名");
+                        $("#nextpay").on("click", function () {
+                            return false;
+                        });
+
+                    }
+                });
+            }
 
         });
 
@@ -116,8 +130,10 @@
                 aId = $("#activityId").val();
                 if ($("#transferType").val() == 0) {
                     $("#nextpay").attr("href", "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx408ebb6c68b9d640&redirect_uri=http%3a%2f%2fwww.newmami.cn%2fapp%2fshop%2fpay.do%3fredirectUrl%3d%2fshop%2factivity%2fdetail.do%3fid%3d" + aId + "&response_type=code&scope=snsapi_base&state=" + aId + "#wechat_redirect");
-                } else {
+                } else if ($("#transferType").val() == 1) {
                     $("#nextstep").attr("href", "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx408ebb6c68b9d640&redirect_uri=http%3a%2f%2fnewmami.cn%2fapp%2fshop%2fto%2fpay.do%3fredirectUrl%3d%2fshop%2factivity%2fdetail.do%3fid%3d" + aId + "&response_type=code&scope=snsapi_base&state=" + aId + "#wechat_redirect");
+                } else if ($("#transferType").val() == 2) {
+                    $("#nextpay").attr("href", "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx408ebb6c68b9d640&redirect_uri=http%3a%2f%2fwww.newmami.cn%2fapp%2factivity%2fjoin.do%3fscope%3dsnsapi_userinfo%26id%3d" + aId + "%26redirectUrl%3d%2fshop%2factivity%2fdetail.do%3fid%3d" + aId + "&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect");
                 }
 
             });
@@ -133,6 +149,7 @@
 <input type="hidden" id="oldPrice" value="${shopActivityDO.price}">
 <input type="hidden" id="activityId" value="${shopActivityDO.id}">
 <input type="hidden" id="transferType" value="${transferType}">
+<input type="hidden" id="accessToken" value="${token}">
 
 <div class="topbar-holder"></div>
 
@@ -272,9 +289,9 @@
         </div>
         <div class="con">
             <ol class="box-yyxz">
-                <li class="yyxz-dd-xy">使用新手妈咪平台前，请充分了解并同意<a href="${base}/app/to/user/notice.do">《新手妈咪用户协议》</a>。交易前充分沟通，明确包括但不限于服务项、金额、服务时间等具体细节。
+                <li class="yyxz-dd-xy">使用新新妈咪平台前，请充分了解并同意<a href="${base}/app/to/user/notice.do">《新新妈咪用户协议》</a>。交易前充分沟通，明确包括但不限于服务项、金额、服务时间等具体细节。
                 </li>
-                <li class="yyxz-dd-wq">新手妈咪平台服务由第三方提供，强烈建议您在到家平台通过在线支付完成所有交易，并保留相应的证据以利于售后维权。</li>
+                <li class="yyxz-dd-wq">新新妈咪平台服务由第三方提供，强烈建议您在到家平台通过在线支付完成所有交易，并保留相应的证据以利于售后维权。</li>
                 <li class="yyxz-dd-lx">如遇服务质量问题，可进行<a class="xd_report">举报</a></li>
             </ol>
         </div>
@@ -306,7 +323,7 @@
         </#if>
 
         <#if (transferType == 2)>
-            <a href="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx408ebb6c68b9d640&redirect_uri=http%3a%2f%2fwww.newmami.cn%2fapp%2factivity%2fjoin.do%3fscope%3dsnsapi_userinfo%26id%3d${shopActivityDO.id}%26redirectUrl%3d%2fshop%2factivity%2fdetail.do%3fid%3d${shopActivityDO.id}&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect"
+            <a href="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx408ebb6c68b9d640&redirect_uri=http%3a%2f%2fwww.newmami.cn%2fapp%2factivity%2fjoin.do&response_type=code&scope=snsapi_userinfo&connect_redirect=1&state=${shopActivityDO.id}#wechat_redirect"
                class="btn_order" id="nextpay">
                 我要报名
             </a>

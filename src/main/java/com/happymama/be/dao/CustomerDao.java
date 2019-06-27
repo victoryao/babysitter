@@ -22,7 +22,7 @@ public interface CustomerDao {
     @Select("select * from `customer` where token = #{token}")
     CustomerDO getCustomerByToken(@Param("token") String token);
 
-    @Update("update `customer` set `name` = #{name}, phone = #{phone}, address = #{address}, `updated` = now() where id = #{id}")
+    @Update("update `customer` set `img` = #{img}, nick_name = #{nickName}, sex = #{sex}, `updated` = now() where id = #{id}")
     void updateCustomer(CustomerDO customerDO);
 
     @Update({"<script>", "update `customer` set `token` = #{token}, ",

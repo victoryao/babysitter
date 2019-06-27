@@ -1,6 +1,7 @@
 package com.happymama.be.dao;
 
 import com.happymama.be.model.EmployeeDO;
+import com.happymama.be.model.EmployeePhotoDO;
 import org.apache.ibatis.annotations.*;
 
 import java.util.List;
@@ -35,4 +36,8 @@ public interface EmployeeDao {
 
     @Update("update employee set score = #{score}, comment = comment + 1 where id = #{employeeId} ")
     void updateEmployeeScore(@Param("score") float score, @Param("employeeId") int employeeId);
+
+    @Select({"select img from employee_photo where employee_id = #{employeeId} and type = #{type} "})
+    public List<String> getEmployeePhotoList(@Param("employeeId") int employeeId, @Param("type") int type);
+
 }

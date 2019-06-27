@@ -44,7 +44,7 @@ public class UtilService {
             entity = response.getEntity();
             res = EntityUtils.toString(entity, Charset.forName("UTF-8"));
             jsonObject = JSON.parseObject(res);
-            builder.sex(jsonObject.getString("sex"));
+            builder.sex(jsonObject.getInteger("sex"));
             builder.nickName(jsonObject.getString("nickname"));
             builder.headImgUrl(jsonObject.getString("headimgurl"));
         }

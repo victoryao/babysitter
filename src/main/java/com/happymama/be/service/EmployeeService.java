@@ -4,9 +4,11 @@ import com.happymama.be.dao.EmployeeDao;
 import com.happymama.be.dao.EmployeePositionDao;
 import com.happymama.be.model.CourseOrderDO;
 import com.happymama.be.model.EmployeeDO;
+import com.happymama.be.model.EmployeePhotoDO;
 import com.happymama.be.utils.QueryResult;
 import lombok.extern.java.Log;
 import org.apache.commons.collections.CollectionUtils;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -26,6 +28,9 @@ public class EmployeeService {
     @Resource
     private EmployeePositionDao employeePositionDao;
 
+    public List<String> getEmployeePhotoList(@Param("employeeId") int employeeId, @Param("type") int type) {
+        return employeeDao.getEmployeePhotoList(employeeId, type);
+    }
     public EmployeeDO getEmployeeById(int id) {
         return employeeDao.getEmployeeById(id);
     }

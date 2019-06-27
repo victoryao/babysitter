@@ -1,12 +1,12 @@
 package com.happymama.be.controller;
 
+import com.happymama.be.exception.AesException;
 import com.happymama.be.model.*;
-import com.happymama.be.service.CourseService;
-import com.happymama.be.service.CustomerService;
-import com.happymama.be.service.EmployeeCommentService;
-import com.happymama.be.service.EmployeeService;
+import com.happymama.be.pay.WXPayConfig;
+import com.happymama.be.service.*;
 import com.happymama.be.utils.PageView;
 import com.happymama.be.utils.QueryResult;
+import com.happymama.be.utils.SHA1;
 import com.happymama.be.utils.Utils;
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang.StringUtils;
@@ -34,6 +34,8 @@ public class EmployeeCommentController {
     private EmployeeService employeeService;
     @Resource
     private CourseService courseService;
+    @Resource
+    private WechatService wechatService;
 
     @RequestMapping("/employee/{employeeId}/to/comment/add")
     public String toAddEmployeeCommentPage(@PathVariable int employeeId,
@@ -60,7 +62,9 @@ public class EmployeeCommentController {
                                      @RequestParam String content,
                                      @RequestParam String accessToken,
                                      HttpServletRequest request,
-                                     ModelMap modelMap) {
+                                     @RequestParam(required = false, defaultValue = "") String from,
+                                     ModelMap modelMap) throws AesException {
+
         if (StringUtils.isBlank(accessToken) || "undefined".equals(accessToken)) {
             return "/my/login";
         }
@@ -68,6 +72,25 @@ public class EmployeeCommentController {
         if (customerDO == null) {
             return "/my/login";
         }
+
+
+        String ts = String.valueOf(System.currentTimeMillis() / 1000);
+        String nonce = String.valueOf(System.currentTimeMillis());
+
+        String jsApiTicket = wechatService.getJsapiTicket(wechatService.getAccessToken());
+
+        String url = "http://newmami.cn/app/employee/addComment.do";
+        if (StringUtils.isNotBlank(from)) {
+            url += "?from=" + from;
+        }
+
+        String sign = SHA1.getSHA1("jsapi_ticket=" + jsApiTicket + "&noncestr=" + nonce + "&timestamp=" + ts + "&url=" + url);
+
+        PayModel pay = PayModel.builder().appId(WXPayConfig.getAppID()).timeStamp(ts)
+                .nonceStr(nonce).paySign(sign).build();
+
+        modelMap.addAttribute("pay", pay);
+
 
         String ip = Utils.getIpAddr(request);
         employeeCommentService.addEmployeeComment(EmployeeCommentDO.builder().commentId(commentId).comment(content)

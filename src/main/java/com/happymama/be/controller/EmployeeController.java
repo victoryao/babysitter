@@ -99,6 +99,10 @@ public class EmployeeController {
         assembleRecommendInfo(courseOrderDOs);
         employeeDO.setTypes(types);
 
+        //月嫂照片
+        modelMap.addAttribute("lifePhotos", employeeService.getEmployeePhotoList(id, 0));
+        modelMap.addAttribute("foodPhotos", employeeService.getEmployeePhotoList(id, 1));
+
         //月嫂评论
         QueryResult<EmployeeCommentDO> comments = employeeCommentService.getCommentListByEmployeeId(id, 0, 3);
 

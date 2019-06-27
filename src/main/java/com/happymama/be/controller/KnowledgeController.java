@@ -53,4 +53,17 @@ public class KnowledgeController {
         return "/knowledge/view";
     }
 
+    @RequestMapping(value = "/knowledge/query", method = RequestMethod.GET)
+    public String queryKnowledge(@RequestParam(required = false, defaultValue = "") String name,
+                                 ModelMap modelMap
+
+    ) {
+        QueryResult<KnowledgeDO> qr = knowledgeService.queryKnowledge(name);
+        PageView<KnowledgeDO> pageView = new PageView<>(10, 1);
+        pageView.setQueryResult(qr);
+        modelMap.addAttribute("pageView", pageView);
+        return "/knowledge/list";
+    }
+
+
 }

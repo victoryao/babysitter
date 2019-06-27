@@ -29,4 +29,10 @@ public interface KnowledgeDao {
 
     @Select("select * from knowledge  where id = #{id}")
     KnowledgeDO getKnowledgeById(int id);
+
+    @Select("select id from knowledge  where title like CONCAT('%',#{text},'%') limit 10")
+    List<Integer> queryKnowledgeByTitle(@Param("text") String text);
+
+    @Select("select id from knowledge  where content like CONCAT('%',#{text},'%') limit 10")
+    List<Integer> queryKnowledgeByContent(@Param("text") String text);
 }

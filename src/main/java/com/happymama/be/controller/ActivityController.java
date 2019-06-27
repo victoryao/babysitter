@@ -38,6 +38,7 @@ public class ActivityController {
 
     @RequestMapping("/activity/is/join")
     public boolean getActivityJoinerByAid(@RequestParam String accessToken, @RequestParam int activityId) {
+        System.out.println("isjoin" + accessToken + " " + activityId);
         CustomerDO customerDO = customerService.getCustomerByToken(accessToken);
         return customerDO != null && activityJoinService.isActivityJoiner(ActivityJoinDO.builder().activityId(activityId).userId(customerDO.getId()).build());
     }

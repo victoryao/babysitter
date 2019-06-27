@@ -39,7 +39,7 @@ public class UserController {
     public String sso(@RequestParam String mobile,
                       @RequestParam String capt,
                       @RequestParam(required = false, defaultValue = "") String openId,
-                      @RequestParam(required = false, defaultValue = "") int sex,
+                      @RequestParam(required = false, defaultValue = "0") int sex,
                       @RequestParam(required = false, defaultValue = "") String nickName,
                       @RequestParam(required = false, defaultValue = "") String img,
                       @RequestParam(required = false, defaultValue = "") String redirectUrl,

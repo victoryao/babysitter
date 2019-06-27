@@ -68,10 +68,10 @@ public class WechatService {
         String url = "https://api.weixin.qq.com/cgi-bin/menu/create?access_token=" + accessToken;
         HttpPost httpPost = new HttpPost(url);
 
-        /*String data = "{" +
+        String data = "{" +
                 "\"button\": [{" +
                 "\"type\": \"view\"," +
-                "\"name\": \"百科\"," +
+                "\"name\": \"预约服务\"," +
                 "\"url\": \"http://newmami.cn/app\"" +
                 "}," +
                 "{" +
@@ -83,19 +83,25 @@ public class WechatService {
                 "}," +
                 "{" +
                 "\"type\": \"view\"," +
-                "\"name\": \"月嫂课堂\"," +
+                "\"name\": \"母婴百科\"," +
                 "\"url\": \"http://www.newmami.cn/app/app/topic/list.do?loc=knowledge\"" +
                 "}," +
                 "{" +
                 "\"type\": \"view\"," +
-                "\"name\": \"新手社区\"," +
+                "\"name\": \"新新社区\"," +
                 "\"url\": \"http://newmami.cn/app/forum/0/list.do?loc=forum\"" +
                 "}" +
                 "]" +
                 "}," +
                 "{" +
                 "\"name\": \"了解更多\"," +
-                "\"sub_button\": [{" +
+                "\"sub_button\": [" +
+                "{" +
+                "\"type\": \"view\"," +
+                "\"name\": \"我要加群\"," +
+                "\"url\": \"http://newmami.cn/app/to/join.do\"" +
+                "}," +
+                "{" +
                 "\"type\": \"view\"," +
                 "\"name\": \"课程培训\"," +
                 "\"url\": \"http://www.newmami.cn/course.do\"" +
@@ -109,13 +115,13 @@ public class WechatService {
                 "\"type\": \"view\"," +
                 "\"name\": \"联系我们\"," +
                 "\"url\": \"http://www.newmami.cn/contact-us.do\"" +
-                "}" +
+                "} " +
                 "]" +
                 "}" +
                 "]" +
-                "}";*/
+                "}";
 
-        String data = "{" +
+        /*String data = "{" +
                 "\"button\": [{" +
                 "\"type\": \"view\"," +
                 "\"name\": \"母婴百科\"," +
@@ -136,12 +142,12 @@ public class WechatService {
                 "\"sub_button\": [{" +
                 "\"type\": \"view\"," +
                 "\"name\": \"我要加群\"," +
-                "\"url\": \"http://newmami.cn/app/to/mini/class.do\"" +
+                "\"url\": \"http://newmami.cn/app/to/join.do\"" +
                 "}" +
                 "]" +
                 "}" +
                 "]" +
-                "}";
+                "}";*/
         System.out.println(data);
         StringEntity postEntity = new StringEntity(data, "UTF-8");
         httpPost.addHeader("Content-Type", "text/xml");
@@ -192,12 +198,12 @@ public class WechatService {
         if ("124".equals(key))
             return "{\"touser\":\"" + openId + "\",\"msgtype\":\"news\",\"news\":{\"articles\":[" +
                     "{" +
-                    "\"title\":\"【点击进入听课群】孕期心理保健,听我来支招\"," +
-                    "\"url\":\"http://newmami.cn/app/to/mini/class.do\"," +
-                    "\"picurl\":\"https://happymama.oss-cn-beijing.aliyuncs.com/6a1ed65e9ab8ed20693a0cd2485e2498.gif\"" +
+                    "\"title\":\"【点击进入交流群】新新妈咪孕期交流群\"," +
+                    "\"url\":\"http://newmami.cn/app/to/join.do\"," +
+                    "\"picurl\":\"https://happymama.oss-cn-beijing.aliyuncs.com/1545316897750.jpg\"" +
                     "}" +
                     "]}}";
-        return "";
+        return "{\"touser\":\"" + openId + "\",\"msgtype\":\"text\",\"text\":{\"content\": \"" + key + "\"}}";
     }
 
     public String getQRCode(String sceneId) {

@@ -25,7 +25,7 @@
 </head>
 <body>
 <div align="center">
-    <img width="90%" height="90%" src="https://happymama.oss-cn-beijing.aliyuncs.com/miniclass.jpg"/>
+    <img width="90%" height="90%" src="https://happymama.oss-cn-beijing.aliyuncs.com/21561646637_.pic_hd.jpg"/>
 </div>
 </body>
 </html>
