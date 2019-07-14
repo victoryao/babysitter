@@ -209,7 +209,7 @@ public class WechatService {
                 return "{\"touser\":\"" + openId + "\",\"msgtype\":\"news\",\"news\":{\"articles\":[" +
                         "{" +
                         "\"title\":\"【点击进入培训群】月嫂面试技巧培训群\"," +
-                        "\"url\":\"http://newmami.cn/app/to/join.do\"," +
+                        "\"url\":\"http://newmami.cn/app/to/join.do?id=1\"," +
                         "\"picurl\":\"https://happymama.oss-cn-beijing.aliyuncs.com/1545316897750.jpg\"" +
                         "}" +
                         "]}}";
