@@ -25,7 +25,11 @@
 </head>
 <body>
 <div align="center">
+<#if id ==1>
+    <img width="90%" height="90%" src="https://happymama.oss-cn-beijing.aliyuncs.com/train.jpg"/>
+<#elseif id == 0>
     <img width="90%" height="90%" src="https://happymama.oss-cn-beijing.aliyuncs.com/21561646637_.pic_hd.jpg"/>
+</#if>
 </div>
 </body>
 </html>

@@ -163,9 +163,13 @@ public class NavController {
     }
 
     @RequestMapping("/to/join")
-    public String toJoinPage() {
+    public String toJoinPage(@RequestParam(required = false, defaultValue = "0") int id,
+                             ModelMap modelMap) {
+        modelMap.addAttribute("id", id);
         return "/miniclass/join";
+
     }
+
 
     @RequestMapping("/to/pay")
     public String toPayPage() {

@@ -187,22 +187,34 @@ public class WechatService {
     }
 
     private String getMiniWeiYangClass(String openId, String key) {
-        if ("123".equals(key))
-            return "{\"touser\":\"" + openId + "\",\"msgtype\":\"news\",\"news\":{\"articles\":[" +
-                    "{" +
-                    "\"title\":\"【点击直接听课】新生儿喂养,听我来支招\"," +
-                    "\"url\":\"https://mp.weixin.qq.com/s/mUIy4jF6O2DjwoxKeXDPqw\"," +
-                    "\"picurl\":\"http://www.newmami.cn/app/images/miniclass.jpeg\"" +
-                    "}" +
-                    "]}}";
-        if ("124".equals(key))
-            return "{\"touser\":\"" + openId + "\",\"msgtype\":\"news\",\"news\":{\"articles\":[" +
-                    "{" +
-                    "\"title\":\"【点击进入交流群】新新妈咪孕期交流群\"," +
-                    "\"url\":\"http://newmami.cn/app/to/join.do\"," +
-                    "\"picurl\":\"https://happymama.oss-cn-beijing.aliyuncs.com/1545316897750.jpg\"" +
-                    "}" +
-                    "]}}";
+
+        switch (key) {
+            case "123":
+                return "{\"touser\":\"" + openId + "\",\"msgtype\":\"news\",\"news\":{\"articles\":[" +
+                        "{" +
+                        "\"title\":\"【点击直接听课】新生儿喂养,听我来支招\"," +
+                        "\"url\":\"https://mp.weixin.qq.com/s/mUIy4jF6O2DjwoxKeXDPqw\"," +
+                        "\"picurl\":\"http://www.newmami.cn/app/images/miniclass.jpeg\"" +
+                        "}" +
+                        "]}}";
+            case "124":
+                return "{\"touser\":\"" + openId + "\",\"msgtype\":\"news\",\"news\":{\"articles\":[" +
+                        "{" +
+                        "\"title\":\"【点击进入交流群】新新妈咪孕期交流群\"," +
+                        "\"url\":\"http://newmami.cn/app/to/join.do\"," +
+                        "\"picurl\":\"https://happymama.oss-cn-beijing.aliyuncs.com/1545316897750.jpg\"" +
+                        "}" +
+                        "]}}";
+            case "125":
+                return "{\"touser\":\"" + openId + "\",\"msgtype\":\"news\",\"news\":{\"articles\":[" +
+                        "{" +
+                        "\"title\":\"【点击进入培训群】月嫂面试技巧培训群\"," +
+                        "\"url\":\"http://newmami.cn/app/to/join.do\"," +
+                        "\"picurl\":\"https://happymama.oss-cn-beijing.aliyuncs.com/1545316897750.jpg\"" +
+                        "}" +
+                        "]}}";
+        }
+
         return "{\"touser\":\"" + openId + "\",\"msgtype\":\"text\",\"text\":{\"content\": \"" + key + "\"}}";
     }
 
