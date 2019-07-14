@@ -64,6 +64,9 @@ public class WechatController {
             if ("124".equals(eventKey) || ("qrscene_124".equals(eventKey))) {
                 wechatService.sendMessage(openId, "124");
             }
+            if ("125".equals(eventKey) || ("qrscene_125".equals(eventKey))) {
+                wechatService.sendMessage(openId, "125");
+            }
             if (StringUtils.isNotBlank(content)) {
                 QueryResult<KnowledgeDO> qr = knowledgeService.queryKnowledge(content);
                 List<KnowledgeDO> list = qr.getResultlist();
