@@ -48,27 +48,36 @@ public class TestController {
 
     @RequestMapping("/test/get")
     public String getTest() throws IOException {
-        String res = postResponseByUrl("https://xindebaby.com/thrid/provider/571/nurses/", cookie);
-        JSONObject jsonObject = JSON.parseObject(res);
-        JSONArray jsonArray = jsonObject.getJSONObject("data").getJSONArray("nurses");
-        if (jsonArray.size() > 0) {
+
+        int lastId = 0;
+
+        while (true) {
+            String res = postResponseByUrl("https://xindebaby.com/thrid/provider/571/nurses/", cookie, lastId);
+            JSONObject jsonObject = JSON.parseObject(res);
+            JSONArray jsonArray = jsonObject.getJSONObject("data").getJSONArray("nurses");
+            if (jsonArray.isEmpty() || jsonArray.size() == 0) {
+                return "success";
+            }
+
             for (int i = 0; i < jsonArray.size(); i++) {
                 JSONObject nurse = jsonArray.getJSONObject(i);
                 String hometown = nurse.getString("hometown");
                 String name = nurse.getString("name");
                 String price = nurse.getString("price");
-                String id = nurse.getString("id");
+                int id = nurse.getInteger("id");
                 String NurseUrl = "https://xindebaby.com/thrid/provider/571/nurse/" + id + "/edit/";
                 String nurseResponse = getResponseByUrl(NurseUrl, cookie);
                 handleNurse(name, hometown, price, nurseResponse);
+                lastId = id;
                 try {
                     Thread.sleep(1000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
             }
+
         }
-        return "ok";
+
     }
 
 
@@ -112,7 +121,7 @@ public class TestController {
         return "ok";
     }
 
-    private String postResponseByUrl(String url, String cookie) {
+    private String postResponseByUrl(String url, String cookie, int lastId) {
         String agent = "Mozilla/5.0 (Linux; Android 7.1.1; MI MAX 2 Build/NMF26F; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/57.0.2987.132 MQQBrowser/6.2 TBS/044203 Mobile Safari/537.36 MicroMessenger/6.7.1321(0x26070030) NetType/WIFI Language/zh_CN";
         try {
             url = url.replace(" ", "");
