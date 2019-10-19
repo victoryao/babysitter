@@ -17,7 +17,7 @@
     <title>新新妈咪-${employeeDO.name}阿姨简历</title>
     <script type="text/javascript" src="${base}/js/jquery.js"></script>
     <script type="text/javascript" src="${base}/js/jquery.cookie.js"></script>
-    <#--<script type="text/javascript" src="${base}/js/rem.js"></script>-->
+    <link rel="stylesheet" href="${base}/css/swiper.min.css">
     <script type="text/javascript" src="${base}/js/swiper.min.js"></script>
     <script type="text/javascript" src="http://res2.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
 
@@ -88,6 +88,19 @@
             var element = $("div[class='new-comment-content']");
             var temp = element.text().replace(/\n/g, '<br/>');
             element.html(temp);
+        });
+
+
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var mySwiper = new Swiper('.swiper-container', {
+                direction: 'horizontal',
+                loop: true,
+                slidesPerView: 3,
+                spaceBetween: 5
+            })
         });
     </script>
 
@@ -174,42 +187,36 @@
 
     <div id="list">
         <!--生活照-->
-    <#if lifePhotos?? && (lifePhotos?size > 0) >
         <div class="field">
+        <#if lifePhotos?? && (lifePhotos?size > 0) >
             <h2 class="field-title">生活照</h2>
             <div>
-                <div class="po-cmt">
-                    <div class="po-hd">
-                        <p class="post">
-                            <#list lifePhotos as image>
-                                <img class="list-img" src="${image}"/>
-                            </#list>
-                        </p>
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <#list lifePhotos as image>
+                            <div class="swiper-slide"><img class="list-img" src="${image}"/></div>
+                        </#list>
                     </div>
                 </div>
-
             </div>
+        </#if>
         </div>
-    </#if>
 
         <!--月子餐-->
-    <#if foodPhotos?? && (foodPhotos?size > 0) >
         <div class="field">
+        <#if foodPhotos?? && (foodPhotos?size > 0) >
             <h2 class="field-title">月子餐</h2>
             <div>
-                <div class="po-cmt">
-                    <div class="po-hd">
-                        <p class="post">
-                            <#list foodPhotos as image>
-                                <img class="list-img" src="${image}"/>
-                            </#list>
-                        </p>
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <#list foodPhotos as image>
+                            <div class="swiper-slide"><img class="list-img" src="${image}"/></div>
+                        </#list>
                     </div>
                 </div>
-
             </div>
+        </#if>
         </div>
-    </#if>
     </div>
 
     <!-- 评价区域 -->
@@ -308,9 +315,10 @@
             pagination: '.swiper-pagination2'
         });
 
-        $("#list").on("click", ".post img",
+        $("#list").on("click", ".list-img",
                 function () {
-                    var imgBox = $(this).parents(".post").find("img");
+                    var $this =$(this).parent().parent();
+                    var imgBox = $this.find(".list-img");
                     var i = $(imgBox).index(this);
                     $(".big_img .swiper-wrapper").html("");
 

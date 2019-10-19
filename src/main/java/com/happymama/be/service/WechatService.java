@@ -75,11 +75,16 @@ public class WechatService {
                 "\"url\": \"http://newmami.cn/app\"" +
                 "}," +
                 "{" +
-                "\"name\": \"月嫂服务\"," +
+                "\"name\": \"家政服务\"," +
                 "\"sub_button\": [{" +
                 "\"type\": \"view\"," +
                 "\"name\": \"月嫂推荐\"," +
-                "\"url\": \"http://newmami.cn/app/employee/list.do\"" +
+                "\"url\": \"http://newmami.cn/app/employee/list.do?types=1\"" +
+                "}," +
+                "{" +
+                "\"type\": \"view\"," +
+                "\"name\": \"育儿嫂推荐\"," +
+                "\"url\": \"http://newmami.cn/app/employee/list.do?types=3\"" +
                 "}," +
                 "{" +
                 "\"type\": \"view\"," +
@@ -208,7 +213,7 @@ public class WechatService {
             case "125":
                 return "{\"touser\":\"" + openId + "\",\"msgtype\":\"news\",\"news\":{\"articles\":[" +
                         "{" +
-                        "\"title\":\"【点击进入培训群】月嫂面试技巧培训群\"," +
+                        "\"title\":\"【点击进入培训群】新生儿黄疸微课群\"," +
                         "\"url\":\"http://newmami.cn/app/to/join.do?id=1\"," +
                         "\"picurl\":\"https://happymama.oss-cn-beijing.aliyuncs.com/1545316897750.jpg\"" +
                         "}" +
